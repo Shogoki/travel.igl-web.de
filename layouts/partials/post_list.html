@@ -1,4 +1,5 @@
 <!-- post list -->
+{{ $url := .Site.Params.icloud_api }}
 {{ range $index, $element := $.Paginator.Pages }}
 <div class="post-preview">
     <a href="{{ .Permalink }}">
@@ -11,7 +12,7 @@
         </h3>
 	{{ end }}
     {{ $album :=  .Params.album }}
-    {{ $url := .Site.Params.icloud.api }}
+   
     {{with .Params.featured }}
         <div id="featured-image-{ $index }}" >
         </div>
