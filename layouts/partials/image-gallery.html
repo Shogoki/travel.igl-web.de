@@ -120,13 +120,15 @@
     </div>
 </div>
 {{ $album := string .album }}
-
+{{ $url := .site.Params.icloud_api }}
 
 <div id="single-gallery" class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom itemscope" >
 </div>
 <script>
     //TODO: Get URL from config
-    fetch("http://localhost:8000/album/{{$album}}").then(res => res.json().then(images => {
+    const url = "{{$url}}/album/{{$album}}";
+    console.log("url:",url)
+    fetch(url).then(res => res.json().then(images => {
         images.forEach(image => {
             const div = document.createElement("div")
             //${image.caption}

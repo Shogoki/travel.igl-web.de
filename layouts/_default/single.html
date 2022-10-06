@@ -69,7 +69,7 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                {{ partial "image-gallery" (dict "context" . "album" .Params.album) }}
+                {{ partial "image-gallery" (dict "context" . "album" .Params.album "site" .Site) }}
                 {{ .Content }}
 
 

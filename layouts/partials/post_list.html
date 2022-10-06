@@ -11,6 +11,7 @@
         </h3>
 	{{ end }}
     {{ $album :=  .Params.album }}
+    {{ $url := .Site.Params.icloud.api }}
     {{with .Params.featured }}
         <div id="featured-image-{ $index }}" >
         </div>
@@ -18,7 +19,7 @@
             const el = document.getElementById("featured-image-{ $index }}");
             const img = document.createElement("img");
             const index = parseInt("{{.}}")
-            fetch("http://localhost:8000/album/{{$album}}").then(res => res.json().then(images => {
+            fetch("{{ $url }}/album/{{$album}}").then(res => res.json().then(images => {
                 if(images && images.length >= index) {
                     img.src = images[index].thumbnailUrl
                     img.alt = images[index].caption

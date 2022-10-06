@@ -10,6 +10,8 @@ theme = "hugo-theme-cleanwhite"
 home = ["HTML", "RSS"]
 
 [params]
+  #icloud_api="http://localhost:8000"
+  icloud_api="https://icloud-api.evolution-web.de"
   header_image = "img/home-bg-jeep.jpg"
   SEOTitle = "Igl Travel - Crocs around the world"
 
@@ -75,3 +77,16 @@ home = ["HTML", "RSS"]
     startLevel = 1
   [markup.highlight]
     style = "dracula"
+
+  [params.giscus]
+    data_repo="Shogoki/travel.igl-web.de"
+    data_repo_id="your repo id"
+    data_category="your category"
+    data_category_id="your category id"
+    data_mapping="pathname"
+    data_reactions_enabled="1"
+    data_emit_metadata="0"
+    data_theme="light"
+    data_lang="en"
+    crossorigin="anonymous"
+  
