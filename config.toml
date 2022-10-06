@@ -1,0 +1,77 @@
+baseURL = 'http://example.org/'
+languageCode = 'de-de'
+title = 'Crocs around the world'
+theme = "hugo-theme-cleanwhite"
+
+
+### theme config
+
+[outputs]
+home = ["HTML", "RSS"]
+
+[params]
+  header_image = "img/home-bg-jeep.jpg"
+  SEOTitle = "Igl Travel - Crocs around the world"
+
+  image_404 = "img/404-bg.jpg"
+  title_404 = "Seite nicht gefunden"
+  omit_categories = true
+
+  # leancloud storage for page view counter
+  page_view_conter = false 
+  leancloud_app_id = ""
+  leancloud_app_key = ""
+
+  # Sidebar settings
+  sidebar_about_description = ""
+  #sidebar_avatar = "img/avatar-zhaohuabing.jpg"      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+  featured_tags = false 
+  
+  disqus_site = ""
+
+  # Twikoo comments
+  # Follow https://twikoo.js.org/ to set up your own env_id
+  twikoo_env_id = ""
+
+  #Enable wechat pay & alipay to allow readers send reward money if they like the articles 
+  reward = false 
+  # reward_guide = "如果这篇文章对你有用,请随意打赏" 
+
+  friends = false
+  bookmarks = false
+  about_me = false
+
+  [params.social]
+  rss            = true 
+  email          = "travel@igl-web.de"
+  #facebook      = "full profile url in facebook"
+  #googleplus    = "full profile url in googleplus"
+  twitter       = "https://twitter.com/theshogoki"
+  #linkedin       = "https://www.linkedin.com/in/yourlinkedinid"
+  #stackoverflow  = "https://stackoverflow.com/users/yourstackoverflowid"
+  #instagram     = "full profile url in instagram"
+  github         = "https://github.com/Shogoki"
+  #wechat         = "your wechat qr code image"
+  #medium        = "full profile url in medium"
+  #slack         = "full workspace url in slack"
+  #pinterest     = "full profile url in pinterest"
+  #reddit        = "full profile url in reddit"
+  #gitlab        = "full profile url in gitlab"
+  #mastodon      = "full profile url in mastodon"
+  #keybase       = "full profile url in keybase"
+  #xing          = "https://www.xing.com/profile/yourxingid"
+  #git           = "full profile url for git user"
+  
+  
+  [[params.addtional_menus]]
+  title =  "Unsere Route"
+  href =  "/unsere-route/"
+ 
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 2
+    startLevel = 1
+  [markup.highlight]
+    style = "dracula"
