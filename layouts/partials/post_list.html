@@ -1,5 +1,20 @@
 <!-- post list -->
 {{ $url := .Site.Params.icloud_api }}
+<script>
+    console.log("URL: '{{$url}}'")
+     function setFeaturedImage(id,index,album) {  
+                const el = document.getElementById(`featured-image-${index}`);
+                const img = document.createElement("img");
+                const url = "{{ $url }}"
+                fetch(`${url}/album/${album}`).then(res => res.json().then(images => {
+                    if(images && images.length >= id) {
+                        img.src = images[id].thumbnailUrl
+                        img.alt = images[id].caption
+                        el.appendChild(img)
+                    }
+                }));
+            }
+</script>
 {{ range $index, $element := $.Paginator.Pages }}
 <div class="post-preview">
     <a href="{{ .Permalink }}">
@@ -17,16 +32,7 @@
         <div id="featured-image-{ $index }}" >
         </div>
         <script>
-            const el = document.getElementById("featured-image-{ $index }}");
-            const img = document.createElement("img");
-            const index = parseInt("{{.}}")
-            fetch("{{ $url }}/album/{{$album}}").then(res => res.json().then(images => {
-                if(images && images.length >= index) {
-                    img.src = images[index].thumbnailUrl
-                    img.alt = images[index].caption
-                    el.appendChild(img)
-                }
-            }));
+            setFeaturedImage(parseInt("{{.}}"), "{{$index}}", "{{$album}}");
         </script>
     {{ end }}
         <div class="post-content-preview">
