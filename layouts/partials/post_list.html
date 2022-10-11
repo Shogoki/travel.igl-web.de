@@ -4,13 +4,27 @@
     console.log("URL: '{{$url}}'")
      function setFeaturedImage(id,index,album) {  
                 const el = document.getElementById(`featured-image-${index}`);
-                const img = document.createElement("img");
+                const oldImg = el.querySelector("img")
+                const oldGUID = oldImg.getAttribute("data-guid")
+                // console.log("old image", oldImg)
+                
                 const url = "{{ $url }}"
                 fetch(`${url}/album/${album}`).then(res => res.json().then(images => {
                     if(images && images.length >= id) {
-                        img.src = images[id].thumbnailUrl
-                        img.alt = images[id].caption
-                        el.appendChild(img)
+                        if(oldGUID !== images[id].guid) {
+                            console.log("Image GUID differs, replacing image")
+                            if(oldImg) {
+                               el.removeChild(oldImg)
+                            }
+                            const img = document.createElement("img")
+                            img.src = images[id].thumbnailUrl
+                            img.alt = images[id].caption
+                            img.setAttribute("data-guid") = images[id].guid
+                            el.appendChild(img)
+                        }
+                        else {
+                            console.log("Did not replace image as it is the same")
+                        }
                     }
                 }));
             }
@@ -27,12 +41,18 @@
         </h3>
 	{{ end }}
     {{ $album :=  .Params.album }}
-   
+   {{ $albumData :=  index site.Data.albums (printf "%s" $album) }}
     {{with .Params.featured }}
-        <div id="featured-image-{ $index }}" >
+        {{$featured := .}}
+        <div id="featured-image-{{ $index }}" >
+            {{range $idx, $data := $albumData}}
+                {{if eq $idx $featured}}
+                <img data-guid="{{$data.guid}}" src="{{$data.thumbnailUrl}}" alt="{{$data.caption}}" />
+                {{end}}
+            {{end}}
         </div>
         <script>
-            setFeaturedImage(parseInt("{{.}}"), "{{$index}}", "{{$album}}");
+            setFeaturedImage(parseInt("{{$featured}}"), "{{$index}}", "{{$album}}");
         </script>
     {{ end }}
         <div class="post-content-preview">

@@ -1,10 +1,10 @@
 ---
 title: "#6 We entered the Amazonas region"
-date: 2022-09-30
+date: 2022-10-03
 author: Kerstin
 categories: ["Peru", "Chachapoyas"]
 featured: 4
-album: https://www.icloud.com/sharedalbum/#B0OJ0DiRHGu5rnb
+album: B0OJ0DiRHGu5rnb
 ---
 
 ## 29.09.-03.10.2022 – Chachapoyas (2.483 m)
