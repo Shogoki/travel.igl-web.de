@@ -121,19 +121,47 @@
 </div>
 {{ $album := string .album }}
 {{ $url := .site.Params.icloud_api }}
-
-<div id="single-gallery" class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom itemscope" >
+{{ $albumData :=  index site.Data.albums (printf "%s" $album) }}
+<div data-album="{{$album}}" id="single-gallery" class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom itemscope" >
+{{ range $albumData }}
+<div class="box fancy-figure caption-position-bottom caption-effect-slide" data-guid="{{.guid}}" >
+	<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+		<div class="img" style="background-image: url('{{.thumbnailUrl}}');">
+		<img itemprop="thumbnail" src="{{.thumbnailUrl}}" alt="{{.caption}}"/>
+		</div>
+		<a href="{{.fullImageUrl}}" itemprop="contentUrl"></a>
+		{{if ne .caption ""}}
+		<figcaption>{{.caption}}</figcaption>
+		{{ end }}
+	   
+	</figure>
+</div>
+{{ end }}
 </div>
 <script>
-    //TODO: Get URL from config
     const url = "{{$url}}/album/{{$album}}";
     console.log("url:",url)
+	const baseElem = document.querySelector("#single-gallery");
     fetch(url).then(res => res.json().then(images => {
-        images.forEach(image => {
+		const childs = baseElem.querySelectorAll("div");
+		let doReplace = false;
+		if(childs.length === images.length) {
+			for(let i=0; i> images.length;i++) {
+				if(childs[i].getAttribute("data-guid") === images[i].guid) {
+					doReplace = true;
+					console.log("GUID not matching, replacing image")
+				}
+			}
+		}
+		else {
+			console.log("image count not matching, replacing image")
+			doReplace = true
+		}
+		if(doReplace) {
+
+        images.forEach((idx, image) => {
+
             const div = document.createElement("div")
-            //${image.caption}
-            //${image.thumbnailUrl}
-            //${image.fullImageUrl}
             div.classList.add("box","fancy-figure","caption-position-bottom","caption-effect-slide")
             const caption = (image.caption && image.caption != "") ? `<figcaption>${image.caption}</figcaption>`: "";
             const inner = `<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
@@ -145,10 +173,10 @@
                    
                 </figure>`
             div.innerHTML = inner;
-            document.querySelector("#single-gallery").appendChild(div);
+            baseElem.appendChild(div);
 
         });
+	}
         initPhotoSwipe();
-        console.log(images)
     }))
 </script>
