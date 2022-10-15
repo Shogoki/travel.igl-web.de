@@ -1,7 +1,7 @@
 #!/bin/bash
 OUTFILE="./data/albums.json"
-URL=https://icloud-api.evolution-web.de/album
-# URL=http://localhost:8000/album
+# URL=https://icloud-api.evolution-web.de/album
+URL=http://localhost:8000/album
 ALBUMS=$(grep album  content/post/*.md | cut -d " " -f 2)
 # A=$(grep album  content/post/*.md | cut -d " " -f 2)
 echo '{"dummystart": "dummy"' > $OUTFILE
