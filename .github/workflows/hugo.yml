@@ -31,12 +31,14 @@ jobs:
           # extended: true
 
       - name: Build
-        run: hugo --minify
+        run: |
+          ./scripts/fetchalbums.sh
+          hugo --minify
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          cname: traveldev.igl-web.de
+          cname: travel.igl-web.de
 
