@@ -27,3 +27,5 @@ date: 06.10.2022
 - 04.10. – 06.10 Tarapoto
 - 06.10. Bus nach Yurimaguas
 - 06.10 - 07.10 Yurimaguas
+- 07.10 - 14.10. Frachtschiff Yurimaguas-Nauta
+- 14.10. - ?? Iquitos
