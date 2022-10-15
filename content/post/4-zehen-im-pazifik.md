@@ -5,6 +5,9 @@ author: Kerstin
 categories: ["Peru", "Huanchaco"]
 featured: 2
 album: B0O5yeZFhGkFrog
+# This is for the old WP links to still work
+aliases:
+   - "/2022/09/26/4-zehen-im-pazifik/"
 ---
 
 ## 22.-25.09.2022 – Huanchaco & der Pazifische Ozean, Trujillo

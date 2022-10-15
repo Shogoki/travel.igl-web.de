@@ -5,6 +5,9 @@ author: Kerstin
 categories: ["Peru", "Chachapoyas"]
 featured: 4
 album: B0OJ0DiRHGu5rnb
+# This is for the old WP links to still work
+aliases:
+   - "2022/10/04/6-we-entered-the-amazonas-region/"
 ---
 
 ## 29.09.-03.10.2022 – Chachapoyas (2.483 m)
