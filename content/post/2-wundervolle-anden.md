@@ -5,6 +5,9 @@ author: Kerstin
 categories: ["Peru", "Huaraz"]
 featured: 7
 album: B0O5n8hH4GTacJw
+# This is for the old WP links to still work
+aliases:
+   - "/2022/09/20/2-wundervolle-anden/"
 ---
 
 ## 15.-20.09.2022 – Huaraz & die faszinierenden Anden

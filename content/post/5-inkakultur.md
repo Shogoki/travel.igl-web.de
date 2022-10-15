@@ -4,7 +4,10 @@ date: 2022-09-30
 author: Kerstin
 categories: ["Peru", "Cajamarca"]
 featured: 5
-album: B0O59UlCqGY1U67
+album: 
+# This is for the old WP links to still work
+aliases:
+   - "/2022/09/30/5-inkakultur/"
 ---
 
 ## 26.-28.09.2022 – Cajamarca
