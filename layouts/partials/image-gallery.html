@@ -142,6 +142,7 @@
     const url = "{{$url}}/album/{{$album}}";
     console.log("url:",url)
 	const baseElem = document.querySelector("#single-gallery");
+	initPhotoSwipe();
     fetch(url).then(res => res.json().then(images => {
 		const childs = baseElem.querySelectorAll("div");
 		let doReplace = false;
@@ -176,7 +177,7 @@
             baseElem.appendChild(div);
 
         });
-	}
         initPhotoSwipe();
+	}
     }))
 </script>
