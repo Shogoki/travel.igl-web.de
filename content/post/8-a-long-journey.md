@@ -5,6 +5,7 @@ author: Kerstin
 categories: ["Peru", "Amazonas"]
 featured: 
 album: https://www.icloud.com/sharedalbum/#B0OJ0DiRHGu5rnb
+draft: true
 ---
 
 ## 07.10.-14.10.2022 – Río Amazonas

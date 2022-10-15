@@ -4,7 +4,7 @@ date: 2022-10-13
 author: Kerstin
 categories: ["Peru", "Tarapoto"]
 featured: 3
-album: https://www.icloud.com/sharedalbum/#B0OJ0DiRHGu5rnb
+album: B195oqs3qIAea6b
 ---
 
 ## 04.-07.10.2022 – Tarapoto, Yurimaguas
