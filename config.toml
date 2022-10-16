@@ -1,4 +1,4 @@
-baseURL = 'http://travel.igl-web.de/'
+baseURL = 'https://travel.igl-web.de/'
 languageCode = 'de-de'
 title = 'Crocs around the world'
 theme = "hugo-theme-cleanwhite"
