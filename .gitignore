@@ -1,2 +1,4 @@
 public
 .DS_Store
+static/img/thumbs/*.jpg
+static/img/full/*.jpg
