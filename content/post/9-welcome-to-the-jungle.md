@@ -4,7 +4,7 @@ date: 2022-10-14
 author: Kerstin
 categories: ["Peru", "Tarapoto"]
 featured: 4
-album: https://www.icloud.com/sharedalbum/#B0OJ0DiRHGu5rnb
+album: B0OJ0DiRHGu5rnb
 draft: true
 ---
 
