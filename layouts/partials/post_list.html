@@ -13,19 +13,15 @@
         </h3>
 	{{ end }}
     {{ $album :=  .Params.album }}
-   {{ $albumData :=  index site.Data.albums (printf "%s" $album) }}
+    {{ $albumData :=  index site.Data.albums (printf "%s" $album) }}
     {{with .Params.featured }}
-        {{$featured := .}}
-        <div id="featured-image-{{ $index }}" >
-            {{range $idx, $data := $albumData}}
-                {{if eq $idx $featured}}
-                <img data-guid="{{$data.guid}}" src="{{$data.thumbnailUrl}}" alt="{{$data.caption}}" />
-                {{end}}
-            {{end}}
+    {{$fIdx := .}}
+    {{ with $albumData}}
+    {{$featuredImage := index . $fIdx}}
+        <div id="featured-image-{{ $fIdx }}" >
+                <img src="/img/thumbs/{{$album}}_{{$fIdx}}.jpg" alt="{{ $featuredImage.caption}}" />
         </div>
-        <script>
-            setFeaturedImage(parseInt("{{$featured}}"), "{{$index}}", "{{$album}}");
-        </script>
+    {{ end }}
     {{ end }}
         <div class="post-content-preview">
 	{{ with .Description }}

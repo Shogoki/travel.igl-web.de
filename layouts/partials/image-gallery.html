@@ -123,15 +123,16 @@
 {{ $url := .site.Params.icloud_api }}
 {{ $albumData :=  index site.Data.albums (printf "%s" $album) }}
 <div data-album="{{$album}}" id="single-gallery" class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom itemscope" >
-{{ range $albumData }}
+{{ range $idx, $img := $albumData }}
+
 <div class="box fancy-figure caption-position-bottom caption-effect-slide" data-guid="{{.guid}}" >
 	<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-		<div class="img" style="background-image: url('{{.thumbnailUrl}}');">
-		<img itemprop="thumbnail" src="{{.thumbnailUrl}}" alt="{{.caption}}"/>
+		<div class="img" style="background-image: url('/img/thumbs/{{$album}}_{{$idx}}.jpg');">
+		<img itemprop="thumbnail" src="/img/thumbs/{{$album}}_{{$idx}}.jpg" alt="{{$img.caption}}"/>
 		</div>
-		<a href="{{.fullImageUrl}}" itemprop="contentUrl"></a>
-		{{if ne .caption ""}}
-		<figcaption>{{.caption}}</figcaption>
+		<a href="/img/full/{{$album}}_{{$idx}}.jpg" itemprop="contentUrl"></a>
+		{{if ne $img.caption ""}}
+		<figcaption>{{$img.caption}}</figcaption>
 		{{ end }}
 	   
 	</figure>
