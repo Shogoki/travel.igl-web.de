@@ -139,45 +139,5 @@
 {{ end }}
 </div>
 <script>
-    const url = "{{$url}}/album/{{$album}}";
-    console.log("url:",url)
-	const baseElem = document.querySelector("#single-gallery");
-	initPhotoSwipe();
-    fetch(url).then(res => res.json().then(images => {
-		const childs = baseElem.querySelectorAll("div");
-		let doReplace = false;
-		if(childs.length === images.length) {
-			for(let i=0; i> images.length;i++) {
-				if(childs[i].getAttribute("data-guid") === images[i].guid) {
-					doReplace = true;
-					console.log("GUID not matching, replacing image")
-				}
-			}
-		}
-		else {
-			console.log("image count not matching, replacing image")
-			doReplace = true
-		}
-		if(doReplace) {
-
-        images.forEach((idx, image) => {
-
-            const div = document.createElement("div")
-            div.classList.add("box","fancy-figure","caption-position-bottom","caption-effect-slide")
-            const caption = (image.caption && image.caption != "") ? `<figcaption>${image.caption}</figcaption>`: "";
-            const inner = `<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                    <div class="img" style="background-image: url('${image.thumbnailUrl}');">
-                    <img itemprop="thumbnail" src="${image.thumbnailUrl}" alt="${image.caption}"/>
-                    </div>
-                    <a href="${image.fullImageUrl}" itemprop="contentUrl"></a>
-                    ${caption}
-                   
-                </figure>`
-            div.innerHTML = inner;
-            baseElem.appendChild(div);
-
-        });
         initPhotoSwipe();
-	}
-    }))
 </script>
