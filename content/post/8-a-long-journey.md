@@ -15,4 +15,4 @@ album: B19532ODW8kbMcC
 * San Jose de Saramuro - Mittwoch in der früh dann bereits leider der zweite Stopp, diesmal aber relativ unspektakulär. Auch hier haben wir fast 2 Tage gestanden und konnten das Schiff verlassen. Die Orte waren sich ähnlich, ein steinerner Weg entlang des Wassers, rechts und links kleine Holzhüttchen, überall Hühner, Hunde und Katzen, aber keine Fahrzeuge, lauter kleine Lädchen (die nicht als solche erkennbar sind) und einer zentralen Wasserstation.
 * Donnerstag Abend konnten wir erneut ablegen und mussten nur am nächsten Tag zum Abladen der Fracht nochmal bis Nachmittags halten. Um fast genau 18 Uhr sind wir in Nauta, einem kleinen lebhaften Hafenstädtchen, angekommen und dort ausgestiegen. Wir haben das Schiff eine Station früher als geplant verlassen und sind zu unserem Zeilort Iquitos mit dem Bus gefahren.
 
-Endlich angekommen, kann es nun endlich mit der Dschungeltour losgehen.
+Endlich angekommen, kann es nun mit der Dschungeltour losgehen.
