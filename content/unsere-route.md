@@ -14,7 +14,7 @@ date: 06.10.2022
 
 - 12.09. – 14.09. Lima
 - 14.09. Nachtbus nach Huaraz
-- 14.09. – 20.09. Huaraz
+- 15.09. – 20.09. Huaraz
 - 20.09. Nachtbus nach Trujillo
 - 21.09. – 22.09 Trujillo
 - 22.09. – 25.09 Huanchaco
@@ -27,6 +27,11 @@ date: 06.10.2022
 - 04.10. – 06.10 Tarapoto
 - 06.10. Bus nach Yurimaguas
 - 06.10. - 07.10 Yurimaguas
-- 07.10. - 14.10. Frachtschiff Yurimaguas-Nauta
-- 14.10. - 21.10. Iquitos (inklusive Dschungel-Tour)
-- 21.10. - .??? Frachtschiff Iquitos - Santa Rosa
+- 07.10. - 14.10. Frachtschiff Yurimaguas - Nauta
+- 14.10. - 21.10. Nauta, Iquitos (inklusive Dschungel-Tour)
+- 21.10. - 23.10. Frachtschiff Iquitos - Santa Rosa
+
+## Kolumbien
+ 
+- 23.10. - 25.10. Leticia, Tribordergrenze 🇨🇴🇧🇷🇵🇪
+- 25.10. - ... Bogota
