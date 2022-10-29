@@ -5,7 +5,6 @@ author: Kerstin
 categories: ["Peru"]
 featured: 18
 album: B19GWZuqDHB5CMV
-draft: false
 ---
 
 ## 11.09.-23.10.2022 – Peru
