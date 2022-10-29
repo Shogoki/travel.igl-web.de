@@ -1,7 +1,7 @@
 ---
 title: Unsere Route
 author: Sven
-date: 06.10.2022
+date: 2022-10-27
 ---
 
 ## Anreise
@@ -31,7 +31,16 @@ date: 06.10.2022
 - 14.10. - 21.10. Nauta, Iquitos (inklusive Dschungel-Tour)
 - 21.10. - 23.10. Frachtschiff Iquitos - Santa Rosa
 
+## Tri-Border Zone (Peru, Kolumbien, Brasilien)
+
+{{< figure src="/img/route_triborder.png"  height="360px" width="323px">}}
+
+- 23.10. - 25.10. Leticia 🇨🇴, Triborder-Zone 🇨🇴🇧🇷🇵🇪
+
 ## Kolumbien
- 
-- 23.10. - 25.10. Leticia, Tribordergrenze 🇨🇴🇧🇷🇵🇪
-- 25.10. - ... Bogota
+
+{{< figure src="/img/route_kolumbien.png"  height="560px" width="315px">}}
+
+- 25.10. Flug von Leticia nach Bogotá
+- 25.10. - 28.10. Bogotá
+- 28.10. Bus nach Neiva (Tatacoa Desert)
