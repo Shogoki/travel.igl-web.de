@@ -43,4 +43,7 @@ date: 2022-10-27
 
 - 25.10. Flug von Leticia nach Bogotá
 - 25.10. - 28.10. Bogotá
-- 28.10. Bus nach Neiva (Tatacoa Desert)
+- 28.10. Bus nach Neiva & Villavieja (Tatacoa Desert)
+- 28.10. - 31.10. Villavieja (Tatacoa Desert)
+- 31.10. - 01.11. Nachtbus von Neiva nach Cali
+- 01.11 - ?? Cali
