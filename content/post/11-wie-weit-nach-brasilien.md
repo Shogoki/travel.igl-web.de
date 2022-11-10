@@ -4,7 +4,7 @@ date: 2022-10-27
 author: Kerstin
 categories: ["Kolumbien"]
 featured: 3
-album: B19GY8gBYHVR4EI
+album: B19GY8gBYHVR4El
 draft: false
 ---
 
