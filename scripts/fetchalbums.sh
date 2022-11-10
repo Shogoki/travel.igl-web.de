@@ -6,7 +6,7 @@ ALBUMS=$(grep album  content/post/*.md | cut -d " " -f 2)
 echo '{"dummystart": "dummy"' > $OUTFILE
 for album in $ALBUMS; do 
     echo Fetching Album $URL/$album
-    data=$(curl $URL/$album) 2> /dev/null
+    data=$(curl --fail $URL/$album) 2> /dev/null
     if [[ $data ]]; then
         echo "Found Album $album"
         length=$(echo $data | jq length)
