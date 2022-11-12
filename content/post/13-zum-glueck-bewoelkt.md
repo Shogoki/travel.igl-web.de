@@ -3,7 +3,7 @@ title: "#13 Zum Glück bewölkt"
 date: 2022-10-31
 author: Kerstin
 categories: ["Kolumbien", "Tatacoa"]
-featured: 7
+featured: 8
 album: B195Uzl7VFG3Z6P
 draft: false
 
