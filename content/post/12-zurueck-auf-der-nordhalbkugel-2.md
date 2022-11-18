@@ -9,7 +9,7 @@ draft: false
 
 ---
 
-## 26.-28.10.2022 – Bogotá, La Candelaria/Altstadt
+## 26.-28.10.2022 – Bogotá (La Candelaria/Altstadt)
 
 * Stadtführung
 * Food Tour: Arepas, Canelazo (Art Punsch mit Alkohol), Mazorca (Südamerikanischer Mais mit Butter und Salz), Ajiaco (Suppe), Limonada de Coco, Capybara (gegrilltes Wasserschwein), Oblaten mit Karamell und Cream, Hot Chocolate con queso, Kaffee
