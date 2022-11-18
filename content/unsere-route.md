@@ -46,4 +46,17 @@ date: 2022-10-27
 - 28.10. Bus nach Neiva & Villavieja (Tatacoa Desert)
 - 28.10. - 31.10. Villavieja (Tatacoa Desert)
 - 31.10. - 01.11. Nachtbus von Neiva nach Cali
-- 01.11 - ?? Cali
+- 01.11. - 03.11. Cali
+- 03.11. Bus nach Buenaventura
+- 04.11. Bus nach Armenia
+- 04.11. - 06.11. Armenia
+- 06.11. Bus nach Salento
+- 06.11. - 08.11. Salento 
+- 08.11. Nachtbus nach Medellin
+- 08.11. - 14.11. Medellin
+- 14.11. Bus nach Jardin
+- 14.11. - 16.11. Jardin
+- 16.11. Nachtbus nach Palomino
+- 17.11. - 19.11. Palomino
+- 19.11. Bus nach Santa Marta
+- 19.11. - ?? Santa Marta
