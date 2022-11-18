@@ -11,7 +11,7 @@ aliases:
    - "/2022/09/15/1-aufbruch-in-eine-unbekannte-welt/"
 ---
 
-## 11.-14.09.2022 – Frankfurt, Lima
+## 11.-14.09.2022 – Frankfurt, Lima (Miraflores)
 
 * Packing
 * Verabschiedung am Flughafen
