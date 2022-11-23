@@ -1,6 +1,6 @@
 ---
 title: "#18 Schöne Grüße vom Meer"
-date: 2022-11-21
+date: 2022-11-20
 author: Kerstin
 categories: ["Kolumbien", "Palomino", "Santa Marta"]
 featured: 2
