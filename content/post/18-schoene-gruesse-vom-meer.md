@@ -4,7 +4,7 @@ date: 2022-11-20
 author: Kerstin
 categories: ["Kolumbien", "Palomino", "Santa Marta"]
 featured: 2
-album: B19GWZuqDHB5CM
+album: B1959UlCq8tuOcD
 draft: false
 
 ---
