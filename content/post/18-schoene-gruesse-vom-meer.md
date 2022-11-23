@@ -16,7 +16,7 @@ Eeendlich Strand und Sonne!! Nach ca. 24 Stunden Busfahrt ab Medellín haben wir
 Tschüss Pullover und Jacke...
  
 Santa Marta
-Im Küstenort Santa Marta war ein Strandbesuch keine gute Option, da zwar das Wasser angenehm und ruhig, aber der Strand ziemlich überfüllt und vermüllt war. 
-Daher umso besser tauchen zu gehen! Unsere 2 Dives haben wir im Tyrona Nationalpark (La Pesera und Punta Granate) nahe Taganga gemacht.
+Santa Marta war die erste spanische Siedlung und ist die älteste Stadt Kolumbiens (1525) und die Zweitälteste Südamerikas. Ein Strandbesuch war hier keine gute Option, da zwar das Wasser angenehm und ruhig, aber der Strand ziemlich überfüllt und vermüllt war. Die Promenade ist sehr schön hergerichtet und modern gestaltet. 
+Der Küstenort ist allerdings super Ausgangspunkt zum Tauchen! Unsere 2 Dives haben wir im Tyrona Nationalpark (La Pesera und Punta Granate) nahe Taganga gemacht.
 
 Morgen fahren wir nach Cartagena.
