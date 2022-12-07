@@ -3,7 +3,7 @@ title: "#12 Zurück auf der Nordhalbkugel"
 date: 2022-10-29
 author: Kerstin
 categories: ["Kolumbien", "Bogotá"]
-featured: 6
+featured: 5
 album: B195nhQSTIzUPRu
 draft: false
 
