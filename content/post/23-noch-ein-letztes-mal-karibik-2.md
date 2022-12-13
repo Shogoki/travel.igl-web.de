@@ -11,11 +11,11 @@ draft: false
 
 ## 04.-07.12.2022 – Tulum
 
-Die Regionen Quintana Roo und Yucatán sind bekannt für ihr unterirdisches Höhlensystem mit den Cenoten, die Eingänge zu dem Süßwassersiehe auch https://lacalypsodivecenter.com/de/was-aber-ist-eine-cenote/
+Die Regionen Quintana Roo und Yucatán sind bekannt für ihr unterirdisches Höhlensystem mit den [Cenoten](https://lacalypsodivecenter.com/de/was-aber-ist-eine-cenote/), die Eingänge zu den Süßwassergrotten.
 
 * Strand Playa Paraiso
 * Acrópolis-Conjunto Cobá, Ruinen der Maya in Cobá
-* Cenote Tamcach-Ha ca. 27 m Tiefe
+* Cenote Tamcach-Ha: Die Höhle ist ca. 27 m  tief, hier waren wir schwimmen
 * Cenoten Dos Ojos und El Pit, unsere ersten zwei Süßwassertauchgänge mit Mel von TheCenoteGuy: Dos Ojos war ein Cavern-Dive in 2 Höhlen, Barbie Line und Batcave, mit Fledermäusen, Fossilien und Tropfsteinen. El Pit war ein Deep-Dive in 30 m.
 
 Nun geht es mit dem Nachtbus ins Landesinnere nach Palenque.
