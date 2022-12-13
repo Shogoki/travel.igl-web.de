@@ -1,6 +1,6 @@
 ---
 title: "#22 Alles in Butter"
-date: 2022-12-03
+date: 2022-12-04
 author: Kerstin
 categories: ["Mexiko", "Cancun"]
 featured: 2
