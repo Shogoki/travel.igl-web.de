@@ -59,4 +59,33 @@ date: 2022-10-27
 - 16.11. Nachtbus nach Palomino
 - 17.11. - 19.11. Palomino
 - 19.11. Bus nach Santa Marta
-- 19.11. - ?? Santa Marta
+- 19.11. - 21.11. Santa Marta     xx 
+- 21.11. - 23.11. Cartagena
+- 23.11. Flug nach San Andres
+- 23.11. - 01.12. San Andres
+- 01.12. - 02.12. Cartagena
+
+## Mexiko
+
+- 02.12. Flug von Caragena nach Cancun
+- 02.12. - 04.12. Cancun
+- 04.12. Collectivo nach Tulum
+- 04.12. - 07.12. Tulum
+- 07.12. Nachtbus nach Palenque
+- 08.12. Palenque
+- 08.12. Nachtbus nach Mexiko-Stadt
+- 09.12. - 11.12. Mexiko-Stadt
+- 11.12. Nachtbus nach Guadalajara
+- 12.12. - 13.12. Guadalajara
+- 13.12. Flug nach Tijuana
+- 14.12. - 15.12. Tijuana
+
+## USA
+
+- 15.12. - 16.12. San Diego
+- 16.12. - 17.12. Joshua Tree
+- 17.12. - 18.12. Los Angeles
+- 19.12. - 20.12. Las Vegas
+- 20.12. Ridesharing von Las Vegas nach Seattle
+- 21.12. - 22.12. Seattle
+- 22.12. Zug nach Vancouver
