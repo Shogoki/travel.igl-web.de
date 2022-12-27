@@ -19,5 +19,5 @@ Als wir morgens ankamen, waren es nur 5 Grad 🥶 und dabei blieb es, abends und
 
 Nach einem entspannten Tag am Strand und dem letzten Taco, haben wir uns am Nachmittag auf den Weg zum Grenzübergang gemacht. In knapp einer Stunde waren wir in San Diego 🇺🇸
 
-Leider hatten wir nicht viel Zeit in Mexiko, aber die Erfahrung war es definitiv wert (& die Tacos!! 😂)
+Leider hatten wir nicht viel Zeit in Mexiko, aber die Erfahrung war es definitiv wert (& die Tacos!! 😉)
 
