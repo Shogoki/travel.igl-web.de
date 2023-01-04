@@ -3,8 +3,8 @@ title: "#30 Frosty"
 date: 2022-12-26
 author: Kerstin
 categories: ["USA"]
-featured: 16
-album: 
+featured: 17
+album: B0VJtdOXmGElR47
 draft: false
 
 ---
