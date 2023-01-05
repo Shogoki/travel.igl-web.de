@@ -9,7 +9,7 @@ draft: false
 
 ---
 
-## 25.-29.12.2022 – Newcastle, Shoa. Bay
+## 25.-29.12.2022 – Newcastle, Shoal Bay
 
 Da unser Flugzeug in Vancouver vor Abflug enteist werden musste, flogen wir mit Verspätung los und erreichten am 1. Weihnachtsfeiertag gegen Mittag unser Ziel Sydney.
 
@@ -23,5 +23,6 @@ Die beiden Weihnachtsfeiertage (Boxingdays) waren wir in Shoal Bay am Strand und
 * Erste Wildlife Begegnungen mit Birds, Iguanas und Possums
 * Aussichtspunkt Tomaree Head Lookout
 * Trekking zu Fingal Island with Spit im Tomaree National Park
+* Walk in Huntervalley Wetlands
 
 Als nächstes geht es zurück nach Sydney für Silvester. 
