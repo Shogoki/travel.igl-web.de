@@ -3,7 +3,7 @@ title: "#32 Verrückte Weihnachten"
 date: 2022-12-29
 author: Kerstin
 categories: ["Australien", "Newcastle"]
-featured: 6
+featured: 2
 album: B195idkMw8utWd7
 draft: false
 
@@ -19,10 +19,10 @@ In Sydney angekommen, wurden wir von Bone mit seinem Van "Vanjamin" abgeholt, um
 
 Die beiden Weihnachtsfeiertage (Boxingdays) waren wir in Shoal Bay am Strand und die Gegend erkunden. 
 
-* Point Stephens
+* Port Stephens mit Leuchtturm
 * Erste Wildlife Begegnungen mit Birds, Iguanas und Possums
 * Aussichtspunkt Tomaree Head Lookout
 * Trekking zu Fingal Island with Spit im Tomaree National Park
-* Walk in Huntervalley Wetlands
+* Walk in Hunter Valley Wetlands
 
 Als nächstes geht es zurück nach Sydney für Silvester. 
