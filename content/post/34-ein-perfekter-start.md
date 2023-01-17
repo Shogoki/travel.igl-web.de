@@ -3,7 +3,7 @@ title: "#34 Ein perfekter Start"
 date: 2023-01-01
 author: Kerstin
 categories: ["Australien", "Wollongong"]
-featured: 0
+featured: 3
 album: B19GRMtznIpXeGi
 draft: false
 
