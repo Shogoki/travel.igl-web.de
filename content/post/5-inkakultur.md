@@ -19,4 +19,4 @@ aliases:
 
 Nach 17 Tagen bleibt festzustellen, dass die Peruaner Pizza und Pommes echt nicht können, aber dafür alles rund ums Huhn umso besser 🙂 Endlich hat sich auch die Sonne mal blicken lassen und wir haben die 25°C erreicht ☀️
 
-Weiter geht es mit Nachtbus in ca. 10 Stunden nach Chachapoyas…
+Weiter geht es mit dem Nachtbus in ca. 10 Stunden nach Chachapoyas.
