@@ -3,15 +3,13 @@ title: "#35 Roos & Wombats"
 date: 2023-01-09
 author: Kerstin
 categories: ["Australien", "Jervis Bay"]
-featured: 
-album: 
+featured: 1
+album: B0OGtnIORJ0HXsf
 draft: false
 
 ---
 
 ## 02.-08.01.2023 – Jervis Bay Region
-
-[Ja uns gibts noch! 😅 Leider haben wir seit paar Wochen Schwierigkeiten mit dem Internet und unseren Fotoalben, von daher posten wir nun erstmal die Artikel und später dann die Bilder...]
 
 Shoalhaven
 

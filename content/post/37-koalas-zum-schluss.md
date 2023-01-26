@@ -1,15 +1,18 @@
 ---
-title: "#37 Zurück auf Anfang"
+title: "#37 Koalas zum Schluss
 date: 2023-01-14
 author: Kerstin
 categories: ["Australien", "Newcastle"]
-featured: 
-album: 
+featured: 4
+album: B0OJEsNWnGfTJq3
 draft: false
 
 ---
 
 ## 11.-14.01.2023 – Newcastle, Sydney
+
+* Woy Woy Walk
+* Caves Beach
 
 Surfen stand auf unser aller Bucketlist. Weil das in Jervis Bay wegen schlechten Wetters für uns nicht so reingepasst hat, haben wir das zunächst verschoben. Die geeignete Zeit war in unserer letzten Woche gekommen und so haben wir uns am One Mile Beach bei Port Stephens Surfbretter geliehen und uns bei optimalen Bedingungen ausgepowert. Von Haien gefressen wurde keiner und bis auf Muskelkater und ein paar wunde Stellen, sind alle heil geblieben. 
 
