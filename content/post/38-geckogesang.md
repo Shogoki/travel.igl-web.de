@@ -2,7 +2,7 @@
 title: "#38 Geckogesang"
 date: 2023-01-22
 author: Kerstin
-categories: ["Indonesien", "Bali", "Bukit"]
+categories: ["Indonesien", "Bali", "Bukit", "Kuta"]
 featured: 9
 album: B19GQOeMmIY8S6E
 draft: false
