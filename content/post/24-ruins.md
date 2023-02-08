@@ -15,3 +15,4 @@ draft: false
 
 Und nochmal 16 Stunden mit dem Nachtbus in die Hauptstadt...
 
+[Nachtrag: Bei unserer Fahrt von Palenque nach Mexiko-Stadt wurden wir in den ersten 3 Stunden 5 und in der Nacht noch 2 Mal angehalten und kontrolliert. Crazy & schlaf war damit diesmal auch nicht so viel drin...]
