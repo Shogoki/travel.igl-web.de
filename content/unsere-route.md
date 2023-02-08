@@ -99,3 +99,59 @@ date: 2022-10-27
 - 22.12. Amtrak von Seattle 🇺🇸 nach Vancouver 🇨🇦
 - 23.12. Vancouver 🇨🇦
 - 23.12 Flug nach Sydney
+
+## Australien
+
+{{< figure src="/img/route_canada-aus.png"  height="315px" width="560px">}}
+
+- 25.12 Ankunft in Sydney --> Weiterfahrt nach Newcastle
+- 25.12. - 26.12 Newcastle
+- 26.12. - 29.12. Shoal Bay, Port Stephens
+- 30.12. - 01.01. Sydney
+- 01.01. - 02.01. Wollongong
+- 02.01. - 03.01. Shoalhaven
+- 03.01. - 07.01. Mollymook
+- 07.01. - 08.01. Kangaroo Valley
+- 08.01. - 09.01. Katoomba
+- 09.01. - 10.01. Umina
+- 10.01. - 11.01. Caves Beach
+- 11.01. - 12.01. Shoal Bay, Port Stephens
+- 12.01. - 14.01. Newcastle
+- 14.01. - 15.01. Sydney
+- 15.01. Flug nach Denpasar, Bali
+
+{{< figure src="/img/route_aus-ind.png"  height="315px" width="560px">}}
+
+## Indonesien
+
+{{< figure src="/img/route_indonesien_all.png"  height="315px" width="560px">}}
+
+Übersicht der Indonesien Route. Details folgen weiter unten.
+
+- 15.01. - 23.01. Bali
+- 24.01. - 29.01. Nusa Penida
+- 29.01. - ?? Java
+
+### Bali & Nusa Penida
+
+{{< figure src="/img/route_Bali.png"  height="315px" width="560px">}}
+
+- 15.01. - 17.01. Bukit Halbinsel
+- 17.01. - 18.01. Kuta
+- 18.01. - 21.01. Ubud
+- 21.01. - 23.01. Munduk Region
+- 23.01. - 24.01. Sanur
+- 24.01. Fähre nach Nusa Penida
+- 24.01. - 29.01. Nusa Penida
+- 29.01. Weiterreise nach Java
+
+### Java
+
+{{< figure src="/img/Route_Java.png"  height="315px" width="560px">}}
+
+- 29.01. - 31.01. Banyuwangi
+- 31.01. - 01.02. Probolingo
+- 01.02. - 02.02. Cemoro Lawang (Mt. Bromo)
+- 02.02. Weiterreise nach Surabaya
+- 02.01. - 04.02. Surabaya
+- 04.02. - 10.02. Yogyakarta
