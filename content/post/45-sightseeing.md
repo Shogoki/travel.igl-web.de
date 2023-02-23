@@ -5,7 +5,7 @@ author: Kerstin
 categories: ["Indonesien", "Java", "Jawa-Barat"]
 featured: 25
 album: B195CmvAS8wx13N
-draft: true
+draft: false
 
 ---
 
