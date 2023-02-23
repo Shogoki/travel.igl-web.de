@@ -2,14 +2,14 @@
 title: "#42 Vulcanos"
 date: 2023-02-04
 author: Kerstin
-categories: ["Indonesien", "Java", "Jawa Timur"]
+categories: ["Indonesien", "Java", "Jawa-Timur"]
 featured: 23
 album: B195M7GFP8Mapb0
 draft: false
 
 ---
 
-## 29.01.-04.02.2023 – Banyuwangi, Probolinggo, Cemoro Lawang, Sarubaya
+## 29.01.-04.02.2023 – Jawa-Timur (Banyuwangi, Probolinggo, Cemoro Lawang, Surabaya)
 
 Bis zur Hafenstadt Banyuwangi in Ost-Java haben wir etwa 12 Stunden gebraucht, da wir erst von Nusa Penida mit der Fähre zurück nach Sanur in Bali und von dort mit dem Bus nach Denpasar gefahren sind. Nachdem wir etwa 4 Stunden in der Hauptstadt verbracht haben, hat uns ein weiterer Bus quer durch Balis Westen zur Fähre und nach Banyuwangi gefahren. Zufällig haben wir bei unserer Ankunft festgestellt, dass wir eine Stunde Zeitverschiebung zu Bali haben und damit nun nur noch 6 Stunden vor Deutschland sind. 
 

@@ -9,7 +9,7 @@ draft: false
 
 ---
 
-## 13.-18.02.2023 – Semarang, Wonosobo, Purwokerto
+## 13.-18.02.2023 – Jawa-Tengah (Semarang, Wonosobo, Purwokerto)
 
 ...nur der Vulkan brodelt, bei uns ist alles klar 😉
 
@@ -24,4 +24,4 @@ Nach etwa 3 Stunden Busfahrt Richtung Süden haben wir Wonosobo erreicht, um uns
 
 Noch ein Stück weiter im Süden liegt Purwokerto mit vielen umliegenden Naturattraktionen wie heißen Quellen und kleinen Wasserfällen. Da die Verbindung in den Nachbarort Banderrung nicht so gut ist, es zu weit zu laufen und das Wetter schwierig war, haben wir uns auf nur ein Ziel konzentriert. Telaga Sunyi ist ein klitzekleiner See, ca. 5 m tief mit kristallklarem Wasser und Wasserfall. Und kalt, richtig kalt. 
 
-Wieder kräftig von oben geduscht und nassen Rucksäcken machen wir uns mit einem kleinen Bus auf nach Banderung.
+Wieder kräftig von oben geduscht und nassen Rucksäcken machen wir uns mit einem kleinen Bus auf nach Bandung.
