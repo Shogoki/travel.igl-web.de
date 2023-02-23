@@ -11,7 +11,7 @@ draft: false
 
 ## 19.-23.02.2023 – Jawa-Barat (Bandung, Jakarta)
 
-Auf vielfachen Wunsch teilen wir unsere Bilder nun auch auf Instagram mit euch - also gerne "Roaminginrubber" folgen 😉
+Auf vielfachen Wunsch teilen wir unsere Bilder nun auch auf Instagram mit euch - also gerne [Roaminginrubber](https://www.instagram.com/roaminginrubber/) folgen 😉
 
 Für die zwei großen Städte im Westen Javas haben wir uns nicht viel Zeit genommen, aber genug um die wichtigsten Sehenswürdigkeiten abzuklappern und ein paar schöne Spots zu entdecken. 
 
