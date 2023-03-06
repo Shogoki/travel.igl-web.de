@@ -1,5 +1,5 @@
 ---
-title: "#42 Vulcanos"
+title: "#42 Volcanos"
 date: 2023-02-04
 author: Kerstin
 categories: ["Indonesien", "Java", "Jawa-Timur"]
