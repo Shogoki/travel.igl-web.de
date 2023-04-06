@@ -1,6 +1,6 @@
 ---
 title: "#50 Männer mit Vogel"
-date: 2023-03-29
+date: 2023-03-20
 author: Kerstin
 categories: ["Indonesien"]
 featured: 31
@@ -10,6 +10,8 @@ draft: false
 ---
 
 ## 15.01.-15.03.2023 – Indonesien: Bali, Java, Sumatra
+
+Der Vogel ist neben Frau und Haus ein wichtiges Statussymobol für die Männer Indonesiens 😉
 
 ### Essen 
 
@@ -39,6 +41,6 @@ Die Leute sind stolz auf ihr Land und viele von ihnen waren noch nie wirklich (w
 
 ### Highlights
 
-Die 2 Monate in Indonesien waren ziemlich spannend, manchmal anstrengend und demotivierend, aber auch faszinierend. Durch couchsurfing und workaway haben wir eine ganz andere Seite des Landes und eine neue Form des Reisens kennengelernt, die uns einen noch authentischeren Eindruck von Indonesiens Vielfalt gegeben hat. Wir haben dabei viele tolle Menschen kennengelernt, gesehen wie das Leben hier funktionieren kann und wie unterschiedlich die Lebensweisen sind. Auch die verschiedenen Einstellungen und Handhabe der Religion im muslimischen Land war ziemlich interessant. 
+Die 2 Monate in Indonesien waren ziemlich spannend, manchmal anstrengend und demotivierend, aber auch total faszinierend. Durch couchsurfing und workaway haben wir eine ganz andere Seite des Landes und eine neue Form des Reisens kennengelernt, die uns einen noch authentischeren Eindruck von Indonesiens Vielfalt gegeben hat. Wir haben dabei viele tolle Menschen kennengelernt, gesehen wie das Leben hier funktionieren kann und wie unterschiedlich die Lebensweisen sind. Auch die verschiedenen Einstellungen und Handhabe der Religion im muslimischen Land war ziemlich interessant. Außerdem bietet Indonesien wunderschöne, für Fremde schwer erreichbare Naturattraktionen und eine unglaubliche Vulkanlandschaft.
 
 Am beeindruckendsten fand ich definitiv die Vulkane und in den Krater eines aktiven Vulkans zu schauen! Von den beiden Ausbrüchen des Merapi in Zentral-Java oder den heftigen Überflutungen in Jakarta und West-Sumatra vor kurzem haben wir nichts mitbekommen.
