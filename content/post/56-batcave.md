@@ -1,6 +1,6 @@
 ---
 title: "#56 Batcave"
-date: 2023-04-06
+date: 2023-04-10
 author: Sven
 categories: ["Malaysia" , "Taman Negara" , "Kuala Tahan"]
 featured: 22
