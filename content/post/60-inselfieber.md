@@ -9,7 +9,7 @@ draft: false
 
 ---
 
-## 23.04.-09.05.2023 – Koh Lipe, Koh Adang, Koh Lanta, Koh Phi Phi
+## 23.04.-04.05.2023 – Koh Lipe (Sunrise Beach), Koh Adang, Koh Lanta (....), Koh Phi Phi
 
 Die Fähre brachte uns in 2 Stunden vor die Küste von Koh Lipe (Koh = Insel), wo wir in ein kleines Taxiboot umgestiegen sind, das uns an den Strand der Insel gebracht hat. Quasi fast noch im Sand haben wir unseren Einreisestempel bekommen und sind dann stilecht mit einem Tuk Tuk zu unserem Chalet auf der anderen Seite der Insel am Strand gefahren worden. 
  
