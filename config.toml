@@ -4,7 +4,7 @@ title = 'Crocs around the world'
 theme = "hugo-theme-cleanwhite"
 
 
-### theme config
+### theme config g
 
 [outputs]
 home = ["HTML", "RSS"]
