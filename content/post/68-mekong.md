@@ -16,5 +16,7 @@ Der Grenzübergang verlief wieder problemlos und auch konnten wir unsere letzten
 Nachdem bei der Anreise bisschen was schief gelaufen ist, hat sich die Eigentümerin unserer Unterkunft trotzdem rührend um uns gekümmert und uns gleich zu den richtigen Local-Food-Restaurants geschickt.
 
 In Can Tho fließt der Mekong Fluss, den wir schon aus Kambodscha kennen. 
+
 Nach einer morgendlichen Bootstour zum Floating Market und über die kleinen Kanäle des Mekong River, sind wir mit dem Bus in die Hauptstadt gefahren. 
 
+[Nachtrag 28.07: Im Fluss war so unglaublich viel Abfall, dass wir mehrmals anhalten und den Antrieb freischneiden mussten. Das Traurigste dabei war allerdings, dass unsere Fahrerin das Zeug einfach genommen und zurückgeworfen hat, anstatt es wenigstens dann mit rauszunehmen...]
