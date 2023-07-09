@@ -130,7 +130,8 @@ date: 2022-10-27
 
 - 15.01. - 23.01. Bali
 - 24.01. - 29.01. Nusa Penida
-- 29.01. - ?? Java
+- 29.01. - 25.02. Java
+- 26.02. - 15.03. Sumatra
 
 ### Bali & Nusa Penida
 
@@ -152,6 +153,88 @@ date: 2022-10-27
 - 29.01. - 31.01. Banyuwangi
 - 31.01. - 01.02. Probolingo
 - 01.02. - 02.02. Cemoro Lawang (Mt. Bromo)
-- 02.02. Weiterreise nach Surabaya
 - 02.01. - 04.02. Surabaya
 - 04.02. - 10.02. Yogyakarta
+- 10.02. - 13.02. Solo
+- 13.02. - 15.02. Semarang
+- 15.02. - 17.02. Wonosobo
+- 17.02. - 18.02. Purwokerto
+- 19.02. - 21.02. Bandung
+- 21.02. - 23.02. Jakarta
+- 23.02. - 24.02. Pulau Pramuka
+- 24.02. - 25.02. Jakarta
+- 25.02. Weiterreise nach Sumatra  
+
+### Sumatra
+
+- 26.02. - 27.02. Ranau
+- 27.02. - 28.02. Lahat 
+- 02.03. - 06.02. Payakumbuh 
+- 07.03. - 10.02. Danau Toba/Samosir
+- 10.03. - 13.02. Bukit Lawang
+- 13.03. - 15.02. Medan
+- 15.03. Flug nach Penang, Malaysia
+
+## Malaysia
+
+- 15.03. - 19.03. Penang
+- 19.03. - 20.03. Butterworth
+- 21.03. - 23.03. Terrengganu
+- 23.03. - 24.03. Mersing
+- 24.03. - 28.03. Pulau Tioman
+- 28.03. - 01.04. Kuala Lumpur
+- 01.04. - 02.04. Melakka
+- 02.04. - 03.04. Ipoh
+- 03.04. - 06.04. Tanah Rata
+- 06.04. - 09.04. Jerantut/Taman Negara
+- 09.04. - 13.04. Pulau Perhentian Kecil
+- 13.04. - 14.04. Kuala Besut
+- 14.04. - 15.04. Penang
+- 16.04. - 23.04. Langkawi
+- 23.04. Fähre nach Koh Lipe, Thailand
+
+## Thailand
+
+- 23.04. - 26.04. Koh Lipe 
+- 26.04. - 27.04. Koh Andang
+- 27.04. - 30.04. Koh Lanta
+- 01.05. - 04.05. Koh Phi Phi
+- 04.05. - 09.05. Ao Nang
+- 09.05. - 13.05. Koh Samui
+- 13.05. - 16.05. Koh Pha-Ngan
+- 16.05. - 19.05. Koh Tao
+- 20.05. - 21.05. Bangkok
+- 22.05. Zug nach Poipet, Kambodscha
+
+## Kambodscha
+
+- 22.05. - 24.05. Battambang
+- 24.05. - 27.05. Siem Reap & Angkor
+- 27.05. - 29.05. Phnom Penh
+- 29.05. - 31.05. Kracheh
+- 31.05. - 02.06. Sihanoukville
+- 02.06. - 04.06. Koh Rong Samloem
+- 04.06. - 06.06. Kep
+- 06.06. - 07.06. Kampot
+- 07.06. - 08.06. Kep
+- 08.06. Tuktuk nach Ha Tien, Vietnam
+
+## Vietnam
+
+- 08.06. - 10.06. Can Tho
+- 10.06. - 13.06. Ho-Chi-Minh-City(Saigon)
+- 14.06. - 16.06. Da Lat
+- 17.06. - 18.06. Da Nang
+- 18.06. - 20.06. Hoi An
+- 20.06. - 22.06. Hue
+- 22.06. - 23.06. Dong Hoi
+- 23.06. - 25.06. Phong Nha
+- 26.06. - 28.06. Ninh Binh
+- 28.06. - 30.06. Cat Ba
+- 01.07. - 04.07. Ha Giang
+- 04.07. - 06.07. Hanoi
+- 07.07. Flug nach Busan, Südkorea
+
+## Südkorea
+
+- 07.07. - 10.07. Busan 
