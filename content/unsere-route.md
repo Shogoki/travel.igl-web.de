@@ -238,3 +238,8 @@ date: 2022-10-27
 ## Südkorea
 
 - 07.07. - 10.07. Busan 
+- 10.07. - 11.07. Ulsan
+- 11.07. - 13.07. Gyeongsangnam-do
+- 13.07. - 15.07. Daegu
+- 15.07. - 17.07. Gyeongsangbuk-do
+- 17.07. Gangwon-do
