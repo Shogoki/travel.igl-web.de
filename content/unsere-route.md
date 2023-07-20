@@ -242,4 +242,6 @@ date: 2022-10-27
 - 11.07. - 13.07. Gyeongsangnam-do
 - 13.07. - 15.07. Daegu
 - 15.07. - 17.07. Gyeongsangbuk-do
-- 17.07. Gangwon-do
+- 17.07. - 19.07. Gangwon-do
+- 19.07. - 20.07. Chungcheongnam-do
+-  
