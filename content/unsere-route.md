@@ -243,5 +243,9 @@ date: 2022-10-27
 - 13.07. - 15.07. Daegu
 - 15.07. - 17.07. Gyeongsangbuk-do
 - 17.07. - 19.07. Gangwon-do
-- 19.07. - 20.07. Chungcheongnam-do
--  
+- 19.07. - 20.07. Chungcheongbuk-do
+- 20.07. - 22.07. Chungcheongnam-do
+- 22.07. - 23.07. Jeollabuk-do
+- 23.07. - 26.07. Gyeongsangnam-do
+- 26.07. - 27.08. Busan
+- 27.07. - 06.08. Seoul

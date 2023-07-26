@@ -9,7 +9,7 @@ draft: false
 
 ---
 
-## 10.-20.07.2023 - Ulsan, Gyeongsangnam-do, Daegu, Gyeongsangbuk-do, Gangwon-do, Chungcheongnam-do
+## 10.-20.07.2023 - Ulsan, Gyeongsangnam-do, Daegu, Gyeongsangbuk-do, Gangwon-do, Chungcheongbuk-do
 
 Mit unserem Mietwagen "Sumi" (koreanisch: die Raffinierte) machen wir einen 16-tägigen Roadtrip im Campingstyle durch Südkorea. Hier unsere Stopps im Osten und Zentrum von Südkorea:
 
@@ -40,7 +40,7 @@ Sokcho:
 
 DMZ: Demilitarisierte Zone zwischen Nord- und Süd-Korea, Museum und Obervatory
 
-Danyang: Guinsa Temple, Skywalk, 8 Views
+Danyang: Guinsa Temple, Skywalk, 8 Views und Märkte mit Knoblauch, für den die Region bekannt ist
 
 Jetzt sind wir auf dem Weg nach Boryeong an der Westküste.
  
