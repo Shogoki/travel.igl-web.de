@@ -32,12 +32,15 @@ Ich hab noch nie so überfüllte Strände gesehen wie in Vietnam. Aber man kann 
 
 Die Menschen waren freundlich und hilfsbereit, aber oft an uns als Ausländer nicht wirklich interessiert. Die Kinder in Kambodscha waren eher neugierig, die vietnamesischen Kinder eher frech.
 
+Vietnam ist das erste Land, das es schafft so mit Klimaanlagen umzugehen, dass man bei Betreten eines Geschäfts nicht erfriert und es trotzdem angenehm kühl ist.
+
 
 ### Essen
 
 In Vietnam muss man sich darauf einstellen, dass eine besorgte Dame an deinen Tisch kommt und dir im Essen rumrührt, damit sie sicher sein kann, dass du ihr Gericht auch richtig isst. Es gibt überwiegend Suppen und/mit Reisnudeln, häufig Salat und Schweinefleisch, Reis eher selten. Hauptsächlich wird mit Stäbchen gegessen und die Suppe direkt aus der Schüssel getrunken. Oder vielmehr geschlürft. Abfall wird oft direkt in den Abfalleimer neben dem Tisch oder einfach auf den Boden geworfen. Zwar bin ich kein Fan von Suppen, habe allerdings letztlich doch Gefallen an der klassischen vietnamesischen Suppe Phở gefunden. Außer in richtigen Restaurants isst man auf der Straße in Kambodscha und Vietnam immer an Mini Tischchen und Stühlchen, die aussehen, als ob sie aus dem Kindergarten geklaut wurden. Für uns als vergleichsweise große Menschen war das manchmal eine kleine Herausforderung. Ich bin davon ausgegangen, dass vietnamesisches Essen scharf ist und wurde dahingehend enttäuscht.
 
 Am besten geschmeckt habt mir in Kambodscha das Nudelgericht Lort Chha. In Vietnam war die Krabbensuppe (Bánh Canh Cua Roi) fantastisch, aber mein Favorit Bún Thit Nuong (Flache Reisnudel mit Salat und mariniertem Schweinefleisch). Die Sandwichs Banh Mi gingen immer.
+
 
 ### Highlights
 
