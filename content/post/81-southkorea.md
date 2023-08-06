@@ -1,5 +1,5 @@
 ---
-title: "#81 Kleiner Kulurschock"
+title: "#81 Kleiner Kulturschock"
 date: 2023-08-05
 author: Kerstin
 categories: ["Südkorea"]
