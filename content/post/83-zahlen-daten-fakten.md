@@ -3,8 +3,8 @@ title: "#83 Zahlen, Daten, Fakten"
 date: 2023-08-06
 author: Kerstin
 categories: ["Ende"]
-featured: 
-album: 
+featured: 0
+album: B19JPrgBGI1uHld
 draft: false
 
 ---
@@ -64,4 +64,8 @@ ca. 25.000 Bilder und Videos
 Günstigste Unterkunft 3,29€ in Ha Giang (2 Betten im Dorm)
 Teuerste Unterkunft 68,66€ in San Diego (2 Betten im Dorm)
 Ort mit längstem Aufenthalt: Seoul
-Kosten-Ranking: 1) Beförderung 2) Essen 3) Unterkünfte
+
+Kosten-Ranking: 
+        1) Beförderung 
+        2) Lebensmittel 
+        3) Unterkünfte
