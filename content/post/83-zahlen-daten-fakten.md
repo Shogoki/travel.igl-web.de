@@ -1,6 +1,6 @@
 ---
 title: "#83 Zahlen, Daten, Fakten"
-date: 2023-08-06
+date: 2023-08-07
 author: Kerstin
 categories: ["Ende"]
 featured: 0
