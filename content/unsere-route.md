@@ -272,3 +272,13 @@ date: 2023-09-01
 ## Abreise
 
 06.08.2023 – Flug von Seoul 🇰🇷 nach Frankfurt 🇩🇪
+
+
+-- NEXT STEPS --
+
+## Ibiza 16.09. - 29.09.2023 🇪🇸
+
+
+## Brasilien 🇧🇷
+
+- 06.06. São Paulo
