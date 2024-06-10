@@ -15,8 +15,8 @@ for album in $ALBUMS; do
         do
             thumb=$(echo "$data" | jq -r ".[$i].thumbnailUrl")
             full=$(echo "$data" | jq -r ".[$i].fullImageUrl")
-            curl -o "static/img/thumbs/${album}_$i.jpg" $thumb
-            curl -o "static/img/full/${album}_$i.jpg" $full
+#            curl -o "static/img/thumbs/${album}_$i.jpg" $thumb
+#            curl -o "static/img/full/${album}_$i.jpg" $full
         done
 
     else
