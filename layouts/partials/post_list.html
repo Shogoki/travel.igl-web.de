@@ -1,6 +1,20 @@
 <!-- post list -->
 {{ $url := .Site.Params.icloud_api }}
 
+<script>
+    async function setFeaturedImage(albumId, fIdx) {
+
+        const url = "{{$url}}/album"; 
+        const featureImgNode = document.querySelector(`#featured-image-${albumId}>img`);
+        const res = await fetch(`${url}/${albumId}`)
+        const data = await res.json();
+        const featuredImg = data.at(fIdx);
+        featureImgNode.src = featuredImg.thumbnailUrl;
+        featureImgNode.alt = featuredImg.caption;
+
+    }
+</script>
+
 {{ range $index, $element := $.Paginator.Pages }}
 <div class="post-preview">
     <a href="{{ .Permalink }}">
@@ -12,17 +26,9 @@
             {{ . }}
         </h3>
 	{{ end }}
-    {{ $album :=  .Params.album }}
-    {{ $albumData :=  index site.Data.albums (printf "%s" $album) }}
-    {{with .Params.featured }}
-    {{$fIdx := .}}
-    {{ with $albumData}}
-    {{$featuredImage := index . $fIdx}}
-        <div id="featured-image-{{ $fIdx }}" >
-                <img src="/img/thumbs/{{$album}}_{{$fIdx}}.jpg" alt="{{ $featuredImage.caption}}" />
+        <div id="featured-image-{{ .Params.album }}" >
+                <img src="https://placehold.jp/3d4070/ffffff/150x150.png?text=Loading%20image..." alt="thumbnail" />
         </div>
-    {{ end }}
-    {{ end }}
         <div class="post-content-preview">
 	{{ with .Description }}
             {{ . }}
@@ -53,4 +59,15 @@
 
 </div>
 <hr>
+
+{{ $album :=  .Params.album }}
+{{$fIdx := 0}}
+    {{ if ne .Params.featured 0 }}
+{{with .Params.featured }}
+{{$fIdx := .}}
+    {{ end }}
+    {{ end }}
+<script defer >
+setFeaturedImage("{{$album}}", "{{$fIdx}}").then(_ => console.log("Loaded featured image for album {{$album}}")).catch(e => console.error(e));
+</script>
 {{ end }}
