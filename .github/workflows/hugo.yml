@@ -32,7 +32,6 @@ jobs:
 
       - name: Build
         run: |
-          ./scripts/fetchalbums.sh
           hugo --minify
 
       - name: Deploy

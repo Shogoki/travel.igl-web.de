@@ -1,144 +1,147 @@
 <script>
-    function initPhotoSwipe() {
-	/*
-	Initialise Photoswipe
-	*/
-	var items = []; // array of slide objects that will be passed to PhotoSwipe()
-	// for every figure element on the page:
-	$('figure').each( function() {
-		if ($(this).attr('class') == 'no-photoswipe') return true; // ignore any figures where class="no-photoswipe"
-		// get properties from child a/img/figcaption elements,
-		var $figure = $(this),
-			$a 		= $figure.find('a'),
-			$img 	= $figure.find('img'),
-			$src	= $a.attr('href'),
-			$title  = $img.attr('alt'),
-			$msrc	= $img.attr('src');
-		// if data-size on <a> tag is set, read it and create an item
-		if ($a.data('size')) {
-			var $size 	= $a.data('size').split('x');
-			var item = {
-				src		: $src,
-				w		: $size[0],
-				h 		: $size[1],
-				title 	: $title,
-				msrc	: $msrc
-			};
-			console.log("Using pre-defined dimensions for " + $src);
-		// if not, set temp default size then load the image to check actual size
-		} else {
-			var item = {
-				src		: $src,
-				w		: 800, // temp default size
-				h 		: 600, // temp default size
-				title 	: $title,
-				msrc	: $msrc
-			};
-			console.log("Using default dimensions for " + $src);
-			// load the image to check its dimensions
-			// update the item as soon as w and h are known (check every 30ms)
-			var img = new Image(); 
-			img.src = $src;
-			var wait = setInterval(function() {
-				var w = img.naturalWidth,
-					h = img.naturalHeight;
-				if (w && h) {
-					clearInterval(wait);
-					item.w = w;
-					item.h = h;
-					console.log("Got actual dimensions for " + img.src);
-				}
-			}, 30);
-	   	}
-		// Save the index of this image then add it to the array
-		var index = items.length;
-		items.push(item);
-		// Event handler for click on a figure
-		$figure.on('click', function(event) {
-			event.preventDefault(); // prevent the normal behaviour i.e. load the <a> hyperlink
-			// Get the PSWP element and initialise it with the desired options
-			var $pswp = $('.pswp')[0];
-			var options = {
-				index: index, 
-				bgOpacity: 0.8,
-				showHideOpacity: true
+	function initPhotoSwipe() {
+		/*
+		Initialise Photoswipe
+		*/
+		var items = []; // array of slide objects that will be passed to PhotoSwipe()
+		// for every figure element on the page:
+		$('figure').each(function () {
+			if ($(this).attr('class') == 'no-photoswipe') return true; // ignore any figures where class="no-photoswipe"
+			// get properties from child a/img/figcaption elements,
+			var $figure = $(this),
+				$a = $figure.find('a'),
+				$img = $figure.find('img'),
+				$src = $a.attr('href'),
+				$title = $img.attr('alt'),
+				$msrc = $img.attr('src');
+			// if data-size on <a> tag is set, read it and create an item
+			if ($a.data('size')) {
+				var $size = $a.data('size').split('x');
+				var item = {
+					src: $src,
+					w: $size[0],
+					h: $size[1],
+					title: $title,
+					msrc: $msrc
+				};
+				console.log("Using pre-defined dimensions for " + $src);
+				// if not, set temp default size then load the image to check actual size
+			} else {
+				var item = {
+					src: $src,
+					w: 800, // temp default size
+					h: 600, // temp default size
+					title: $title,
+					msrc: $msrc
+				};
+				console.log("Using default dimensions for " + $src);
+				// load the image to check its dimensions
+				// update the item as soon as w and h are known (check every 30ms)
+				var img = new Image();
+				img.src = $src;
+				var wait = setInterval(function () {
+					var w = img.naturalWidth,
+						h = img.naturalHeight;
+					if (w && h) {
+						clearInterval(wait);
+						item.w = w;
+						item.h = h;
+						console.log("Got actual dimensions for " + img.src);
+					}
+				}, 30);
 			}
-			new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options).init();
-		});	
-	});
-}
+			// Save the index of this image then add it to the array
+			var index = items.length;
+			items.push(item);
+			// Event handler for click on a figure
+			$figure.on('click', function (event) {
+				event.preventDefault(); // prevent the normal behaviour i.e. load the <a> hyperlink
+				// Get the PSWP element and initialise it with the desired options
+				var $pswp = $('.pswp')[0];
+				var options = {
+					index: index,
+					bgOpacity: 0.8,
+					showHideOpacity: true
+				}
+				new PhotoSwipe($pswp, PhotoSwipeUI_Default, items, options).init();
+			});
+		});
+	}
 </script>
 <link rel="stylesheet" href={{ "css/hugo-easy-gallery.css" | relURL }} />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js" integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js" integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js"
+	integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js"
+	integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
 
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-<!-- Background of PhotoSwipe.
+	<!-- Background of PhotoSwipe.
      It's a separate element, as animating opacity is faster than rgba(). -->
-<div class="pswp__bg"></div>
-<!-- Slides wrapper with overflow:hidden. -->
-<div class="pswp__scroll-wrap">
-    <!-- Container that holds slides.
+	<div class="pswp__bg"></div>
+	<!-- Slides wrapper with overflow:hidden. -->
+	<div class="pswp__scroll-wrap">
+		<!-- Container that holds slides.
       PhotoSwipe keeps only 3 of them in DOM to save memory.
       Don't modify these 3 pswp__item elements, data is added later on. -->
-    <div class="pswp__container">
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-      <div class="pswp__item"></div>
-    </div>
-    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-    <div class="pswp__ui pswp__ui--hidden">
-    <div class="pswp__top-bar">
-      <!--  Controls are self-explanatory. Order can be changed. -->
-      <div class="pswp__counter"></div>
-      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-      <button class="pswp__button pswp__button--share" title="Share"></button>
-      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-      <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-      <!-- element will get class pswp__preloader--active when preloader is running -->
-      <div class="pswp__preloader">
-        <div class="pswp__preloader__icn">
-          <div class="pswp__preloader__cut">
-            <div class="pswp__preloader__donut"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-      <div class="pswp__share-tooltip"></div>
-    </div>
-    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-    </button>
-    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-    </button>
-    <div class="pswp__caption">
-      <div class="pswp__caption__center"></div>
-    </div>
-    </div>
-    </div>
+		<div class="pswp__container">
+			<div class="pswp__item"></div>
+			<div class="pswp__item"></div>
+			<div class="pswp__item"></div>
+		</div>
+		<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+		<div class="pswp__ui pswp__ui--hidden">
+			<div class="pswp__top-bar">
+				<!--  Controls are self-explanatory. Order can be changed. -->
+				<div class="pswp__counter"></div>
+				<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+				<button class="pswp__button pswp__button--share" title="Share"></button>
+				<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+				<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+				<!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+				<!-- element will get class pswp__preloader--active when preloader is running -->
+				<div class="pswp__preloader">
+					<div class="pswp__preloader__icn">
+						<div class="pswp__preloader__cut">
+							<div class="pswp__preloader__donut"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+				<div class="pswp__share-tooltip"></div>
+			</div>
+			<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+			</button>
+			<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+			</button>
+			<div class="pswp__caption">
+				<div class="pswp__caption__center"></div>
+			</div>
+		</div>
+	</div>
 </div>
 {{ $album := string .album }}
 {{ $url := .site.Params.icloud_api }}
-{{ $albumData :=  index site.Data.albums (printf "%s" $album) }}
-<div data-album="{{$album}}" id="single-gallery" class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom itemscope" >
-{{ range $idx, $img := $albumData }}
-
-<div class="box fancy-figure caption-position-bottom caption-effect-slide" data-guid="{{.guid}}" >
-	<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-		<div class="img" style="background-image: url('/img/thumbs/{{$album}}_{{$idx}}.jpg');">
-		<img itemprop="thumbnail" src="/img/thumbs/{{$album}}_{{$idx}}.jpg" alt="{{$img.caption}}"/>
-		</div>
-		<a href="/img/full/{{$album}}_{{$idx}}.jpg" itemprop="contentUrl"></a>
-		{{if ne $img.caption ""}}
-		<figcaption>{{$img.caption}}</figcaption>
-		{{ end }}
-	   
-	</figure>
-</div>
-{{ end }}
+<div data-album="{{$album}}" id="single-gallery" class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom itemscope">
 </div>
 <script>
-        initPhotoSwipe();
+	const albumId = "{{ $album }}";
+	const albumAPI = "{{ $url }}/album/{{ $album }}";
+	const container = document.querySelector("#single-gallery");
+	fetch(albumAPI).then(res => res.json().then(data => data.forEach((image, idx) => {
+		const imgNode = `<div class="box fancy-figure caption-position-bottom caption-effect-slide" data-guid="${albumId}-${idx}" >
+			<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+				<div class="img" style="background-image: url('${image.fullImageUrl}');">
+					<img itemprop="thumbnail" src="${image.thumbnailUrl}" alt="${image.caption}"/>
+				</div>
+				<a href="${image.fullImageUrl}" itemprop="contentUrl"></a>
+				${image.caption ? `<figcaption>${image.caption}</figcaption>` : ""}
+			</figure>
+		</div>`;
+		container.insertAdjacentHTML("beforeEnd", imgNode);
+
+	})).catch(e => console.error(e)));
+	//Init photoswipe library
+	initPhotoSwipe();
 </script>
