@@ -281,4 +281,7 @@ date: 2023-09-01
 
 ## Brasilien 🇧🇷
 
-- 06.06. São Paulo
+- 06.06. - 08.06. São Paulo
+- 08.06. - 09.06. Ubatuba
+- 09.06. - 10.06. Piraty
+- 10.06. - 12.06. Ilha Grande
