@@ -65,7 +65,7 @@
 <hr>
 
 {{ $album :=  .Params.album }}
-{{ if isset .Params featured }}
+{{ if isset .Params "featured" }}
 <script>
 setFeaturedImage("{{$album}}", "{{ .Params.featured }}").then(_ => console.log("Loaded featured image for album {{$album}}")).catch(e => console.error(e));
 </script>
