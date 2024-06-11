@@ -61,13 +61,16 @@
 <hr>
 
 {{ $album :=  .Params.album }}
-{{$fIdx := 0}}
-    {{ if ne .Params.featured 0 }}
-{{with .Params.featured }}
-{{$fIdx := .}}
-    {{ end }}
-    {{ end }}
-<script defer >
+{{ if ne .Params.featured 0 }}
+    {{with .Params.featured }}
+<script>
 setFeaturedImage("{{$album}}", "{{$fIdx}}").then(_ => console.log("Loaded featured image for album {{$album}}")).catch(e => console.error(e));
 </script>
+    {{ end }}
+{{ else }}
+<script>
+setFeaturedImage("{{$album}}", "0").then(_ => console.log("Loaded featured image for album {{$album}}")).catch(e => console.error(e));
+</script>
+    {{ end }}
+
 {{ end }}
