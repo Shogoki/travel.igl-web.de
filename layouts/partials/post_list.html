@@ -13,6 +13,10 @@
         featureImgNode.alt = featuredImg.caption;
 
     }
+    function removeFeaturedImage(albumId) {
+        const featureImgNode = document.querySelector(`#featured-image-${albumId}`);
+        featureImgNode.remove();
+    }
 </script>
 
 {{ range $index, $element := $.Paginator.Pages }}
@@ -61,16 +65,15 @@
 <hr>
 
 {{ $album :=  .Params.album }}
-{{ if ne .Params.featured 0 }}
-    {{with .Params.featured }}
+{{ if isset .Params featured }}
 <script>
-setFeaturedImage("{{$album}}", "{{$fIdx}}").then(_ => console.log("Loaded featured image for album {{$album}}")).catch(e => console.error(e));
+setFeaturedImage("{{$album}}", "{{ .Params.featured }}").then(_ => console.log("Loaded featured image for album {{$album}}")).catch(e => console.error(e));
 </script>
-    {{ end }}
 {{ else }}
 <script>
-setFeaturedImage("{{$album}}", "0").then(_ => console.log("Loaded featured image for album {{$album}}")).catch(e => console.error(e));
+removeFeaturedImage("{{$album}}");
 </script>
-    {{ end }}
+
+{{ end }}
 
 {{ end }}
