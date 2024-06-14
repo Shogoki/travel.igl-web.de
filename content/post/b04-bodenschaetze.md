@@ -11,3 +11,4 @@ draft: true
 
 ## 13.-14.06.2024 - Diamantina
 
+Der brasilianische Bundesstaat Minas Gerais ist für seine Bodenschätze und Kaffeeanbau bekannt.
