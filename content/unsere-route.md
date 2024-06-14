@@ -283,5 +283,7 @@ date: 2023-09-01
 
 - 06.06. - 08.06. São Paulo
 - 08.06. - 09.06. Ubatuba
-- 09.06. - 10.06. Piraty
+- 09.06. - 10.06. Paraty
 - 10.06. - 12.06. Ilha Grande
+- 13.06. - 14.06. Diamantina
+- 15.06. - xxxxxx Salvador de Bahia
