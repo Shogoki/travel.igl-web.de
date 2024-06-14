@@ -1,6 +1,6 @@
 ---
 title: "#B02 - Wiedersehen mit dem Atlantik"
-date: 2024-06-06
+date: 2024-06-11
 author: Kerstin
 categories: ["Brasilien" , "Costa Verde"]
 featured: 2
