@@ -15,11 +15,11 @@ In SP haben wir andere Reisende und Einheimische kennengelernt, die uns Tipps un
 
 Die Costa Verde ist der Küstenstreifen zwischen São Paulo und Rio de Janeiro. Nach den letzten Monaten Bus-Abstinenz muss ich sagen, ich habe sie vermisst - die Öffentlichen im Ausland. Ich liebe das Gefühl im Bus zu sitzen, sich am offenen Fenster die warme Brise um die Nase wehen zu lassen und vor sich hinzuträumen. Die Unebenheiten und Schlaglöcher, die  man dabei intensiv im Steiß spürt, gehören definitiv zum Feeling dazu und vom leichten Quietschen, mit dem der Bus sein Erlebnis konsequent kommentiert, darf man sich einfach nicht ablenken lassen. Wenn dir dann der dekorative Busvorhang zärtlich über die Backe streichelt, weißt du - that’s life.
 
-## Ubatuba
+# Ubatuba
 
 Ubatuba ist ein kleiner Surferort ca. 4 Stunden Autofahrt von SP entfernt. Die Strecke ist landschaftlich sehr schön und das letzte Stück an die Küste sehr kurvenreich und steil. Ich muss zugeben, dass ich mich während der Fahrt gefragt habe, wie hier die Organspende funktioniert und ob ich bei einem Unfall meine Nieren geklaut bekomme 😅 Da auf der engen Serpentinenstrecke aber alle in Rush sind und es nicht so typisch tranquilo zugeht, würden wir wohl eher einfach überholt werden. Der Ort selbst hat eine schöne Promenade und rundherum belebte Strände. 
 
-## Paraty
+# Paraty
 
 Die charmante Kolonialstadt überzeugt mit ihren kleinen Gässchen und bunten Häusern, ist aber sehr touristisch. Jeder zweite Laden ist zwar ein Souvenirshop, aber trotzdem ein entspanntes Städtchen.
 
