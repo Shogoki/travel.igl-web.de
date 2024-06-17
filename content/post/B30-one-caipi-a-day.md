@@ -17,7 +17,8 @@ Als Europäer fällt man in Brasilien nicht auf. Es gibt Blonde und Schwarzhaari
 ### Transport und Verkehr
 
 Die Reisebusse sind sauber, modern und geräumig, in Linienbusse hat man auch viel Platz. Während der Fahrten stelle ich mir zwar Fragen wie in Brasilien die Organspende funktioniert und . Ansonsten sind die Fahrzeuge zumindest optisch in gutem Zustand und 
-
+Busfahren, speziell in der Nacht, ist gefährlich. Hat man mal gehört. Deswegen mal lieber nichts riskieren und stattdessen bei Privatleuten mitfahren. 
+Nachdem uns verschiedene Einheimische bestätigt haben, dass Nachtbusse auch für Ausländer komfortabel und sicher sind, werden wir die längeren Strecken wie geplant nachts zurücklegen, um möglichst wenig Zeit zu verlieren. 
 
 ### Unterkünfte und Umgebung
 
