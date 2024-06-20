@@ -3,7 +3,7 @@ title: "#B04 - Festivals"
 date: 2024-06-18
 author: Kerstin
 categories: ["Brasilien" , "Diamantina" , "Salvador"]
-featured: 
+featured: 7
 album: B19GnbeumHAblKS
 draft: true
 
