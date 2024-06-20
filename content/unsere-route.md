@@ -286,4 +286,6 @@ date: 2023-09-01
 - 09.06. - 10.06. Paraty
 - 10.06. - 12.06. Ilha Grande
 - 13.06. - 14.06. Diamantina
-- 15.06. - xxxxxx Salvador de Bahia
+- 15.06. - 17.06. Salvador de Bahia
+- 18.06. - 19.06. Maragogi
+- 19.06. - xx.06. Recife
