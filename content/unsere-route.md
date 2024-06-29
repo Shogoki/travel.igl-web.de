@@ -288,4 +288,9 @@ date: 2023-09-01
 - 13.06. - 14.06. Diamantina
 - 15.06. - 17.06. Salvador de Bahia
 - 18.06. - 19.06. Maragogi
-- 19.06. - xx.06. Recife
+- 19.06. - 21.06. Recife
+- 22.06. - 23.06. Pipa 
+- 24.06. - 26.06. Fortaleza
+- 26.06. - 28.06. Jericoacoara
+- 29.06. Flug von Fortaleza nach Rio
+- 29.06. - 03.07. Rio de Janeiro
