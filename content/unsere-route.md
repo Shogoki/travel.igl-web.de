@@ -294,3 +294,6 @@ date: 2023-09-01
 - 26.06. - 28.06. Jericoacoara
 - 29.06. Flug von Fortaleza nach Rio
 - 29.06. - 03.07. Rio de Janeiro
+
+
+## Koh Kood, Thailand 20.10. - 02.11.2024 🇹🇭
