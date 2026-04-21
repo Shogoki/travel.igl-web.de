@@ -1,0 +1,26 @@
+{{ define "header" }}
+<header class="intro-header" style="background-image: url('{{ .Site.Params.header_image | relURL }}')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>{{ .Title }}</h1>
+                    <span class="subheading">{{ len .Pages }} {{ if eq (len .Pages) 1 }}Post{{ else }}Posts{{ end }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{{ end }}
+
+{{ define "main" }}
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+                {{ partial "post_list.html" . }}
+            </div>
+        </div>
+    </div>
+</article>
+{{ end }}
