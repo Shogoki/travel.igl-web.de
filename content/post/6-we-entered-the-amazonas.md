@@ -3,6 +3,7 @@ title: "#6 We entered the Amazonas region"
 date: 2022-10-03
 author: Kerstin
 categories: ["Peru", "Chachapoyas"]
+country: "Peru"
 featured: 4
 album: B0OJ0DiRHGu5rnb
 # This is for the old WP links to still work

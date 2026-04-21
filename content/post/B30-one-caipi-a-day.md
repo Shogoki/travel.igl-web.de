@@ -3,6 +3,7 @@ title: "#B30 - One Caipi a day"
 date: 2024-07-03
 author: Kerstin
 categories: ["Brasilien"]
+country: "Brasilien"
 featured: 
 album: 
 draft: true

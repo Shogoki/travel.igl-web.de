@@ -3,6 +3,7 @@ title: "#22 Alles in Butter"
 date: 2022-12-04
 author: Kerstin
 categories: ["Mexiko", "Cancun"]
+country: "Mexiko"
 featured: 2
 album: B19GfnH8t8DDLJj
 draft: false
