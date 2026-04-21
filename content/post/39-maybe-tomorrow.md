@@ -3,6 +3,7 @@ title: "#39 Maybe tomorrow"
 date: 2023-01-23
 author: Kerstin
 categories: ["Indonesien", "Bali", "Ubud"]
+country: "Indonesien"
 featured: 4
 album: B195aVbMK8aUpX0
 draft: false

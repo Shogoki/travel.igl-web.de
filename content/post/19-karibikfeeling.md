@@ -3,6 +3,7 @@ title: "#19 Karibikfeeling"
 date: 2022-11-24
 author: Sven
 categories: ["Kolumbien", "Cartagena"]
+country: "Kolumbien"
 featured: 3
 album: B19J0DiRHIegBVz
 #

@@ -3,6 +3,7 @@ title: "#68 Mekong"
 date: 2023-06-11
 author: Kerstin
 categories: ["Vietnam" , "Can Tho"]
+country: "Vietnam"
 featured: 9
 album: B19J058xyIeKh89
 draft: false
