@@ -3,6 +3,7 @@ title: "#74 Sprung ins Meer"
 date: 2023-06-30
 author: Kerstin
 categories: ["Vietnam" , "Ninh Binh" , "Ha Long"]
+country: "Vietnam"
 featured: 14
 album: B19GLLXGLIBeiYP
 draft: false

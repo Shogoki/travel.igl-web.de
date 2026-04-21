@@ -3,6 +3,7 @@ title: "#77 Sashimi"
 date: 2023-07-10
 author: Kerstin
 categories: ["Südkorea" , "Busan"]
+country: "Südkorea"
 featured: 19
 album: B19J5HumnIVPb8t
 draft: false

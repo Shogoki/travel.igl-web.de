@@ -3,6 +3,7 @@ title: "#71 Keine runde Sache"
 date: 2023-06-21
 author: Kerstin
 categories: ["Vietnam" , "Da Nang" , "Hoi An"]
+country: "Vietnam"
 featured: 16
 album: B195kuVsb8x5kqR
 draft: false

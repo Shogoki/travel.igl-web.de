@@ -3,6 +3,7 @@ title: "#B05 - Perigo"
 date: 2024-06-21
 author: Kerstin
 categories: ["Brasilien" , "Maragogi" , "Recife"]
+country: "Brasilien"
 featured: 15
 album: B19Gtec4X8nCmDH
 draft: false

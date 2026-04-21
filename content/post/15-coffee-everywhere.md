@@ -3,6 +3,7 @@ title: "#15 Coffee everywhere"
 date: 2022-11-08
 author: Kerstin
 categories: ["Kolumbien", "Armenia", "Salento"]
+country: "Kolumbien"
 featured: 14
 album: B195n8hH4Izqg2T
 draft: false

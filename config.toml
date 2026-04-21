@@ -6,6 +6,11 @@ theme = "hugo-theme-cleanwhite"
 
 ### theme config g
 
+[taxonomies]
+  category = "categories"
+  tag = "tags"
+  country = "countries"
+
 [outputs]
 home = ["HTML", "RSS"]
 
