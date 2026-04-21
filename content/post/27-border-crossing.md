@@ -3,6 +3,7 @@ title: "#27 Border crossing"
 date: 2022-12-19
 author: Kerstin
 categories: ["Mexiko", "Tijuana"]
+country: "Mexiko"
 featured: 2
 album: B19Gf693Z8T9OmK
 draft: false

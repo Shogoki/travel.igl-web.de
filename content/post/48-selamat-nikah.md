@@ -3,6 +3,7 @@ title: "#48 Selamat Nikah"
 date: 2023-03-10
 author: Kerstin
 categories: ["Indonesien", "Sumatra", "West-Sumatra"]
+country: "Indonesien"
 featured: 42
 album: B19JRveFpI7WJtS
 draft: false

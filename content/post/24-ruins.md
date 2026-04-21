@@ -3,6 +3,7 @@ title: "#24 Ruinen"
 date: 2022-12-10
 author: Kerstin
 categories: ["Mexiko", "Palenque"]
+country: "Mexiko"
 featured: 11
 album: B19GgZLKuIX2kjV
 draft: false

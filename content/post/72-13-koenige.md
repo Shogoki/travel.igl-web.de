@@ -3,6 +3,7 @@ title: "#72 13 Könige"
 date: 2023-06-24
 author: Kerstin
 categories: ["Vietnam" , "Hue"]
+country: "Vietnam"
 featured: 9
 album: B19GqQrCLIFmKNS
 draft: false

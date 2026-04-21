@@ -3,6 +3,7 @@ title: "#B08 - Rio"
 date: 2024-07-03
 author: Kerstin
 categories: ["Brasilien" , "Rio de Janeiro"]
+country: "Brasilien"
 featured: 1
 album: B19G3KxPyHkczRC
 draft: false

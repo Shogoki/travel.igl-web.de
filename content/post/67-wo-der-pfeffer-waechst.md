@@ -3,6 +3,7 @@ title: "#67 Wo der Pfeffer wächst"
 date: 2023-06-09
 author: Kerstin
 categories: ["Kambodscha" , "Kampot" , "Kep"]
+country: "Kambodscha"
 featured: 9
 album: B19JsHvHoInAnhU
 draft: false

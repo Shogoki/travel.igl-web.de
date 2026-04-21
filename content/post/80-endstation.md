@@ -3,6 +3,7 @@ title: "#80 Endstation"
 date: 2023-08-04
 author: Kerstin
 categories: ["Südkorea" , "Seoul"]
+country: "Südkorea"
 featured: 12
 album: B19G1CvrSIEzAlq
 draft: false

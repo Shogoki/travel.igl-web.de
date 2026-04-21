@@ -3,6 +3,7 @@ title: "#40 Kibbel ruff, Kibbel runner"
 date: 2023-01-24
 author: Kerstin
 categories: ["Indonesien", "Bali", "Munduk", "Sanur"]
+country: "Indonesien"
 featured: 15
 album: B195ejO17IwnFXa
 draft: false
