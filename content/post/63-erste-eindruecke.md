@@ -3,7 +3,7 @@ title: "#63 Erste Eindrücke"
 date: 2023-05-26
 author: Kerstin
 categories: ["Kambodscha" , "Battambang"]
-country: "Kambodscha"
+countries: ["Kambodscha"]
 featured: 1
 album: B19J8GySPI2825T
 draft: false

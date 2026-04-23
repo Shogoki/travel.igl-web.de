@@ -3,7 +3,7 @@ title: "#61 Koh Koh Koh"
 date: 2023-05-21
 author: Kerstin
 categories: ["Thailand" , "Ao Nang" , "Samui" , "Pha-ngan" , "Tao"]
-country: "Thailand"
+countries: ["Thailand"]
 featured: 52
 album: B19JqstnBI9pf1P
 draft: false

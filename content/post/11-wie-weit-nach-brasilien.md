@@ -3,7 +3,7 @@ title: "#11 Wie lange laufen wir nach Brasilien?"
 date: 2022-10-27
 author: Kerstin
 categories: ["Kolumbien"]
-country: "Kolumbien"
+countries: ["Kolumbien"]
 featured: 3
 album: B19GY8gBYHVR4El
 draft: false

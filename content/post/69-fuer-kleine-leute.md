@@ -3,7 +3,7 @@ title: "#69 Für kleine Leute"
 date: 2023-06-14
 author: Kerstin
 categories: ["Vietnam" , "HCMC"]
-country: "Vietnam"
+countries: ["Vietnam"]
 featured: 14
 album: B19GKQPy6IEL17U
 draft: false

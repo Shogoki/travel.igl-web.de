@@ -3,7 +3,7 @@ title: "#49 Über 9 Brücken"
 date: 2023-03-15
 author: Kerstin
 categories: ["Indonesien", "Sumatra", "North-Sumatra"]
-country: "Indonesien"
+countries: ["Indonesien"]
 featured: 18
 album: B195aDWbr8aZXAi
 draft: false

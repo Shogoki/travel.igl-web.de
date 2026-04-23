@@ -3,7 +3,7 @@ title: "#B06 - Golfinhos"
 date: 2024-06-25
 author: Kerstin
 categories: ["Brasilien" , "Pipa"]
-country: "Brasilien"
+countries: ["Brasilien"]
 featured: 1
 album: B19JOX8tMIRDqLL
 draft: false

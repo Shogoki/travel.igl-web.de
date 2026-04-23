@@ -3,7 +3,7 @@ title: "#43 60 days"
 date: 2023-02-12
 author: Kerstin
 categories: ["Indonesien", "Java", "Yogyakarta"]
-country: "Indonesien"
+countries: ["Indonesien"]
 featured: 14
 album: B1952plgj8pXd86
 draft: false

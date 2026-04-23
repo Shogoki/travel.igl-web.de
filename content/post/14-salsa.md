@@ -3,7 +3,7 @@ title: "#14 Salsa"
 date: 2022-11-06
 author: Kerstin
 categories: ["Kolumbien", "Cali"]
-country: "Kolumbien"
+countries: ["Kolumbien"]
 featured: 5
 album: B19Grq0zwIO1oBJ
 draft: false
