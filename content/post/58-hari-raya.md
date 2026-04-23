@@ -3,7 +3,7 @@ title: "#58 Hari Raya"
 date: 2023-04-23
 author: Kerstin
 categories: ["Malaysia" , "Penang" , "Langkawi"]
-country: "Malaysia"
+countries: ["Malaysia"]
 featured: 13
 album: B19GdFryYIflsu5
 draft: false

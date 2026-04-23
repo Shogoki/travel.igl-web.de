@@ -3,7 +3,7 @@ title: "#45 Sightseeing"
 date: 2023-02-23
 author: Kerstin
 categories: ["Indonesien", "Java", "Jawa-Barat"]
-country: "Indonesien"
+countries: ["Indonesien"]
 featured: 25
 album: B195CmvAS8wx13N
 draft: false

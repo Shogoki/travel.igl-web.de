@@ -3,7 +3,7 @@ title: "#4 Zehen im Pazifik"
 date: 2022-09-26
 author: Kerstin
 categories: ["Peru", "Huanchaco"]
-country: "Peru"
+countries: ["Peru"]
 featured: 2
 album: B0O5yeZFhGkFrog
 # This is for the old WP links to still work

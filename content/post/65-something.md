@@ -3,7 +3,7 @@ title: "#65 Something"
 date: 2023-06-01
 author: Kerstin
 categories: ["Kambodscha" , "Phnom Penh" , "Kratie"]
-country: "Kambodscha"
+countries: ["Kambodscha"]
 featured: 8
 album: B19GPCdxkIqhzOS
 draft: false

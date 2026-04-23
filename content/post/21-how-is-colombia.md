@@ -3,7 +3,7 @@ title: "#21 How is Colombia"
 date: 2022-12-03
 author: Kerstin
 categories: ["Kolumbien"]
-country: "Kolumbien"
+countries: ["Kolumbien"]
 featured: 7
 album: B19GqkRUiIFlzpQ
 draft: false
