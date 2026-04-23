@@ -3,7 +3,7 @@ title: "#36 Von den blauen Bergen"
 date: 2023-01-11
 author: Sven
 categories: ["Australien", "Katoomba"]
-country: "Australien"
+countries: ["Australien"]
 featured: 2
 album: B0O5VaUrzGjDHCR
 draft: false

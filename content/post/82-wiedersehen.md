@@ -3,7 +3,7 @@ title: "#82 Wiedersehen"
 date: 2023-08-06
 author: Kerstin
 categories: ["Ende"]
-country: "Deutschland"
+countries: ["Deutschland"]
 featured: 1
 album: B195ZhN2v8gWPSG
 draft: false

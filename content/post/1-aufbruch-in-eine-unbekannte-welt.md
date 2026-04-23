@@ -3,7 +3,7 @@ title: "#1 - Aufbruch in eine unbekannte Welt"
 date: 2022-09-15
 author: Kerstin
 categories: ["Deutschland", "Peru", "Lima"]
-country: "Deutschland"
+countries: ["Deutschland"]
 featured: 1
 album: B0OGrq0zwH4gVC
 # This is for the old WP links to still work

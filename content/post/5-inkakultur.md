@@ -3,7 +3,7 @@ title: "#5 Inkakultur"
 date: 2022-09-30
 author: Kerstin
 categories: ["Peru", "Cajamarca"]
-country: "Peru"
+countries: ["Peru"]
 featured: 5
 album: B0O59UlCqGY1U67
 # This is for the old WP links to still work

@@ -3,7 +3,7 @@ title: "#3 Ein wenig Kultur"
 date: 2022-09-23
 author: Kerstin
 categories: ["Peru", "Trujillo"]
-country: "Peru"
+countries: ["Peru"]
 featured: 2
 album: B0OGI9HKKFMYH1
 # This is for the old WP links to still work
