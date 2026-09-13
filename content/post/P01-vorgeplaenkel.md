@@ -2,7 +2,8 @@
 title: "#P01 - Vorgeplänkel"
 date: 2025-11-30
 author: Kerstin
-categories: ["Thailand“ , “Koh Phi Phi"]
+categories: ["Thailand", "Koh Phi Phi"]
+countries: ["Thailand"]
 featured: 1
 album: B2R5MbK9V8BScyX
 draft: false

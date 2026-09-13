@@ -3,7 +3,7 @@ title: "#28 600 Meilen"
 date: 2022-12-22
 author: Kerstin
 categories: ["USA"]
-country: "USA"
+countries: ["USA"]
 featured: 58
 album: B1955Z2WM8iy4Ke
 draft: false

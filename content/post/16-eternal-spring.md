@@ -3,7 +3,7 @@ title: "#16 Eternal Spring"
 date: 2022-11-16
 author: Kerstin, Sven
 categories: ["Kolumbien", "Medellin"]
-country: "Kolumbien"
+countries: ["Kolumbien"]
 featured: 5
 album: B19GI9HKKIF7sjw
 draft: false

@@ -3,7 +3,7 @@ title: "#60 Inselfieber"
 date: 2023-05-07
 author: Kerstin
 categories: ["Thailand" , "Lipe" , "Adang" , "Lanta" , "Phi Phi"]
-country: "Thailand"
+countries: ["Thailand"]
 featured: 11
 album: B19GhtLJ3IXJm9n
 draft: false

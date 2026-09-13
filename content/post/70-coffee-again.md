@@ -3,7 +3,7 @@ title: "#70 Coffee again"
 date: 2023-06-17
 author: Kerstin
 categories: ["Vietnam" , "Da Lat"]
-country: "Vietnam"
+countries: ["Vietnam"]
 featured: 13
 album: B19GAfJVYIUJbDM
 draft: false
