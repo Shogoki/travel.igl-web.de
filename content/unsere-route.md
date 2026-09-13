@@ -1,14 +1,76 @@
 ---
-title: Unsere Route
+title: Unsere Reisen
 author: Sven, Kerstin
-date: 2023-09-01
+date: 2026-09-13
 ---
 
-## Anreise
+## Valencia 11.09. - 13.09.2026 🇪🇸
+
+
+## Ägypten 🇪🇬 
+
+- 30.08.26 - 02.09.26 Dahab
+- 02.09.26 - 06.09.26 Sharm El-Sheikh
+
+
+## Japan 🇯🇵 
+
+- 15.04.26 - 21.04.26 Osaka
+- 21.04.26 - 23.04.26 Yamanouchi
+- 23.04.26 - 03.05.26 Tokyo
+- 03.05.26 - 07.05.26 Okinawa
+- 07.05.26 - 12.05.26 Ishigaki
+
+
+## Thailand (Internship) 🇹🇭 
+
+- 27.11.25 - 30.11.25 Phuket
+- 30.11.25 - 26.01.26 Koh Phi Phi
+- 26.01.26 - 30.01.26 Visarun nach Nha Trang, Vietnam 🇻🇳  
+- 31.01.26 - 05.04.26 Koh Phi Phi
+- 06.04.26 - 12.04.26 Khao Lak, Similan Islands
+- 12.04.26 - 14.04.26 Koh Phi Phi
+
+
+## Malaysia 🇲🇾 
+
+- 18.06.25 - 20.06.25 Forest City (Network School)
+- 20.06.25 - 22.06.25 Pulau Tioman
+- 22.06.25 - 26.06.25 Forest City (Network School)
+
+
+## Thailand 🇹🇭 
+
+- 20.10.24 - 27.10.24 Koh Kood
+- 27.10.24 - 02.11.24 Koh Chang
+- 30.10.24 - 02.11.24 Bangkok
+ 
+
+## Brasilien 🇧🇷
+
+- 06.06.24 - 08.06.24 São Paulo
+- 08.06.24 - 09.06.24 Ubatuba
+- 09.06.24 - 10.06.24 Paraty
+- 10.06.24 - 12.06.24 Ilha Grande
+- 13.06.24 - 14.06.24 Diamantina
+- 15.06.24 - 17.06.24 Salvador de Bahia
+- 18.06.24 - 19.06.24 Maragogi
+- 19.06.24 - 21.06.24 Recife
+- 22.06.24 - 23.06.24 Pipa 
+- 24.06.24 - 26.06.24 Fortaleza
+- 26.06.24 - 28.06.24 Jericoacoara
+- 29.06.24 Flug von Fortaleza nach Rio
+- 29.06.24 - 03.07.24 Rio de Janeiro
+
+ 
+## Ibiza 16.09. - 29.09.2023 🇪🇸
+
+
+## Weltreise
 
 11.09 – 12.09. – Flug von Frankfurt 🇩🇪 nach Lima 🇵🇪
 
-## Peru 🇵🇪
+# Peru 🇵🇪
 
 {{< figure src="/img/route_peru.png"  height="430px" width="300px">}}
 
@@ -32,13 +94,13 @@ date: 2023-09-01
 - 21.10. - 23.10. Frachtschiff Iquitos - Santa Rosa
 - 23.10. Boot nach Leticia, Kolumbien 🇨🇴 
 
-## Tri-Border Zone (Peru, Kolumbien, Brasilien) 🇵🇪🇨🇴🇧🇷
+# Tri-Border Zone (Peru, Kolumbien, Brasilien) 🇵🇪🇨🇴🇧🇷
 
 {{< figure src="/img/route_triborder.png"  height="360px" width="323px">}}
 
 - 23.10. - 25.10. Leticia 🇨🇴, Triborder-Zone 🇵🇪🇨🇴🇧🇷
 
-## Kolumbien 🇨🇴
+# Kolumbien 🇨🇴
 
 {{< figure src="/img/route_kolumbien.png"  height="560px" width="315px">}}
 
@@ -68,7 +130,7 @@ date: 2023-09-01
 - 01.12. - 02.12. Cartagena
 - 02.12. Flug nach Cancun, Mexiko 🇲🇽
 
-## Mexiko 🇲🇽
+# Mexiko 🇲🇽
 
 {{< figure src="/img/route_col-mex.png"  height="360px" width="323px">}}
 
@@ -86,7 +148,7 @@ date: 2023-09-01
 - 13.12. Flug nach Tijuana
 - 14.12. - 15.12. Tijuana
 
-## USA & Kanada 🇺🇸🇨🇦
+# USA & Kanada 🇺🇸🇨🇦
 
 {{< figure src="/img/route_usa_kanada.png"  height="560px" width="315px">}}
 
@@ -101,7 +163,7 @@ date: 2023-09-01
 - 23.12. Vancouver 🇨🇦
 - 23.12 Flug nach Sydney 🇦🇺
 
-## Australien 🇦🇺
+# Australien 🇦🇺
 
 {{< figure src="/img/route_canada-aus.png"  height="315px" width="560px">}}
 
@@ -125,7 +187,7 @@ date: 2023-09-01
 
 {{< figure src="/img/route_aus-ind.png"  height="315px" width="560px">}}
 
-## Indonesien 🇮🇩
+# Indonesien 🇮🇩
 
 {{< figure src="/img/route_indonesien_all.png"  height="315px" width="560px">}}
 
@@ -136,7 +198,7 @@ date: 2023-09-01
 - 29.01. - 25.02. Java
 - 26.02. - 15.03. Sumatra
 
-### Bali & Nusa Penida 🇮🇩
+## Bali & Nusa Penida 🇮🇩
 
 {{< figure src="/img/route_Bali.png"  height="315px" width="560px">}}
 
@@ -149,7 +211,7 @@ date: 2023-09-01
 - 24.01. - 29.01. Nusa Penida
 - 29.01. Weiterreise nach Java 🇮🇩
 
-### Java 🇮🇩
+## Java 🇮🇩
 
 {{< figure src="/img/Route_Java.png"  height="315px" width="560px">}}
 
@@ -168,7 +230,7 @@ date: 2023-09-01
 - 24.02. - 25.02. Jakarta
 - 25.02. Weiterreise nach Sumatra 🇮🇩
 
-### Sumatra 🇮🇩
+## Sumatra 🇮🇩
 
 {{< figure src="/img/Route_Sumatra.png">}}
 
@@ -180,7 +242,7 @@ date: 2023-09-01
 - 13.03. - 15.02. Medan
 - 15.03. Flug nach Penang, Malaysia 🇲🇾
 
-## Malaysia 🇲🇾
+# Malaysia 🇲🇾
 
 {{< figure src="/img/Route_Malaysia.png">}}
 
@@ -200,7 +262,7 @@ date: 2023-09-01
 - 16.04. - 23.04. Langkawi
 - 23.04. Fähre nach Koh Lipe, Thailand 🇹🇭
 
-## Thailand 🇹🇭
+# Thailand 🇹🇭
 
 {{< figure src="/img/Route_Thailand.png">}}
 
@@ -215,7 +277,7 @@ date: 2023-09-01
 - 20.05. - 21.05. Bangkok
 - 22.05. Zug nach Poipet, Kambodscha 🇰🇭
 
-## Kambodscha 🇰🇭
+# Kambodscha 🇰🇭
 
 {{< figure src="/img/Route_Kambodscha.png">}}
 
@@ -231,7 +293,7 @@ date: 2023-09-01
 - 07.06. - 08.06. Kep
 - 08.06. Tuktuk nach Ha Tien, Vietnam 🇻🇳
 
-## Vietnam 🇻🇳
+# Vietnam 🇻🇳
 
 {{< figure src="/img/Route_Vietnam.png">}}
 
@@ -250,7 +312,7 @@ date: 2023-09-01
 - 04.07. - 06.07. Hanoi
 - 07.07. Flug nach Busan, Südkorea 🇰🇷
 
-## Südkorea 🇰🇷
+# Südkorea 🇰🇷
 
 {{< figure src="/img/Route_Südkorea.png">}}
 
@@ -268,32 +330,4 @@ date: 2023-09-01
 - 27.07. Zug nach Seoul
 - 27.07. - 06.08. Seoul
 
-
-## Abreise
-
 06.08.2023 – Flug von Seoul 🇰🇷 nach Frankfurt 🇩🇪
-
-
--- NEXT STEPS --
-
-## Ibiza 16.09. - 29.09.2023 🇪🇸
-
-
-## Brasilien 🇧🇷
-
-- 06.06. - 08.06. São Paulo
-- 08.06. - 09.06. Ubatuba
-- 09.06. - 10.06. Paraty
-- 10.06. - 12.06. Ilha Grande
-- 13.06. - 14.06. Diamantina
-- 15.06. - 17.06. Salvador de Bahia
-- 18.06. - 19.06. Maragogi
-- 19.06. - 21.06. Recife
-- 22.06. - 23.06. Pipa 
-- 24.06. - 26.06. Fortaleza
-- 26.06. - 28.06. Jericoacoara
-- 29.06. Flug von Fortaleza nach Rio
-- 29.06. - 03.07. Rio de Janeiro
-
-
-## Koh Kood, Thailand 20.10. - 02.11.2024 🇹🇭
