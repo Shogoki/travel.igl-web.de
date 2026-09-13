@@ -1,0 +1,42 @@
+{{/*
+  Fetches one iCloud shared album from the API and returns its photos, oldest
+  first. Shared by the post galleries and the homepage title images so both
+  validate the response the same way.
+
+  Called during the build, not from the browser. That is possible because the
+  images are served through the API's image proxy, whose URLs are addressed by
+  photo GUID and never expire — iCloud's own asset URLs are signed and die
+  after about three hours, so they can never be written into a page.
+
+  Hugo caches remote fetches, so an album used by both a post and a homepage
+  card is fetched once per build.
+
+  Params: api, album, where (a page reference, for error messages).
+*/}}
+{{ $api := .api }}
+{{ $album := .album }}
+{{ $where := .where | default "unknown page" }}
+{{ $photos := slice }}
+
+{{ $try := try (resources.GetRemote (printf "%s/album/%s" $api $album)) }}
+{{ with $try.Err }}
+  {{ errorf "album %q could not be fetched (%s): %s" $album $where . }}
+{{ else with $try.Value }}
+  {{ $photos = . | transform.Unmarshal }}
+{{ else }}
+  {{ errorf "album %q returned nothing (%s)" $album $where }}
+{{ end }}
+
+{{/*
+  The proxy is addressed by photo GUID and the images are sized from the
+  dimensions, so an API predating either produces URLs reading "%!s(<nil>)"
+  and a silently broken page. Refuse to build instead.
+*/}}
+{{ with $photos }}
+  {{ $sample := index . 0 }}
+  {{ if or (not $sample.photoGuid) (not $sample.thumbWidth) }}
+    {{ errorf "album %q came back without photoGuid/dimensions — the deployed album API predates the image proxy. Deploy the API before this site." $album }}
+  {{ end }}
+{{ end }}
+
+{{ return $photos }}
