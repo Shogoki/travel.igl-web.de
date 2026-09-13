@@ -3,6 +3,7 @@ title: "#57 Schwarze Finne"
 date: 2023-04-14
 author: Sven
 categories: ["Malaysia" , "Perhentian" , "Long Beach", "Tauchen"]
+country: "Malaysia"
 featured: 4
 album: B195fEtEv8dVsIm
 draft: false

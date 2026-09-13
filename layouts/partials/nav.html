@@ -28,6 +28,18 @@
                     <li>
                         <a href="{{ "/" | relLangURL }}">Alle Posts</a>
                     </li>
+                    {{ with .Site.Taxonomies.countries }}
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Länder <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            {{ range $name, $taxonomy := . }}
+                            <li>
+                                <a href="{{ (printf "countries/%s/" ($name | urlize)) | relLangURL }}">{{ $name }} <span class="badge">{{ len $taxonomy.Pages }}</span></a>
+                            </li>
+                            {{ end }}
+                        </ul>
+                    </li>
+                    {{ end }}
                     {{ if not .Site.Params.omit_categories }}
                         {{ range $name, $taxonomy := .Site.Taxonomies.categories }}
                         <li>
@@ -35,7 +47,7 @@
                         </li>
                         {{ end }}
                     {{ end }}
-                    
+
 		    {{ range .Site.Params.addtional_menus }}
                         <li><a href="{{.href | relLangURL}}">{{.title}}</a></li>
                     {{ end }}

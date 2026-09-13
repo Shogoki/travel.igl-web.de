@@ -3,6 +3,7 @@ title: "#35 Roos & Wombats"
 date: 2023-01-09
 author: Kerstin
 categories: ["Australien", "Jervis Bay"]
+country: "Australien"
 featured: 1
 album: B0OGtnIORJ0HXsf
 draft: false

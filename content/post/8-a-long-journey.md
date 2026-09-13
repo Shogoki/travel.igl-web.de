@@ -3,6 +3,7 @@ title: "#8 A long journey"
 date: 2022-10-15
 author: Kerstin
 categories: ["Peru", "Amazonas"]
+country: "Peru"
 featured: 10
 album: B19532ODW8kbMcC
 ---

@@ -3,6 +3,7 @@ title: "#23 Noch ein letztes Mal Karibik"
 date: 2022-12-07
 author: Kerstin
 categories: ["Mexiko", "Tulum"]
+country: "Mexiko"
 featured: 9
 album: B1953qWtH8kQwKf
 draft: false
