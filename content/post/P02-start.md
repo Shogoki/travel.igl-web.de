@@ -2,7 +2,8 @@
 title: "#P02 - Start"
 date: 2025-12-10
 author: Kerstin
-categories: ["Thailand“ , “Koh Phi Phi"]
+categories: ["Thailand", "Koh Phi Phi"]
+countries: ["Thailand"]
 featured: 16
 album: B2R5ZBCwP8gxRao
 draft: false
