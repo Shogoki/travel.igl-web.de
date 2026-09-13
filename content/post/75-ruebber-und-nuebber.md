@@ -3,7 +3,7 @@ title: "#75 Rübber und Nübber"
 date: 2023-07-06
 author: Kerstin
 categories: ["Vietnam" , "Ha Giang" , "Hanoi"]
-country: "Vietnam"
+countries: ["Vietnam"]
 featured: 5
 album: B19GDZLe8HkQald
 draft: false

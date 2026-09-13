@@ -3,7 +3,7 @@ title: "#2 Wundervolle Anden"
 date: 2022-09-20
 author: Kerstin
 categories: ["Peru", "Huaraz"]
-country: "Peru"
+countries: ["Peru"]
 featured: 7
 album: B0O5n8hH4GTacJw
 # This is for the old WP links to still work

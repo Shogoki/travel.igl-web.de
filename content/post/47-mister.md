@@ -3,7 +3,7 @@ title: "#47 Mister"
 date: 2023-03-01
 author: Kerstin
 categories: ["Indonesien", "Sumatra", "South-Sumatra"]
-country: "Indonesien"
+countries: ["Indonesien"]
 featured: 21
 album: B19GdPblXI04Sbk
 draft: false

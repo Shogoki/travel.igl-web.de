@@ -3,7 +3,7 @@ title: "#78 Zwischen Bergen und Meer"
 date: 2023-07-20
 author: Kerstin
 categories: ["Südkorea"]
-country: "Südkorea"
+countries: ["Südkorea"]
 featured: 43
 album: B19GsCn7G8n2oYE
 draft: false

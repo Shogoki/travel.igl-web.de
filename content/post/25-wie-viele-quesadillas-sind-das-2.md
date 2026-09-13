@@ -3,7 +3,7 @@ title: "#25 Wie viele Quesadillas sind das?"
 date: 2022-12-13
 author: Kerstin
 categories: ["Mexiko", "Mexiko-Stadt"]
-country: "Mexiko"
+countries: ["Mexiko"]
 featured: 27
 album: B19GtnIOR8owUR5
 draft: false

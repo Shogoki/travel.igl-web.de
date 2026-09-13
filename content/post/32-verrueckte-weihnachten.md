@@ -3,7 +3,7 @@ title: "#32 Verrückte Weihnachten"
 date: 2022-12-29
 author: Kerstin
 categories: ["Australien", "Newcastle"]
-country: "Australien"
+countries: ["Australien"]
 featured: 2
 album: B195idkMw8utWd7
 draft: false

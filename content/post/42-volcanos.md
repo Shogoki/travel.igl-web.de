@@ -3,7 +3,7 @@ title: "#42 Volcanos"
 date: 2023-02-04
 author: Kerstin
 categories: ["Indonesien", "Java", "Jawa-Timur"]
-country: "Indonesien"
+countries: ["Indonesien"]
 featured: 23
 album: B195M7GFP8Mapb0
 draft: false

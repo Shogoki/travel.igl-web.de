@@ -3,7 +3,7 @@ title: "#9 Welcome to the jungle"
 date: 2022-10-21
 author: Kerstin
 categories: ["Peru", "Iquitos"]
-country: "Peru"
+countries: ["Peru"]
 featured: 2
 album: B19G4TcsmHMEHVP
 ---

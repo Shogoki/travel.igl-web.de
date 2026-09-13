@@ -3,7 +3,7 @@ title: "#10 This is Peru"
 date: 2022-10-24
 author: Kerstin
 categories: ["Peru"]
-country: "Peru"
+countries: ["Peru"]
 featured: 18
 album: B19GWZuqDHB5CMV
 ---

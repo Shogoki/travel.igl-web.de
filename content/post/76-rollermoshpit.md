@@ -3,7 +3,7 @@ title: "#76 Roller-Moshpit"
 date: 2023-07-09
 author: Kerstin
 categories: ["Vietnam" , "Kambodscha"]
-country: "Vietnam"
+countries: ["Vietnam"]
 featured: 29
 album: B195p3ich82f8wv
 draft: false

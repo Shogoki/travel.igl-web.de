@@ -3,7 +3,7 @@ title: "#73 Tiger und Bären"
 date: 2023-06-27
 author: Kerstin
 categories: ["Vietnam" , "Dong Hoi" , "Phong Nha"]
-country: "Vietnam"
+countries: ["Vietnam"]
 featured: 11
 album: B195cLqfNIhWx7F
 draft: false

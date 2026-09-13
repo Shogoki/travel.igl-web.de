@@ -3,7 +3,7 @@ title: "#64 Angkor"
 date: 2023-05-28
 author: Kerstin, Sven
 categories: ["Kambodscha" , "Siem Reap"]
-country: "Kambodscha"
+countries: ["Kambodscha"]
 featured: 36
 album: B19GzFCC1IWFU1s
 draft: false

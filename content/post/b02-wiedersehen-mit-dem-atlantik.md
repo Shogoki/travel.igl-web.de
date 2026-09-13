@@ -3,7 +3,7 @@ title: "#B02 - Wiedersehen mit dem Atlantik"
 date: 2024-06-11
 author: Kerstin
 categories: ["Brasilien" , "Costa Verde"]
-country: "Brasilien"
+countries: ["Brasilien"]
 featured: 2
 album: B19G60dj68TOjjn
 draft: false

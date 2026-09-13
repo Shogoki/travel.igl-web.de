@@ -3,7 +3,7 @@ title: "#50 Männer mit Vogel"
 date: 2023-03-20
 author: Kerstin
 categories: ["Indonesien"]
-country: "Indonesien"
+countries: ["Indonesien"]
 featured: 31
 album: B19GJDfWG8l4xYb
 draft: false

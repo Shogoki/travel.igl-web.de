@@ -3,7 +3,7 @@ title: "#44 Es brodelt"
 date: 2023-02-19
 author: Kerstin
 categories: ["Indonesien", "Java", "Jawa-Tengah"]
-country: "Indonesien"
+countries: ["Indonesien"]
 featured: 30
 album: B195NI45M80qGxL
 draft: false

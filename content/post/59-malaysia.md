@@ -3,7 +3,7 @@ title: "#59 Malaysia"
 date: 2023-05-05
 author: Kerstin
 categories: ["Malaysia"]
-country: "Malaysia"
+countries: ["Malaysia"]
 featured: 9
 album: B19GVfZ2vHB7z0c
 draft: false
