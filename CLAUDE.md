@@ -23,9 +23,8 @@ hugo new post/<slug>.md
 # Pull/refresh the theme submodule
 git submodule update --init --recursive
 
-# Regenerate data/albums.json from the iCloud album API
-# (not currently run in CI — see .github/workflows/hugo.yml)
-./scripts/fetchalbums.sh
+# Build against a local album API instead of the deployed one
+hugo server --config config.toml,config.local.toml
 ```
 
 There are no tests, linters, or package managers — the entire toolchain is Hugo + bash.
@@ -39,13 +38,15 @@ There are no tests, linters, or package managers — the entire toolchain is Hug
 3. Runs `hugo --minify`.
 4. Publishes `./public` to the `gh-pages` branch via `peaceiris/actions-gh-pages`, with `cname: travel.igl-web.de`.
 
-Don't edit `gh-pages` directly — it is overwritten on every deploy. The commented-out Cloudflare purge step and `./scripts/fetchalbums.sh` call in the workflow are intentionally disabled.
+Don't edit `gh-pages` directly — it is overwritten on every deploy. The commented-out Cloudflare purge step is intentionally disabled.
+
+The build fetches every album from the API, so a deploy takes about 90s longer than a local build and **fails if the API is unreachable**. That is deliberate — the alternative is silently publishing posts with no photos. Re-run the workflow once the API is back. (Adding an `actions/cache` step on Hugo's cache directory would make repeat deploys fast again, at the cost of serving stale albums until the cache expires.)
 
 ## Architecture
 
 ### Content model
 
-- `content/post/*.md` — blog posts, filename-prefixed with an ordinal (`1-…`, `2-…`, … `83-…`, plus a later Brazil series `b01-…`, `b02-…`, `B30-…`). This ordering is **semantic**: Hugo's `PrevInSection`/`NextInSection` navigation in `layouts/_default/single.html` relies on date ordering, but humans sort/read by these numbers. Keep them monotonic when adding posts.
+- `content/post/*.md` — blog posts, filename-prefixed with an ordinal (`1-…`, `2-…`, … `83-…`, plus a later Brazil series `b01-…`, `b02-…`, `B30-…`). This ordering is **semantic**: Hugo's `PrevInSection`/`NextInSection` navigation in `layouts/_default/page.html` relies on date ordering, but humans sort/read by these numbers. Keep them monotonic when adding posts.
 - `content/unsere-route.md` — standalone page linked from the nav menu (see `params.addtional_menus` in `config.toml`).
 - `archetypes/default.md` — front-matter template for `hugo new`; sets `draft: true`.
 
@@ -62,22 +63,28 @@ aliases:                    # legacy WP URL compatibility — preserve when migr
    - "/2022/09/15/…/"
 ```
 
-### Photo galleries (runtime fetch)
+### Photo galleries (built at deploy time)
 
-Posts embed an iCloud shared-album gallery by declaring `album: <id>` in front matter. The mechanism is in `layouts/partials/image-gallery.html`:
+Posts embed an iCloud shared-album gallery by declaring `album: <id>` in front matter. Galleries are **built at deploy time**, not fetched by the browser.
 
-- On page load, client-side JS `fetch()`s `{{ .Site.Params.icloud_api }}/album/{{ album }}` and renders each image into a PhotoSwipe gallery.
-- `icloud_api` is configured in `config.toml` (default: `https://icloud-api.evolution-web.de`; a localhost value is commented out for local API dev).
-- `scripts/fetchalbums.sh` exists to *pre-download* album JSON (into `data/albums.json`) and thumbnails/full images (into `static/img/{thumbs,full}/`, both gitignored). It is currently not invoked by CI, so the site depends on the live API at page-load time.
+**The constraint that shapes all of this:** iCloud's own asset URLs are signed and expire about three hours after they are issued. They can never be committed or written into a page.
 
-When touching gallery code, remember both the fetch-at-runtime path (`image-gallery.html`) and the offline-cache path (`fetchalbums.sh`) exist and are meant to be interchangeable.
+The way around that is the API's image proxy. `{{ icloud_api }}/img/{album}/{photoGuid}/{thumb|full}` is stable and unsigned — it resolves the current signed URL server-side — so Hugo can emit plain `<img src>` once and it keeps working.
+
+- `layouts/partials/album-photos.html` fetches `{{ icloud_api }}/album/{album}` with `resources.GetRemote` **during the build** and returns the photos. Both the post galleries and the homepage title images go through it, so they validate the response identically. Hugo caches remote fetches, so an album used by a post and a homepage card costs one request.
+- `layouts/partials/post_list.html` renders each card's title image from `.Params.featured`, an index into the album (oldest photo first). It used to show a `placehold.jp` placeholder and have JS fetch the whole album per card — ten uncached API round trips before the first title image could start loading.
+- `layouts/partials/image-gallery.html` builds the post gallery and emits static `<figure>` markup: a `thumb` URL for the tile, a `full` URL on the `<a>` for PhotoSwipe, real `width`/`height`, and `loading="lazy"` past the first three tiles. The full-size image is fetched only when the lightbox opens. Nothing about the gallery is fetched by the browser.
+- A failed album fetch calls `errorf`, which **fails the build**. This is on purpose: a warning would ship posts with no photos and nobody would notice. Error handling uses the `try` keyword — `.Err` on a resource was removed in Hugo v0.141.
+- Hugo caches remote fetches on disk, so repeat local builds are instant; the first build after clearing the cache takes ~90s for all 94 albums.
+- `icloud_api` is configured in `config.toml` (default: `https://icloud-api.evolution-web.de`). To develop against a local API, put the override in an untracked `config.local.toml` and run `hugo server --config config.toml,config.local.toml`. That file also needs a `[security.http]` block: Hugo's default policy permits ordinary https hosts but blocks `localhost` and raw IPs.
+- `static/css/gallery.css` makes the `<img>` the visible tile. hugo-easy-gallery ships `.gallery img { display: none }` and paints tiles as a `background-image`, which is what used to force the full-size original into every tile. Keep the override if you touch that CSS, and keep `margin: 0` on it — the theme's `.post-container img` rule otherwise pushes the tile out of its square.
 
 ### Layout overrides
 
 The site uses the `hugo-theme-cleanwhite` theme but **overrides** specific templates at the project root (Hugo's lookup order puts `./layouts/` ahead of `./themes/*/layouts/`):
 
 - `layouts/_default/baseof.html` — adds the "Wir sind gerade hier" location banner, reading `data/location.yaml` (`name` + `url`). Update this file to change the displayed current location.
-- `layouts/_default/single.html` — post template; formats dates using German weekday/month lookups in `data/days_german.toml` and `data/months_german.toml`, and injects the image gallery partial before post content.
+- `layouts/_default/page.html` — post template; formats dates using German weekday/month lookups in `data/days_german.toml` and `data/months_german.toml`, and injects the image gallery partial before post content. **It must be named `page.html`, not `single.html`.** Hugo v0.146 reworked template lookup so `page.html` outranks `single.html`, and the theme ships its own `_default/page.html`. While this file was called `single.html`, the theme's minimal page template silently won on every build: no galleries, no German dates, no post header, no prev/next — with no build error, because CI installs the latest Hugo.
 - `layouts/partials/*.html` — overrides for `head`, `nav`, `footer`, `comments`, `image-gallery`, `post_list`, `header`.
 
 Before editing a partial, check whether the override exists locally; if not, copy from `themes/hugo-theme-cleanwhite/layouts/...` into `./layouts/...` rather than editing inside the submodule.
@@ -89,12 +96,12 @@ Uses [giscus](https://giscus.app) (GitHub Discussions) — config is under `[par
 ### Site-wide data files
 
 - `data/location.yaml` — current location banner (name + Google Maps URL).
-- `data/days_german.toml`, `data/months_german.toml` — German date name lookups used by `single.html`.
-- `data/albums.json` — optional, generated by `fetchalbums.sh`; not required for the runtime-fetch gallery path.
+- `data/days_german.toml`, `data/months_german.toml` — German date name lookups used by `page.html`.
 
 ## Conventions
 
 - Site language is German (`languageCode = 'de-de'`); post titles, UI strings, and date formatting are German. Preserve this when adding content or UI text.
 - Preserve legacy WordPress URLs via the `aliases` front-matter list when migrating or renaming posts.
-- Image paths `static/img/thumbs/*.jpg` and `static/img/full/*.jpg` are gitignored — don't commit generated thumbnails.
+- Photos are never committed — they are served through the API's image proxy, which caches them at the edge. `static/img/thumbs/*.jpg` and `static/img/full/*.jpg` remain gitignored.
+- Adding a post with a new album, or photos to an existing one, needs no extra step: the next deploy picks them up.
 - `public/` is gitignored; never commit the build output.

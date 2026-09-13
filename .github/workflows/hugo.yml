@@ -32,7 +32,9 @@ jobs:
 
       - name: Build
         run: |
-          #./scripts/fetchalbums.sh
+          # Galleries are fetched from the album API during this build, so a
+          # failure here is deliberate: it stops the Deploy step below rather
+          # than publishing posts with no photos. Re-run once the API is back.
           hugo --minify
 
       - name: Deploy
