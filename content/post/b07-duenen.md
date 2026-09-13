@@ -3,6 +3,7 @@ title: "#B07 - Sanddünen"
 date: 2024-06-29
 author: Kerstin
 categories: ["Brasilien" , "Fortaleza" , "Jericoacoara"]
+country: "Brasilien"
 featured: 21
 album: B19G7HOIlIJYuMH
 draft: false

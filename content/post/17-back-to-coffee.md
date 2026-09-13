@@ -3,6 +3,7 @@ title: "#17 Back to Coffee"
 date: 2022-11-20
 author: Kerstin
 categories: ["Kolumbien", "Jardin"]
+country: "Kolumbien"
 featured: 13
 album: B195yeZFh8AYWp7
 draft: false

@@ -3,6 +3,7 @@ title: "#B01 - 10 Monate später"
 date: 2024-06-06
 author: Kerstin
 categories: ["Brasilien" , "Sao Paulo"]
+country: "Brasilien"
 featured: 17
 album: B19JOFSVFIRkBEw
 draft: false

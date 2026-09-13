@@ -3,6 +3,7 @@ title: "#37 Koalas zum Schluss"
 date: 2023-01-14
 author: Kerstin
 categories: ["Australien", "Newcastle"]
+country: "Australien"
 featured: 4
 album: B0OJEsNWnGfTJq3
 draft: false

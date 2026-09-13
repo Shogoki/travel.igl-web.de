@@ -3,6 +3,7 @@ title: "#81 Kleiner Kulturschock"
 date: 2023-08-05
 author: Kerstin
 categories: ["Südkorea"]
+country: "Südkorea"
 featured: 9
 album: B19Jq4WnLI9Y8cv
 draft: false

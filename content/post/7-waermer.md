@@ -3,6 +3,7 @@ title: "#7 Wärmer..."
 date: 2022-10-13
 author: Kerstin
 categories: ["Peru", "Tarapoto"]
+country: "Peru"
 featured: 3
 album: B195oqs3qIAea6b
 ---

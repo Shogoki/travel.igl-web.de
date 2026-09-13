@@ -3,6 +3,7 @@ title: "#66 Gestrandet"
 date: 2023-06-05
 author: Kerstin
 categories: ["Kambodscha" , "Sihanoukville" , "Koh Rong Sanloem"]
+country: "Kambodscha"
 featured: 6
 album: B19GWBC59HB5nyy
 draft: false

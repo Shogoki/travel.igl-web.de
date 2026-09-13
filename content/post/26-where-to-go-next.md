@@ -3,6 +3,7 @@ title: "#26 Where to go next?"
 date: 2022-12-14
 author: Kerstin
 categories: ["Mexiko", "Guadalajara"]
+country: "Mexiko"
 featured: 11
 album: B19JEsNWnITpUUL
 draft: false

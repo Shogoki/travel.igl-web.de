@@ -3,6 +3,7 @@ title: "#62 Flashbacks"
 date: 2023-05-22
 author: Kerstin
 categories: ["Thailand" , "Bangkok"]
+country: "Thailand"
 featured: 1
 album: B19Jr1PPdIc01He
 draft: false

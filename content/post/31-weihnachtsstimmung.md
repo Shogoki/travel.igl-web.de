@@ -3,6 +3,7 @@ title: "#31 Weihnachtsstimmung"
 date: 2022-12-27
 author: Kerstin
 categories: ["Kanada"]
+country: "Kanada"
 featured: 4
 album: B195fk75v8Nl280
 draft: false

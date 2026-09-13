@@ -3,6 +3,7 @@ title: "#20 Happy Bubbles"
 date: 2022-11-28
 author: Kerstin
 categories: ["Kolumbien", "San Andres"]
+country: "Kolumbien"
 featured: 25
 album: B195ON9t38Ken8S
 draft: false

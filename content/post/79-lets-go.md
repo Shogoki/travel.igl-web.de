@@ -3,6 +3,7 @@ title: "#79 Let´s go"
 date: 2023-07-26
 author: Kerstin
 categories: ["Südkorea"]
+country: "Südkorea"
 featured: 7
 album: B19G9Gd2NItwn4S
 draft: false

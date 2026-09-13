@@ -3,6 +3,7 @@ title: "#41 Bright side of Bali"
 date: 2023-01-30
 author: Kerstin
 categories: ["Indonesien", "Bali", "Nusa Penida"]
+country: "Indonesien"
 featured: 20
 album: B19GdIshaIfncib
 draft: false
