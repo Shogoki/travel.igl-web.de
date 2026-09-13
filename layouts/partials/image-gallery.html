@@ -39,6 +39,9 @@
 
 <div id="single-gallery" class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom itemscope">
 	{{ range $index, $photo := $photos }}
+	{{/* The .jpg suffix is what makes these cacheable at the edge: a CDN's
+	     default cache level decides from the file extension, and an
+	     extensionless URL is treated as dynamic however long its max-age. */}}
 	{{ $base := printf "%s/img/%s/%s" $api $album $photo.photoGuid }}
 	<div class="box fancy-figure caption-position-bottom caption-effect-slide" data-guid="{{ $album }}-{{ $index }}">
 		<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
@@ -46,7 +49,7 @@
 				{{/* The first few tiles are above the fold on most screens; the
 				     rest are lazy so a 15-photo post does not fetch 15 images
 				     before it can paint. */}}
-				<img src="{{ $base }}/thumb"
+				<img src="{{ $base }}/thumb.jpg"
 					width="{{ $photo.thumbWidth }}" height="{{ $photo.thumbHeight }}"
 					alt="{{ with $photo.caption }}{{ . }}{{ else }}Reisefoto{{ end }}"
 					itemprop="thumbnail"
@@ -55,7 +58,7 @@
 			</div>
 			{{/* data-size feeds PhotoSwipe the real dimensions, so it neither
 			     guesses 800x600 nor polls naturalWidth every 30ms. */}}
-			<a href="{{ $base }}/full" itemprop="contentUrl" data-size="{{ $photo.width }}x{{ $photo.height }}" aria-label="{{ with $photo.caption }}{{ . }}{{ else }}Foto{{ end }} vergrößern"></a>
+			<a href="{{ $base }}/full.jpg" itemprop="contentUrl" data-size="{{ $photo.width }}x{{ $photo.height }}" aria-label="{{ with $photo.caption }}{{ . }}{{ else }}Foto{{ end }} vergrößern"></a>
 			{{ with $photo.caption }}<figcaption>{{ . }}</figcaption>{{ end }}
 		</figure>
 	</div>
