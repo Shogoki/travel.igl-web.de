@@ -1,0 +1,47 @@
+/* Galerie-Kacheln
+ *
+ * hugo-easy-gallery paints each tile as a background-image on `.img` and hides
+ * the `<img>` outright (`.gallery img { display: none }`). That forced the
+ * gallery to put the *full-size* original into every tile's background — a
+ * 2048px, ~1MB image behind a 246px square — while the thumbnail it also
+ * loaded was never displayed at all. A 15-photo post cost 14.9MB.
+ *
+ * Here the `<img>` is the tile. That means the browser gets a real element it
+ * can defer with loading="lazy", crawlers can see the photos, and the tile
+ * shows the 342px thumbnail instead of the original. The full-size image is
+ * fetched only when the lightbox opens.
+ */
+.gallery .img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 50%;
+    /* The theme gives every image inside .post-container a 1.5em margin, which
+     * is right for a photo dropped into prose and wrong for a grid tile — it
+     * pushes the image out of its square and leaves a band of the placeholder
+     * showing. The old markup never hit this because the <img> was display:none
+     * and the tile was a background-image. */
+    margin: 0;
+    max-width: none;
+}
+
+/* The zoom-on-hover effect used to scale the background-image container; it
+ * has to move to the image now that the image is what is visible. */
+.gallery.hover-effect-zoom figure:hover .img img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* A tile has nothing to show until its image arrives. Give it a neutral ground
+ * so a lazily-loaded gallery reads as a grid of placeholders rather than as
+ * holes in the page. */
+.gallery .img {
+    background-color: #ececec;
+}
+
+@media (prefers-color-scheme: dark) {
+    .gallery .img {
+        background-color: #2a2a2a;
+    }
+}
