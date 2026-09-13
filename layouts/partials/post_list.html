@@ -1,23 +1,6 @@
 <!-- post list -->
-{{ $url := .Site.Params.icloud_api }}
+{{ $api := .Site.Params.icloud_api }}
 
-<script>
-    async function setFeaturedImage(albumId, fIdx) {
-
-        const url = "{{$url}}/album"; 
-        const featureImgNode = document.querySelector(`#featured-image-${albumId}>img`);
-        const res = await fetch(`${url}/${albumId}`)
-        const data = await res.json();
-        const featuredImg = data.at(fIdx);
-        featureImgNode.src = featuredImg.thumbnailUrl;
-        featureImgNode.alt = featuredImg.caption;
-
-    }
-    function removeFeaturedImage(albumId) {
-        const featureImgNode = document.querySelector(`#featured-image-${albumId}`);
-        featureImgNode.remove();
-    }
-</script>
 
 {{ range $index, $element := $.Paginator.Pages }}
 <div class="post-preview">
@@ -30,9 +13,37 @@
             {{ . }}
         </h3>
 	{{ end }}
-        <div id="featured-image-{{ .Params.album }}" >
-                <img src="https://placehold.jp/3d4070/ffffff/150x150.png?text=Loading%20image..." alt="thumbnail" />
-        </div>
+        {{/*
+          The title image is built in, not fetched. This used to render a
+          placehold.jp placeholder and then have JS fetch the whole album per
+          card just to pick one photo out of it — ten uncached API round trips
+          before the first title image could even start loading.
+
+          .Params.featured indexes the album, oldest photo first.
+        */}}
+        {{ $album := .Params.album }}
+        {{ if $album }}
+          {{ $photos := partial "album-photos.html" (dict "api" $api "album" $album "where" .RelPermalink) }}
+          {{ if $photos }}
+            {{/* `with` rather than a default: featured: 0 is a real value and
+                 would be treated as unset by anything truthiness-based. */}}
+            {{ $i := 0 }}
+            {{ with .Params.featured }}{{ $i = int . }}{{ end }}
+            {{ if ge $i (len $photos) }}
+              {{ warnf "post_list: %s asks for featured photo %d but album %q has only %d — using the last one" $element.RelPermalink $i $album (len $photos) }}
+              {{ $i = sub (len $photos) 1 }}
+            {{ end }}
+            {{ $photo := index $photos $i }}
+            <div class="post-featured-image">
+              <img src="{{ $api }}/img/{{ $album }}/{{ $photo.photoGuid }}/thumb.jpg"
+                width="{{ $photo.thumbWidth }}" height="{{ $photo.thumbHeight }}"
+                alt="{{ with $photo.caption }}{{ . }}{{ else }}{{ $element.Title }}{{ end }}"
+                decoding="async"
+                {{/* The first two cards are above the fold on most screens. */}}
+                {{ if ge $index 2 }}loading="lazy"{{ end }}>
+            </div>
+          {{ end }}
+        {{ end }}
         <div class="post-content-preview">
 	{{ with .Description }}
             {{ . }}
@@ -63,17 +74,5 @@
 
 </div>
 <hr>
-
-{{ $album :=  .Params.album }}
-{{ if isset .Params "featured" }}
-<script>
-setFeaturedImage("{{$album}}", "{{ .Params.featured }}").then(_ => console.log("Loaded featured image for album {{$album}}")).catch(e => console.error(e));
-</script>
-{{ else }}
-<script>
-removeFeaturedImage("{{$album}}");
-</script>
-
-{{ end }}
 
 {{ end }}
