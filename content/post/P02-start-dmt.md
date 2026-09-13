@@ -1,5 +1,5 @@
 ---
-title: "#P02 - Start"
+title: "#P02 - Start DMT"
 date: 2025-12-10
 author: Kerstin
 categories: ["Thailand", "Koh Phi Phi"]
