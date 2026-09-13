@@ -1,6 +1,6 @@
 ---
 title: "#P02 - Start"
-date: 2025-12-01
+date: 2025-12-10
 author: Kerstin
 categories: ["Thailand“ , “Koh Phi Phi"]
 featured: 16

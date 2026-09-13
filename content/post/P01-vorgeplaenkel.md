@@ -16,7 +16,7 @@ Aufgeregt. Ich bin aufgeregt. Und unsicher.
 Wir gehen für 4 Monate nach Thailand, genauer nach Koh Phi Phi, für ein Divemaster Internship.
 
 Warum Divemaster? Warum ein Internship und nicht nur ein Kurs? Warum PP?
-- Well, warum nicht? 😄
+Well, warum nicht? 😄
 
 ## Background
 
