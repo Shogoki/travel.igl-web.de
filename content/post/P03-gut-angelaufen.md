@@ -18,8 +18,6 @@ draft: false
 
 Meine Ohrinfektion ist glücklicherweise nicht schlimmer geworden und hat sich mit ein paar Mittelchen aus der Apotheke schnell wieder regeneriert. Ich nehme jetzt Ohrentropfen zum trocknen und spüle die Ohren nach jedem Tauchgang mit Frischwasser - funktioniert. 
 
-Die Tage beginnen morgens um 6.30 Uhr pünktlich (!) am Shop, wo mehr oder weniger gemeinsam mit Essen und teilweise Equipment bepackt zum Boot gelaufen wird. Auf dem Boot wird das Equipment für die Kunden bereits aufgesetzt und Getränke etc. vorbereitet. Der Trip am Morgen endet nach 2 Tauchgängen mit Pause gegen 11.15 Uhr. Wer Pech hat, trifft die Kunden nochmal am Shop, um die Tauchgänge zu loggen, bevor er zum Packing um 11.30 Uhr geht. Nach kurzer Pause geht es um 12.30 Uhr wieder zum Boot für den Nachmittagstrip, gleiches Spiel wie am Vormittag, Ende gegen 17.30 Uhr. Wer Mittags schon beim Packing war, hat jetzt frei, wer allerdings zwischen den Trips Pause hatte, muss um 20.30 Uhr nochmal ran. Wer wann mit wie vielen Personen taucht, entscheidet sich immer am Vorabend für Morgens mit einer Prognose für Nachmittags und sonst endgültig am Mittag kurz bevor es wieder zum Boot geht, falls noch kurzfristige Buchungen eingegangen sind.
-
 
 ### Training
 
