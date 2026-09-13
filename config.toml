@@ -24,6 +24,8 @@ home = ["HTML", "RSS"]
   title_404 = "Seite nicht gefunden"
   omit_categories = true
 
+  custom_css = ["css/custom-nav.css"]
+
   # leancloud storage for page view counter
   page_view_conter = false 
   leancloud_app_id = ""
