@@ -1,0 +1,19 @@
+/* Länder-Dropdown
+ *
+ * Das Theme färbt in `.navbar-custom .nav li a` jeden Nav-Link weiß, damit die
+ * Links über dem Header-Bild lesbar sind. Bootstraps `.dropdown-menu` ist aber
+ * ein weißes Panel, und da es innerhalb von `ul.nav` liegt, greift die Regel
+ * auch für dessen Links — weiß auf weiß.
+ *
+ * Nur die Links *im* Dropdown umfärben. Drei Klassen statt zwei, damit die
+ * Regel die Theme-Regel in der Spezifität schlägt.
+ */
+.navbar-custom .nav .dropdown-menu li a {
+    color: #404040;
+}
+
+.navbar-custom .nav .dropdown-menu li a:hover,
+.navbar-custom .nav .dropdown-menu li a:focus {
+    color: #0085a1;
+    background-color: #f5f5f5;
+}
