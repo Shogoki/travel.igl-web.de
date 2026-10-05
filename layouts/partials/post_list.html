@@ -1,60 +1,60 @@
 <!-- post list -->
+{{/*
+  One card per post: title photo, title, who/when/where, and a short excerpt.
 
+  The cards used to print each post's whole auto-summary — several
+  paragraphs, often with its headings — under a small portrait thumbnail, so
+  ten posts made a page about 9,000px tall (10,000px on a phone). The excerpt
+  is now two or three lines; the post itself is one click away.
 
+  The photo is chosen by the featured-photo partial (.Params.featured indexes
+  the album), which <head> also uses for the link preview. It is built in,
+  not fetched by the browser.
+*/}}
 {{ range $index, $element := $.Paginator.Pages }}
-<div class="post-preview">
-    <a href="{{ .Permalink }}">
-        <h2 class="post-title">
-            {{ .Title }}
-        </h2>
-	{{with .Params.subtitle }}
-        <h3 class="post-subtitle">
-            {{ . }}
-        </h3>
-	{{ end }}
-        {{/*
-          The title image is built in, not fetched. This used to render a
-          placehold.jp placeholder and then have JS fetch the whole album per
-          card just to pick one photo out of it — ten uncached API round trips
-          before the first title image could even start loading.
-
-          The photo is chosen by the featured-photo partial (.Params.featured
-          indexes the album), which <head> also uses for the link preview.
-        */}}
-        {{ with partialCached "featured-photo.html" . .RelPermalink }}
-            {{ $photo := .photo }}
-            <div class="post-featured-image">
-              <img src="{{ .url }}/thumb.jpg"
-                width="{{ $photo.thumbWidth }}" height="{{ $photo.thumbHeight }}"
-                alt="{{ with $photo.caption }}{{ . }}{{ else }}{{ $element.Title }}{{ end }}"
-                decoding="async"
-                {{/* The first two cards are above the fold on most screens. */}}
-                {{ if ge $index 2 }}loading="lazy"{{ end }}>
-            </div>
-        {{ end }}
-        <div class="post-content-preview">
-	{{ with .Description }}
-            {{ . }}
-        {{ else }}
-            {{ .Summary}}
-       {{ end }}
-        </div>
+{{ $countries := .GetTerms "countries" }}
+<article class="post-card">
+    {{ with partialCached "featured-photo.html" . .RelPermalink }}
+    {{ $photo := .photo }}
+    <a class="post-card-image" href="{{ $element.RelPermalink }}" tabindex="-1" aria-hidden="true">
+        {{/* 3:2 crop. small (≤640px) for a 280px desktop card even at 2x,
+             medium (≤1024px) for full-width phone cards — capped at 2x on
+             3x phones, as in the gallery. The first card is the page's
+             largest image, so it is fetched first; the first two are above
+             the fold. */}}
+        <img src="{{ .url }}/medium.jpg"
+            srcset="{{ .url }}/small.jpg {{ $photo.smallWidth }}w, {{ .url }}/medium.jpg {{ $photo.mediumWidth }}w"
+            sizes="(min-width: 768px) 280px, (min-resolution: 2.5dppx) calc((100vw - 30px) * 2 / 3), calc(100vw - 30px)"
+            width="{{ $photo.mediumWidth }}" height="{{ $photo.mediumHeight }}"
+            alt="{{ with $photo.caption }}{{ . }}{{ else }}{{ $element.Title }}{{ end }}"
+            decoding="async"
+            {{ if eq $index 0 }}fetchpriority="high"{{ end }}
+            {{ if ge $index 2 }}loading="lazy"{{ end }}>
     </a>
-    <p class="post-meta">
-    {{ if .Params.metadata }}
-        {{ range $index, $element := .Params.metadata }}
-            {{ if .link }}
-                <a href="{{ .link }}">{{ .text }}</a>
-            {{ else }}
-                {{ .text }}
+    {{ end }}
+    <div class="post-card-body">
+        {{ with partial "post-lead.html" . }}<p class="post-card-lead">{{ . }}</p>{{ end }}
+        <h2 class="post-card-title">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </h2>
+        {{ with .Params.subtitle }}<h3 class="post-card-subtitle">{{ . }}</h3>{{ end }}
+        <p class="post-card-meta">
+        {{ if .Params.metadata }}
+            {{ range .Params.metadata }}
+                {{ if .link }}<a href="{{ .link }}">{{ .text }}</a>{{ else }}{{ .text }}{{ end }}
+            {{ end }}
+        {{ else }}
+            {{ with .Params.author }}{{ . }}{{ else }}{{ site.Title }}{{ end }}
+            · <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+            {{ with $countries }}·
+                {{ range $i, $c := . }}{{ if $i }}, {{ end }}<a href="{{ $c.RelPermalink }}">{{ $c.LinkTitle }}</a>{{ end }}
             {{ end }}
         {{ end }}
-    {{ else }}
-        geposted von {{ with .Params.author }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }} am {{ .Date | time.Format ":date_full" }}
-    {{ end }}
-    </p>
-
-</div>
-<hr>
-
+        </p>
+        <p class="post-card-excerpt">
+            {{ with .Description }}{{ . }}{{ else }}{{ partial "plain-summary.html" (dict "page" . "length" 220) }}{{ end }}
+        </p>
+        <a class="post-card-more" href="{{ .RelPermalink }}" aria-label="{{ .Title }} lesen">Weiterlesen &rarr;</a>
+    </div>
+</article>
 {{ end }}
