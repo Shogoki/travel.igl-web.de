@@ -1,8 +1,34 @@
 {{ define "header" }}
 <!-- Post Header -->
+{{/*
+  A post's header shows its own featured photo — the one on its homepage card
+  and in its link preview — instead of the same jeep photo on every post.
+  medium (≤1024px) is enough on phones and tablets; a full-width desktop
+  header needs the original. The gradient keeps the white title readable on
+  any photo. `image:` in front matter still overrides, and pages without an
+  album (Unsere Route) keep the site header.
+*/}}
+{{ $small := site.Params.header_image | relURL }}
+{{ $large := $small }}
+{{ $shade := false }}
+{{ with .Params.image }}
+  {{ $small = . | relURL }}{{ $large = $small }}
+{{ else }}
+  {{ with partialCached "featured-photo.html" . .RelPermalink }}
+    {{ $small = printf "%s/medium.jpg" .url }}
+    {{ $large = printf "%s/full.jpg" .url }}
+    {{ $shade = true }}
+  {{ end }}
+{{ end }}
+{{ $gradient := cond $shade "linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.5)), " "" }}
 <style type="text/css">
     header.intro-header {
-        background-image: url('{{ if .Params.image }}{{ .Params.image | relURL }}{{ else }}{{ .Site.Params.header_image | relURL}}{{ end }}')
+        background-image: {{ $gradient | safeCSS }}url('{{ $small }}');
+    }
+    @media (min-width: 1100px) {
+        header.intro-header {
+            background-image: {{ $gradient | safeCSS }}url('{{ $large }}');
+        }
     }
 </style>
 {{ if eq .Params.headerstyle "text" }}
