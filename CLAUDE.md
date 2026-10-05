@@ -49,8 +49,9 @@ The build fetches every album from the API, so a deploy takes about 90s longer t
 ### Content model
 
 - `content/post/*.md` — blog posts, filename-prefixed with an ordinal (`1-…`, `2-…`, … `83-…`, plus a later Brazil series `b01-…`, `b02-…`, `B30-…`). This ordering is **semantic**: Hugo's `PrevInSection`/`NextInSection` navigation in `layouts/_default/page.html` relies on date ordering, but humans sort/read by these numbers. Keep them monotonic when adding posts.
-- `content/unsere-route.md` — standalone page linked from the nav menu (see `params.addtional_menus` in `config.toml`).
+- `content/unsere-route.md` — standalone page linked from the nav menu (see `params.addtional_menus` in `config.toml`). Its maps use `{{< figure src="/img/…png" width="300px" >}}`; the source PNGs live in **`assets/img/`** (not `static/`), and `layouts/shortcodes/figure.html` resizes each to twice its display width and re-encodes it as lazy-loaded WebP at build time. Add new maps to `assets/img/` too — the shortcode fails the build if the file isn't there.
 - `archetypes/default.md` — front-matter template for `hugo new`; sets `draft: true`.
+- `static/img/home-bg-jeep.jpg` (the header photo) is 1920px wide, JPEG q60 — the 4032px original was 700KB on every page. Keep replacements around that size.
 
 Typical post front matter (see `content/post/1-aufbruch-in-eine-unbekannte-welt.md`):
 
