@@ -1,10 +1,11 @@
 baseURL = 'https://travel.igl-web.de/'
-languageCode = 'de-de'
+# German site. locale drives <html lang> and Hugo's own date formatting
+# (time.Format ":date_full" → "Mittwoch, 3. Juli 2024"); it replaces the
+# deprecated languageCode.
+defaultContentLanguage = 'de'
+locale = 'de-DE'
 title = 'Crocs around the world'
 theme = "hugo-theme-cleanwhite"
-
-
-### theme config g
 
 [taxonomies]
   category = "categories"
@@ -15,7 +16,8 @@ theme = "hugo-theme-cleanwhite"
 home = ["HTML", "RSS"]
 
 [params]
-  #icloud_api="http://localhost:8000"
+  # To build against a local API, override this in an untracked
+  # config.local.toml (see CLAUDE.md) instead of editing it here.
   icloud_api="https://icloud-api.evolution-web.de"
   header_image = "img/home-bg-jeep.jpg"
   SEOTitle = "Igl Travel - Crocs around the world"
@@ -23,63 +25,26 @@ home = ["HTML", "RSS"]
   # start of their own text instead.
   description = "Reiseblog von Kerstin und Sven: Geschichten und Fotos von unseren Reisen durch Südamerika, Asien, Australien und mehr."
 
-  image_404 = "img/404-bg.jpg"
+  # The theme's own 404-bg.jpg was never added, so the 404 page's header
+  # image was itself a 404.
+  image_404 = "img/home-bg-jeep.jpg"
   title_404 = "Seite nicht gefunden"
   omit_categories = true
 
   custom_css = ["css/custom-nav.css", "css/gallery.css", "css/footer.css"]
 
-  # leancloud storage for page view counter
-  page_view_conter = false 
-  leancloud_app_id = ""
-  leancloud_app_key = ""
-
-  # Sidebar settings
-  sidebar_about_description = ""
-  #sidebar_avatar = "img/avatar-zhaohuabing.jpg"      # use absolute URL, seeing it's used in both `/` and `/about/`
-
-  featured_tags = false 
-  
-  disqus_site = ""
-
-  # Twikoo comments
-  # Follow https://twikoo.js.org/ to set up your own env_id
-  twikoo_env_id = ""
-
-  #Enable wechat pay & alipay to allow readers send reward money if they like the articles 
-  reward = false 
-  # reward_guide = "如果这篇文章对你有用,请随意打赏" 
-
-  friends = false
-  bookmarks = false
-  about_me = false
-
+  # Footer icons exist for: email, twitter, instagram, facebook, mastodon,
+  # github, rss (see layouts/partials/footer.html).
   [params.social]
-  rss            = true 
+  rss            = true
   email          = "travel@igl-web.de"
-  #facebook      = "full profile url in facebook"
-  #googleplus    = "full profile url in googleplus"
-  twitter       = "https://twitter.com/theshogoki"
-  #linkedin       = "https://www.linkedin.com/in/yourlinkedinid"
-  #stackoverflow  = "https://stackoverflow.com/users/yourstackoverflowid"
-  #instagram      = "https://www.instagram.com/roaminginrubber/"
+  twitter        = "https://twitter.com/theshogoki"
+  #instagram     = "https://www.instagram.com/roaminginrubber/"
   github         = "https://github.com/Shogoki"
-  #wechat        = "your wechat qr code image"
-  #medium        = "full profile url in medium"
-  #slack         = "full workspace url in slack"
-  #pinterest     = "full profile url in pinterest"
-  #reddit        = "full profile url in reddit"
-  #gitlab        = "full profile url in gitlab"
-  #mastodon      = "full profile url in mastodon"
-  #keybase       = "full profile url in keybase"
-  #xing          = "https://www.xing.com/profile/yourxingid"
-  #git           = "full profile url for git user"
-  
-  
+
   [[params.addtional_menus]]
   title =  "Unsere Route"
   href =  "/unsere-route/"
- 
 
 [markup]
   [markup.tableOfContents]
