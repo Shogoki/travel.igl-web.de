@@ -88,6 +88,11 @@ The site uses the `hugo-theme-cleanwhite` theme but **overrides** specific templ
 - `layouts/_default/baseof.html` — adds the "Wir sind gerade hier" location banner, reading `data/location.yaml` (`name` + `url`). Update this file to change the displayed current location.
 - `layouts/_default/page.html` — post template; formats dates using German weekday/month lookups in `data/days_german.toml` and `data/months_german.toml`, and injects the image gallery partial before post content. **It must be named `page.html`, not `single.html`.** Hugo v0.146 reworked template lookup so `page.html` outranks `single.html`, and the theme ships its own `_default/page.html`. While this file was called `single.html`, the theme's minimal page template silently won on every build: no galleries, no German dates, no post header, no prev/next — with no build error, because CI installs the latest Hugo.
 - `layouts/partials/*.html` — overrides for `head`, `nav`, `footer`, `comments`, `image-gallery`, `post_list`, `header`.
+- `layouts/partials/footer.html` — social links from `[params.social]` as inline SVGs from `assets/icons/` (sources and licences in `assets/icons/README.md`). A configured network without an icon there triggers a build warning. The theme's footer JavaScript (table of contents, tag cloud, FastClick, Baidu, PlantUML, language switcher) is deliberately gone — nothing here used it.
+
+### Third-party code
+
+jQuery 1.12.4 and PhotoSwipe 4.1.1 are self-hosted under `static/vendor/`, byte-identical to the CDN builds the site used to load (same SRI hashes). jQuery, `bootstrap.js` and the theme's `hux-blog.js` load with `defer`, so **no inline script may call `$` or `jQuery` at parse time** — wrap such code in a `DOMContentLoaded` listener. PhotoSwipe's CSS and JS are only included by `image-gallery.html`, i.e. only on posts with a gallery.
 
 Before editing a partial, check whether the override exists locally; if not, copy from `themes/hugo-theme-cleanwhite/layouts/...` into `./layouts/...` rather than editing inside the submodule.
 

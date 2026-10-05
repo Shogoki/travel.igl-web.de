@@ -1,0 +1,27 @@
+/* Footer-Icons
+ *
+ * Replaces Font Awesome's "fa-stack" (a solid circle with the icon on top),
+ * which needed the whole icon font for four icons. Same look: a dark disc
+ * with a white glyph that turns the theme's link blue on hover.
+ */
+.footer-social li {
+    padding: 0 4px;
+}
+
+.footer-social a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #404040;
+    color: #fff;
+    transition: background-color 0.2s;
+}
+
+.footer-social a:hover,
+.footer-social a:focus {
+    background-color: #0085a1;
+    color: #fff;
+}

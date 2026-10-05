@@ -59,31 +59,29 @@
     <!-- Clean White theme CSS -->
     <link rel="stylesheet" href="{{ "css/hugo-theme-cleanwhite.min.css" | relURL }}">
 
-    <!-- zangshang CSS -->
-    <link rel="stylesheet" href="{{ "css/zanshang.css" | relURL }}">
-
-    <!-- Custom Fonts -->
-    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
-
     <!--  Custom CSS  -->
     {{ range .Site.Params.custom_css -}}
     <link rel="stylesheet" href="{{ . | absURL }}">
     {{- end }}
 
-    <!-- jQuery
-    <script src="{{ "js/jquery.min.js" | relURL }}"></script> -->
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{ "js/bootstrap.min.js" | relURL }}"></script>
+    {{/* Photos come from the album API's image proxy. Opening that
+         connection while the HTML is still parsing saves a DNS + TLS round
+         trip before the first gallery or title image. */}}
+    {{ with site.Params.icloud_api }}<link rel="preconnect" href="{{ . }}">{{ end }}
 
-    <!-- Hux Theme JavaScript -->
-    <script src="{{ "js/hux-blog.min.js" | relURL }}"></script>
+    {{/* Self-hosted, and deferred: they run once the HTML is parsed, so they
+         no longer block the first paint. Nothing on the page calls jQuery
+         inline any more — the theme footer scripts that did are gone — and
+         defer keeps the order bootstrap.js and hux-blog.js depend on.
+         jQuery is the exact 1.12.4 build the site loaded from
+         code.jquery.com (same SRI hash). The theme's lazysizes.min.js went
+         unused (every image uses native loading="lazy") and is no longer
+         loaded; nor are Font Awesome (replaced by inline SVG icons in the
+         footer) and zanshang.css (the theme's disabled "reward" feature). */}}
+    <script defer src="{{ "vendor/jquery-1.12.4.min.js" | relURL }}"></script>
+    <script defer src="{{ "js/bootstrap.min.js" | relURL }}"></script>
+    <script defer src="{{ "js/hux-blog.min.js" | relURL }}"></script>
 
-    <!-- lazy load image JavaScript -->
-    <script src="{{ "js/lazysizes.min.js" | relURL }}"></script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.css" integrity="sha256-sCl5PUOGMLfFYctzDW3MtRib0ctyUvI9Qsmq2wXOeBY=" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/default-skin/default-skin.min.css" integrity="sha256-BFeI1V+Vh1Rk37wswuOYn5lsTcaU96hGaI7OUVCLjPc=" crossorigin="anonymous" />
     <!-- Custom JS -->
     {{ range .Site.Params.custom_js }}
     <script src="{{ . | absURL }}"></script>
