@@ -107,3 +107,4 @@ Uses [giscus](https://giscus.app) (GitHub Discussions) — config is under `[par
 - Photos are never committed — they are served through the API's image proxy, which caches them at the edge. `static/img/thumbs/*.jpg` and `static/img/full/*.jpg` remain gitignored.
 - Adding a post with a new album, or photos to an existing one, needs no extra step: the next deploy picks them up.
 - `public/` is gitignored; never commit the build output.
+- No analytics or tracking. Google Analytics was removed because it set cookies without consent, which is a GDPR problem for a German site; adding any tracker back needs a consent mechanism first.
