@@ -37,6 +37,12 @@
   {{ if or (not $sample.photoGuid) (not $sample.thumbWidth) }}
     {{ errorf "album %q came back without photoGuid/dimensions — the deployed album API predates the image proxy. Deploy the API before this site." $album }}
   {{ end }}
+  {{/* Same for the resized "small" (≤512px) and "medium" (≤1024px) sizes,
+       which the gallery tiles, the homepage cards and the link previews use:
+       without them every one of those URLs would 400. */}}
+  {{ if or (not $sample.smallWidth) (not $sample.mediumWidth) }}
+    {{ errorf "album %q came back without smallWidth/mediumWidth — the deployed album API predates the resized image sizes. Deploy icloud-shared-album-go with /img/…/small and /medium before this site." $album }}
+  {{ end }}
 {{ end }}
 
 {{ return $photos }}
