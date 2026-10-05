@@ -18,7 +18,10 @@
       {{ $description = . }}
     {{ else }}
       {{ if eq .Kind "page" }}
-        {{ $description = .Summary | plainify | htmlUnescape | strings.TrimSpace | truncate 160 }}
+        {{/* "29.06.-03.07.2024 - Rio de Janeiro: Die letzten Tage …" */}}
+        {{ $description = partial "plain-summary.html" (dict "page" . "length" 1000) }}
+        {{ with partial "post-lead.html" . }}{{ $description = printf "%s: %s" . $description }}{{ end }}
+        {{ $description = $description | truncate 160 }}
       {{ else if eq .Kind "term" }}
         {{ $description = printf "Alle Posts aus %s – %s" .Title site.Params.description }}
       {{ else }}
