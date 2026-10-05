@@ -2,8 +2,8 @@
 title: "#P04 - Feiertage"
 date: 2026-01-06
 author: Kerstin
-categories: ["Thailand“ , “Koh Phi Phi"]
-countries: [„Thailand“]
+categories: ["Thailand", "Koh Phi Phi"]
+countries: ["Thailand"]
 featured: 18
 album: D2Rv3dsjVYU-uKhLFortfmKBwgQCAEQARogRyM3hJM7Lqg2dX03GxlIZvPtyQM7W9eFVNP9WBhUgiM
 draft: true
