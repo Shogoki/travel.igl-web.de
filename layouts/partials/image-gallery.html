@@ -18,15 +18,15 @@
 {{ $photos := partial "album-photos.html" (dict "api" $api "album" $album "where" .context.RelPermalink) }}
 {{ if $photos }}
 
-<link rel="stylesheet" href="{{ "css/hugo-easy-gallery.css" | relURL }}" />
-
-<div id="single-gallery" class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom itemscope">
+{{/* Styled by static/css/gallery.css alone (loaded site-wide via
+     custom_css). The hugo-easy-gallery stylesheet it used to pull in is gone. */}}
+<div id="single-gallery" class="gallery" itemscope itemtype="http://schema.org/ImageGallery">
 	{{ range $index, $photo := $photos }}
 	{{/* The .jpg suffix is what makes these cacheable at the edge: a CDN's
 	     default cache level decides from the file extension, and an
 	     extensionless URL is treated as dynamic however long its max-age. */}}
 	{{ $base := printf "%s/img/%s/%s" $api $album $photo.photoGuid }}
-	<div class="box fancy-figure caption-position-bottom caption-effect-slide" data-guid="{{ $album }}-{{ $index }}">
+	<div class="box" data-guid="{{ $album }}-{{ $index }}">
 		<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
 			<div class="img">
 				{{/* The first few tiles are above the fold on most screens; the
