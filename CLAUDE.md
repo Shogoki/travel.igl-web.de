@@ -31,12 +31,14 @@ There are no tests, linters, or package managers — the entire toolchain is Hug
 
 ## Deployment
 
-`.github/workflows/hugo.yml` deploys on every push to `main` (and runs on PRs):
+`.github/workflows/hugo.yml` deploys on every push to `main`. It also runs on PRs, but there it only builds:
 
 1. Checks out with submodules (required for the theme).
-2. Installs latest Hugo (non-extended) via `peaceiris/actions-hugo`.
+2. Installs a **pinned** Hugo version (non-extended) via `peaceiris/actions-hugo`. Bump it deliberately and build locally with the new version first — an unpinned "latest" is how Hugo v0.146 silently broke every post layout.
 3. Runs `hugo --minify`.
-4. Publishes `./public` to the `gh-pages` branch via `peaceiris/actions-gh-pages`, with `cname: travel.igl-web.de`.
+4. On `main` only: publishes `./public` to the `gh-pages` branch via `peaceiris/actions-gh-pages`, with `cname: travel.igl-web.de`. The `if:` guard on this step is what keeps PRs from going live before they are merged — don't remove it.
+
+Deploys are serialized by a `concurrency` group and never cancelled, so an older build can't overwrite a newer one.
 
 Don't edit `gh-pages` directly — it is overwritten on every deploy. The commented-out Cloudflare purge step is intentionally disabled.
 
@@ -75,7 +77,7 @@ The way around that is the API's image proxy. `{{ icloud_api }}/img/{album}/{pho
 - `layouts/partials/post_list.html` renders each card's title image from `.Params.featured`, an index into the album (oldest photo first). It used to show a `placehold.jp` placeholder and have JS fetch the whole album per card — ten uncached API round trips before the first title image could start loading.
 - `layouts/partials/image-gallery.html` builds the post gallery and emits static `<figure>` markup: a `thumb` URL for the tile, a `full` URL on the `<a>` for PhotoSwipe, real `width`/`height`, and `loading="lazy"` past the first three tiles. The full-size image is fetched only when the lightbox opens. Nothing about the gallery is fetched by the browser.
 - A failed album fetch calls `errorf`, which **fails the build**. This is on purpose: a warning would ship posts with no photos and nobody would notice. Error handling uses the `try` keyword — `.Err` on a resource was removed in Hugo v0.141.
-- Hugo caches remote fetches on disk, so repeat local builds are instant; the first build after clearing the cache takes ~90s for all 94 albums.
+- Hugo caches remote fetches on disk, so repeat local builds are instant; the first build after clearing the cache takes ~90s for all 94 albums. `[caches.getresource] maxAge = "1h"` in `config.toml` makes local builds refetch albums after an hour — Hugo's default is to keep them forever, which hid newly added photos. CI always starts with an empty cache.
 - `icloud_api` is configured in `config.toml` (default: `https://icloud-api.evolution-web.de`). To develop against a local API, put the override in an untracked `config.local.toml` and run `hugo server --config config.toml,config.local.toml`. That file also needs a `[security.http]` block: Hugo's default policy permits ordinary https hosts but blocks `localhost` and raw IPs.
 - `static/css/gallery.css` makes the `<img>` the visible tile. hugo-easy-gallery ships `.gallery img { display: none }` and paints tiles as a `background-image`, which is what used to force the full-size original into every tile. Keep the override if you touch that CSS, and keep `margin: 0` on it — the theme's `.post-container img` rule otherwise pushes the tile out of its square.
 

@@ -97,3 +97,9 @@ home = ["HTML", "RSS"]
     data_theme="light"
     data_lang="de"
     crossorigin="anonymous"
+
+# Hugo keeps remotely fetched resources forever by default, so a local build
+# never noticed photos added to an existing album. CI starts with an empty
+# cache and always fetches fresh; this only changes local builds.
+[caches.getresource]
+  maxAge = "1h"
