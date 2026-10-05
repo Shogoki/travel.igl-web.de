@@ -93,7 +93,7 @@ Before editing a partial, check whether the override exists locally; if not, cop
 
 ### Comments
 
-Uses [giscus](https://giscus.app) (GitHub Discussions) — config is under `[params.giscus]` in `config.toml`, wired into posts via the theme's comments partial (overridden in `layouts/partials/comments.html`). `disqus_site` and `twikoo_env_id` are present but empty.
+Uses [giscus](https://giscus.app) (GitHub Discussions) — config is under `[params.giscus]` in `config.toml` and rendered by `layouts/partials/comments.html`. Each post's thread is a Discussion in the "Show and tell" category of this repo, matched by pathname, so **renaming a post's URL detaches its comments** (an `aliases` entry does not carry them over). giscus needs Discussions enabled on the repo and the giscus GitHub App installed on it. The site used Cusdis's hosted service until cusdis.com went down; those old comments lived on Cusdis and are not migrated. `disqus_site` and `twikoo_env_id` are present but empty.
 
 ### Site-wide data files
 

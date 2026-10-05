@@ -88,6 +88,7 @@ home = ["HTML", "RSS"]
   [params.giscus]
     data_repo="Shogoki/travel.igl-web.de"
     data_repo_id="R_kgDOIJDC8A"
+    data_category="Show and tell"
     data_category_id="DIC_kwDOIJDC8M4CR0fv"
     data_mapping="pathname"
     data_strict="0"
