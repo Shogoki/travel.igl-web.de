@@ -31,7 +31,7 @@ home = ["HTML", "RSS"]
   title_404 = "Seite nicht gefunden"
   omit_categories = true
 
-  custom_css = ["css/custom-nav.css", "css/gallery.css", "css/footer.css", "css/post-list.css"]
+  custom_css = ["css/custom-nav.css", "css/gallery.css", "css/footer.css", "css/post-list.css", "css/header.css"]
 
   # Footer icons exist for: email, twitter, instagram, facebook, mastodon,
   # github, rss (see layouts/partials/footer.html).
