@@ -9,15 +9,18 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div style="margin-top:70px;color:white;">Wir sind gerade hier: <a style="color:white;text-decoration: underline;" href="{{ hugo.Data.location.url }}">{{ hugo.Data.location.name }}</a></div>
-            </div>  
-        </div>
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
                 <div class="site-heading">
+                    {{/* Current location, from data/location.yaml. It used to sit
+                         in a row of its own, left-aligned above the centred
+                         title, styled inline. */}}
+                    {{ with hugo.Data.location }}
+                    <a class="location-badge" href="{{ .url }}" target="_blank" rel="noopener">
+                        <span class="location-badge-label">Wir sind gerade hier:</span>
+                        <strong>{{ .name }}</strong>
+                    </a>
+                    {{ end }}
                     <h1>{{ .Site.Title}} </h1>
-                    <!--<hr class="small">-->
-		    <span class="subheading">{{ .Site.Params.slogan }}</span>
+                    {{ with .Site.Params.slogan }}<span class="subheading">{{ . }}</span>{{ end }}
                 </div>
             </div>
         </div>
