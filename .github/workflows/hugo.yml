@@ -8,26 +8,31 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-# permissions:
-#   contents: read
-#   pages: write
-#   id-token: write
+# Pushing to gh-pages needs write access; nothing else does.
+permissions:
+  contents: write
 
+# Deploys run one at a time and are never cancelled, so an older build can
+# never overwrite a newer one. A new push to a PR just supersedes its old run.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   deploy:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7
         with:
           submodules: true # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
 
       - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+        uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "latest"
+          # Pinned on purpose. Hugo v0.146 changed template lookup and every
+          # post silently lost its layout while this said "latest". Bump it
+          # deliberately, and check a local build with the new version first.
+          hugo-version: "0.167.0"
           # extended: true
 
       - name: Build
@@ -37,8 +42,12 @@ jobs:
           # than publishing posts with no photos. Re-run once the API is back.
           hugo --minify
 
+      # Pull requests build — that is the check — but must never publish.
+      # Without this guard every PR from a branch in this repo went live on
+      # travel.igl-web.de before it was merged.
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
@@ -49,4 +58,3 @@ jobs:
           # Zone is required by both authentication methods
       #    CLOUDFLARE_ZONE: ${{ secrets.CLOUDFLARE_ZONE }}
       #    CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_KEY }}
-
