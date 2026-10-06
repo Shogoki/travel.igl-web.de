@@ -1,42 +1,43 @@
-/* Galerie-Kacheln
+/* Galerie
  *
- * hugo-easy-gallery paints each tile as a background-image on `.img` and hides
- * the `<img>` outright (`.gallery img { display: none }`). That forced the
- * gallery to put the *full-size* original into every tile's background — a
- * 2048px, ~1MB image behind a 246px square — while the thumbnail it also
- * loaded was never displayed at all. A 15-photo post cost 14.9MB.
+ * A plain CSS grid. This used to be hugo-easy-gallery.css (floated boxes
+ * sized with the padding-bottom hack, max-width 768px, a 10px outer margin)
+ * plus a set of overrides here undoing parts of it — it painted tiles as a
+ * background-image and hid the <img>, which forced the full-size original
+ * into every tile. The grid also lines up with the post text now; the old
+ * one sat 15px further in and ended short of the column.
  *
- * Here the `<img>` is the tile. That means the browser gets a real element it
- * can defer with loading="lazy", crawlers can see the photos, and the tile
- * shows the 342px thumbnail instead of the original. The full-size image is
- * fetched only when the lightbox opens.
+ * Markup (layouts/partials/image-gallery.html):
+ *   .gallery > .box > figure > .img > img
+ *                            > a          (full-size link, PhotoSwipe)
+ *                            > figcaption (optional)
  */
-.gallery .img img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 50% 50%;
-    /* The theme gives every image inside .post-container a 1.5em margin, which
-     * is right for a photo dropped into prose and wrong for a grid tile — it
-     * pushes the image out of its square and leaves a band of the placeholder
-     * showing. The old markup never hit this because the <img> was display:none
-     * and the tile was a background-image. */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 0 0 1.5em;
+}
+
+@media (min-width: 480px) {
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.gallery figure {
+    position: relative;
+    aspect-ratio: 1;
     margin: 0;
-    max-width: none;
+    overflow: hidden;
 }
 
-/* The zoom-on-hover effect used to scale the background-image container; it
- * has to move to the image now that the image is what is visible. */
-.gallery.hover-effect-zoom figure:hover .img img {
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
-}
-
-/* A tile has nothing to show until its image arrives. Give it a neutral ground
- * so a lazily-loaded gallery reads as a grid of placeholders rather than as
- * holes in the page. */
+/* A tile has nothing to show until its image arrives. A neutral ground
+ * makes a lazily-loaded gallery read as a grid of placeholders rather than
+ * as holes in the page. */
 .gallery .img {
+    position: absolute;
+    inset: 0;
     background-color: #ececec;
 }
 
@@ -44,4 +45,54 @@
     .gallery .img {
         background-color: #2a2a2a;
     }
+}
+
+.gallery .img img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* The theme gives every image inside .post-container a 1.5em margin and
+     * max-width: 100% — right for a photo in prose, wrong for a grid tile. */
+    margin: 0;
+    max-width: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery figure:hover .img img {
+    transform: scale(1.05);
+}
+
+/* The full-size link covers the whole tile: it is what PhotoSwipe opens,
+ * and what keyboard users tab to. */
+.gallery figure a {
+    position: absolute;
+    inset: 0;
+    cursor: zoom-in;
+}
+
+.gallery figure a:focus-visible {
+    outline: 3px solid #0085a1;
+    outline-offset: -3px;
+}
+
+/* Captions slide up from the bottom edge on hover or keyboard focus. */
+.gallery figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 75%;
+    text-align: center;
+    pointer-events: none;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery figure:hover figcaption,
+.gallery figure:focus-within figcaption {
+    transform: translateY(0);
 }
