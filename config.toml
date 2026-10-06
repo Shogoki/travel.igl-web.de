@@ -19,6 +19,9 @@ home = ["HTML", "RSS"]
   icloud_api="https://icloud-api.evolution-web.de"
   header_image = "img/home-bg-jeep.jpg"
   SEOTitle = "Igl Travel - Crocs around the world"
+  # Used for the homepage's search snippet and link preview; posts use the
+  # start of their own text instead.
+  description = "Reiseblog von Kerstin und Sven: Geschichten und Fotos von unseren Reisen durch Südamerika, Asien, Australien und mehr."
 
   image_404 = "img/404-bg.jpg"
   title_404 = "Seite nicht gefunden"

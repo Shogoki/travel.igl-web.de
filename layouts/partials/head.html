@@ -3,51 +3,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- start ogp -->
-    <meta property="og:site_name" content="{{ .Site.Title }}">
-    <meta property="og:type" content="article">
+    {{/*
+      Link previews (WhatsApp, Signal, Facebook, X, …) and search snippets.
 
-    {{ if .Params.thumbnail }}
-    <meta property="og:image" content="{{ .Site.BaseURL }}{{ .Params.thumbnail }}">
-    <meta property="twitter:image" content="{{ .Site.BaseURL }}{{ .Params.thumbnail }}" />
+      A post previews with its own featured photo — the one its homepage card
+      shows — instead of the same jeep photo on every link. The description
+      is the post's front-matter description if set, otherwise the start of
+      its text; it used to be empty on every page, as was <meta name=title>,
+      which read an undefined param.
+    */}}
+    {{ $title := .Title }}
+    {{ $description := "" }}
+    {{ with .Params.description }}
+      {{ $description = . }}
     {{ else }}
-    <meta property="og:image" content="{{ .Site.BaseURL }}/{{ .Site.Params.header_image }}">
-    <meta property="twitter:image" content="{{ .Site.BaseURL }}/{{ .Site.Params.header_image }}" />
+      {{ if eq .Kind "page" }}
+        {{ $description = .Summary | plainify | htmlUnescape | strings.TrimSpace | truncate 160 }}
+      {{ else if eq .Kind "term" }}
+        {{ $description = printf "Alle Posts aus %s – %s" .Title site.Params.description }}
+      {{ else }}
+        {{ $description = site.Params.description }}
+      {{ end }}
     {{ end }}
 
-    {{ if .Params.title }}
-    <meta name="title" content="{{ .Params.title }}" />
-    <meta property="og:title" content="{{ .Params.title }}" />
-    <meta property="twitter:title" content="{{ .Params.title }}" />
+    {{ $image := site.Params.header_image | absURL }}
+    {{ $imageAlt := site.Title }}
+    {{ $imageWidth := 0 }}
+    {{ $imageHeight := 0 }}
+    {{ with .Params.thumbnail }}
+      {{ $image = . | absURL }}
     {{ else }}
-    <meta name="title" content="{{ .Site.Params.title }}" />
-    <meta property="og:title" content="{{ .Site.Params.title }}" />
-    <meta property="twitter:title" content="{{ .Site.Params.title }}" />
+      {{ with partialCached "featured-photo.html" . .RelPermalink }}
+        {{ $image = printf "%s/full.jpg" .url }}
+        {{ $imageAlt = .photo.caption | default $title }}
+        {{ $imageWidth = .photo.width }}
+        {{ $imageHeight = .photo.height }}
+      {{ end }}
     {{ end }}
 
-    {{ if .Params.description }}
-    <meta name="description" content="{{ .Params.description }}">
-    <meta property="og:description" content="{{ .Params.description }}" />
-    <meta property="twitter:description" content="{{ .Params.description }}" />
-    {{ else }}
-    <meta name="description" content="{{ .Site.Params.description }}">
-    <meta property="og:description" content="{{ .Site.Params.description }}" />
-    <meta property="twitter:description" content="{{ .Site.Params.description }}" />
+    <meta name="description" content="{{ $description }}">
+    <meta property="og:site_name" content="{{ site.Title }}">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:type" content="{{ if eq .Kind "page" }}article{{ else }}website{{ end }}">
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:title" content="{{ $title }}">
+    <meta property="og:description" content="{{ $description }}">
+    <meta property="og:image" content="{{ $image }}">
+    <meta property="og:image:alt" content="{{ $imageAlt }}">
+    {{ with $imageWidth }}<meta property="og:image:width" content="{{ . }}">{{ end }}
+    {{ with $imageHeight }}<meta property="og:image:height" content="{{ . }}">{{ end }}
+    {{ if eq .Kind "page" }}
+    <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+    {{ with .Params.author }}<meta property="article:author" content="{{ . }}">{{ end }}
     {{ end }}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $title }}">
+    <meta name="twitter:description" content="{{ $description }}">
+    <meta name="twitter:image" content="{{ $image }}">
 
-    {{ if .Params.summary }}
-    <meta property="twitter:card" content="{{ .Params.summary }}" />
-    {{ else }}
-    <meta property="twitter:card" content="summary" />
-    {{ end }}
-    <!-- end ogp -->
-
-    <meta name="keyword"  content="{{ .Site.Params.keyword }}">
     <link rel="shortcut icon" href="{{ "img/favicon.ico" | relURL }}">
 
-    <title>{{ if .Title }}{{ .Title }} | {{ .Site.Params.SEOTitle }}{{ else }}{{ .Site.Params.SEOTitle }}{{ end }}</title>
+    {{/* The homepage's own title is the site title, so "Title | SEOTitle"
+         read "Crocs around the world | Igl Travel - Crocs around the world". */}}
+    <title>{{ if or .IsHome (not .Title) }}{{ site.Params.SEOTitle }}{{ else }}{{ .Title }} | {{ site.Params.SEOTitle }}{{ end }}</title>
 
-    <link rel="canonical" href="{{ .RelPermalink }}">
+    <link rel="canonical" href="{{ .Permalink }}">
 
     {{ if .Site.Params.disqus_proxy }}
     <link rel="stylesheet" href="{{ "css/iDisqus.min.css" | relURL }}"/>
