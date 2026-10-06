@@ -87,8 +87,8 @@ The way around that is the API's image proxy. `{{ icloud_api }}/img/{album}/{pho
 The site uses the `hugo-theme-cleanwhite` theme but **overrides** specific templates at the project root (Hugo's lookup order puts `./layouts/` ahead of `./themes/*/layouts/`):
 
 - `layouts/_default/baseof.html` — adds the "Wir sind gerade hier" location banner, reading `data/location.yaml` (`name` + `url`). Update this file to change the displayed current location.
-- `layouts/_default/page.html` — post template; formats dates using German weekday/month lookups in `data/days_german.toml` and `data/months_german.toml`, and injects the image gallery partial before post content. **It must be named `page.html`, not `single.html`.** Hugo v0.146 reworked template lookup so `page.html` outranks `single.html`, and the theme ships its own `_default/page.html`. While this file was called `single.html`, the theme's minimal page template silently won on every build: no galleries, no German dates, no post header, no prev/next — with no build error, because CI installs the latest Hugo.
-- `layouts/partials/*.html` — overrides for `head`, `nav`, `footer`, `comments`, `image-gallery`, `post_list`, `header`.
+- `layouts/_default/page.html` — post template; formats dates with Hugo's own localization (`.Date | time.Format ":date_full"` → "Mittwoch, 3. Juli 2024", driven by `locale = 'de-DE'` in `config.toml`), and injects the image gallery partial before post content. **It must be named `page.html`, not `single.html`.** Hugo v0.146 reworked template lookup so `page.html` outranks `single.html`, and the theme ships its own `_default/page.html`. While this file was called `single.html`, the theme's minimal page template silently won on every build: no galleries, no German dates, no post header, no prev/next — with no build error, because CI installs the latest Hugo.
+- `layouts/partials/*.html` — overrides for `head`, `nav`, `footer`, `comments`, `image-gallery`, `post_list`, `pagination` (German "Neuere/Ältere Posts").
 - `layouts/partials/footer.html` — social links from `[params.social]` as inline SVGs from `assets/icons/` (sources and licences in `assets/icons/README.md`). A configured network without an icon there triggers a build warning. The theme's footer JavaScript (table of contents, tag cloud, FastClick, Baidu, PlantUML, language switcher) is deliberately gone — nothing here used it.
 
 ### Third-party code
@@ -104,13 +104,12 @@ Uses [giscus](https://giscus.app) (GitHub Discussions) — config is under `[par
 ### Site-wide data files
 
 - `data/location.yaml` — current location banner (name + Google Maps URL).
-- `data/days_german.toml`, `data/months_german.toml` — German date name lookups used by `page.html`.
 
 ## Conventions
 
-- Site language is German (`languageCode = 'de-de'`); post titles, UI strings, and date formatting are German. Preserve this when adding content or UI text.
+- Site language is German (`defaultContentLanguage = 'de'`, `locale = 'de-DE'`); post titles, UI strings, and date formatting are German. Preserve this when adding content or UI text.
 - Preserve legacy WordPress URLs via the `aliases` front-matter list when migrating or renaming posts.
-- Photos are never committed — they are served through the API's image proxy, which caches them at the edge. `static/img/thumbs/*.jpg` and `static/img/full/*.jpg` remain gitignored.
+- Photos are never committed — they are served through the API's image proxy, which caches them at the edge.
 - Adding a post with a new album, or photos to an existing one, needs no extra step: the next deploy picks them up.
 - `public/` is gitignored; never commit the build output.
 - No analytics or tracking. Google Analytics was removed because it set cookies without consent, which is a GDPR problem for a German site; adding any tracker back needs a consent mechanism first.

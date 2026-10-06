@@ -1,0 +1,17 @@
+<!-- Pagination -->
+{{/* Overrides the theme's, which said "Newer Posts" / "Older Posts". */}}
+{{ $pag := $.Paginator }}
+{{ if gt $pag.TotalPages 1 }}
+<ul class="pager">
+    {{ if $pag.HasPrev }}
+    <li class="previous">
+        <a href="{{ $pag.Prev.URL }}">&larr; Neuere Posts</a>
+    </li>
+    {{ end }}
+    {{ if $pag.HasNext }}
+    <li class="next">
+        <a href="{{ $pag.Next.URL }}">Ältere Posts &rarr;</a>
+    </li>
+    {{ end }}
+</ul>
+{{ end }}
