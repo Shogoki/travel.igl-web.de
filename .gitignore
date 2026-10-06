@@ -6,3 +6,6 @@ static/img/full/*.jpg
 # Local-only config overrides, e.g. pointing icloud_api at a dev API.
 # Use: hugo server --config config.toml,config.local.toml
 config.local.toml
+
+# Hugo's processed-image cache (route maps). Regenerated on every build.
+resources/
