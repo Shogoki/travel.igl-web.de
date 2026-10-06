@@ -1,7 +1,6 @@
 public
 .DS_Store
-static/img/thumbs/*.jpg
-static/img/full/*.jpg
+.hugo_build.lock
 
 # Local-only config overrides, e.g. pointing icloud_api at a dev API.
 # Use: hugo server --config config.toml,config.local.toml

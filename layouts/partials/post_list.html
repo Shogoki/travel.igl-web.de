@@ -50,13 +50,7 @@
             {{ end }}
         {{ end }}
     {{ else }}
-        geposted von {{ with .Params.author }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }} am {{ index site.Data.days_german (printf "%s" .Date.Weekday) }}, {{ .Date.Day }}. {{ index site.Data.months_german (printf "%d" .Date.Month) }} {{ .Date.Year }}
-
-       
-        <!-- Don't show "Last Modified on" if update happened on the same day. -->
-        {{ if (and (not .Lastmod.IsZero) (not (eq (dateFormat "2006-01-02" .Lastmod) (dateFormat "2006-01-02" .Date)))) }}
-            <br>Last Modified on {{ dateFormat "Monday, January 2, 2006" .Params.LastMod }} 
-        {{ end }}
+        geposted von {{ with .Params.author }}{{ . }}{{ else }}{{ .Site.Title }}{{ end }} am {{ .Date | time.Format ":date_full" }}
     {{ end }}
     </p>
 
