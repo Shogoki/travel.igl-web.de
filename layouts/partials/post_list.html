@@ -1,5 +1,4 @@
 <!-- post list -->
-{{ $api := .Site.Params.icloud_api }}
 
 
 {{ range $index, $element := $.Paginator.Pages }}
@@ -19,30 +18,19 @@
           card just to pick one photo out of it — ten uncached API round trips
           before the first title image could even start loading.
 
-          .Params.featured indexes the album, oldest photo first.
+          The photo is chosen by the featured-photo partial (.Params.featured
+          indexes the album), which <head> also uses for the link preview.
         */}}
-        {{ $album := .Params.album }}
-        {{ if $album }}
-          {{ $photos := partial "album-photos.html" (dict "api" $api "album" $album "where" .RelPermalink) }}
-          {{ if $photos }}
-            {{/* `with` rather than a default: featured: 0 is a real value and
-                 would be treated as unset by anything truthiness-based. */}}
-            {{ $i := 0 }}
-            {{ with .Params.featured }}{{ $i = int . }}{{ end }}
-            {{ if ge $i (len $photos) }}
-              {{ warnf "post_list: %s asks for featured photo %d but album %q has only %d — using the last one" $element.RelPermalink $i $album (len $photos) }}
-              {{ $i = sub (len $photos) 1 }}
-            {{ end }}
-            {{ $photo := index $photos $i }}
+        {{ with partialCached "featured-photo.html" . .RelPermalink }}
+            {{ $photo := .photo }}
             <div class="post-featured-image">
-              <img src="{{ $api }}/img/{{ $album }}/{{ $photo.photoGuid }}/thumb.jpg"
+              <img src="{{ .url }}/thumb.jpg"
                 width="{{ $photo.thumbWidth }}" height="{{ $photo.thumbHeight }}"
                 alt="{{ with $photo.caption }}{{ . }}{{ else }}{{ $element.Title }}{{ end }}"
                 decoding="async"
                 {{/* The first two cards are above the fold on most screens. */}}
                 {{ if ge $index 2 }}loading="lazy"{{ end }}>
             </div>
-          {{ end }}
         {{ end }}
         <div class="post-content-preview">
 	{{ with .Description }}
