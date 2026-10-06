@@ -1,12 +1,29 @@
- <div id="comments">
- <!-- Comments by Cusdis -->
- <h4>Kommentare:</h4>
- <div id="cusdis_thread" data-host="https://cusdis.com"
-   data-app-id="2948e03a-8e60-4f23-b138-163e178b1f30"
-   {{ with .File}}
-     data-page-id="{{ .UniqueID }}"
-   {{ end }}
-     data-page-url="{{ .Permalink }}"
-   data-page-title="{{ .Title }}"></div>
- <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
+{{/*
+  Comments via giscus: each post's thread is a GitHub Discussion in this repo,
+  matched by pathname. Configured under [params.giscus] in config.toml.
+
+  This used to be Cusdis's hosted service, which went down (cusdis.com
+  answers 521) and took every comment section with it. giscus only depends
+  on GitHub, which this site is already built and hosted on.
+*/}}
+{{ with site.Params.giscus }}
+<div id="comments">
+<h4>Kommentare:</h4>
+<script src="https://giscus.app/client.js"
+        data-repo="{{ .data_repo }}"
+        data-repo-id="{{ .data_repo_id }}"
+        data-category="{{ .data_category }}"
+        data-category-id="{{ .data_category_id }}"
+        data-mapping="{{ .data_mapping }}"
+        data-strict="{{ .data_strict }}"
+        data-reactions-enabled="{{ .data_reactions_enabled }}"
+        data-emit-metadata="{{ .data_emit_metadata }}"
+        data-input-position="{{ .data_input_position }}"
+        data-theme="{{ .data_theme }}"
+        data-lang="{{ .data_lang }}"
+        data-loading="lazy"
+        crossorigin="{{ .crossorigin }}"
+        async>
+</script>
 </div>
+{{ end }}

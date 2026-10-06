@@ -48,10 +48,15 @@
 	{{ end }}
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js"
-	integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js"
-	integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+{{/* PhotoSwipe 4.1.1, self-hosted (byte-identical to the cdnjs files the
+     site used, same SRI hashes) and only on pages that have a gallery — its
+     CSS used to be in <head> on every page. The scripts are deferred so they
+     no longer block rendering of the post text below; they still run before
+     DOMContentLoaded, which is when the init below binds the figures. */}}
+<link rel="stylesheet" href="{{ "vendor/photoswipe/photoswipe.min.css" | relURL }}">
+<link rel="stylesheet" href="{{ "vendor/photoswipe/default-skin/default-skin.min.css" | relURL }}">
+<script defer src="{{ "vendor/photoswipe/photoswipe.min.js" | relURL }}"></script>
+<script defer src="{{ "vendor/photoswipe/photoswipe-ui-default.min.js" | relURL }}"></script>
 
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
