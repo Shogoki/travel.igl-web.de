@@ -32,8 +32,17 @@
 				{{/* The first few tiles are above the fold on most screens; the
 				     rest are lazy so a 15-photo post does not fetch 15 images
 				     before it can paint. */}}
-				<img src="{{ $base }}/thumb.jpg"
-					width="{{ $photo.thumbWidth }}" height="{{ $photo.thumbHeight }}"
+				{{/* small (≤640px) covers a ~230px tile even on a retina
+				     screen, portrait photos included, at about the bytes of
+				     iCloud's own 342px preview. sizes is the tile width per
+				     Bootstrap breakpoint, as laid out by gallery.css — except
+				     on 3x phones, where it claims two thirds of the tile so
+				     the browser picks for 2x: a third more pixels on a 175px
+				     tile cannot be seen, but would double the download. */}}
+				<img src="{{ $base }}/small.jpg"
+					srcset="{{ $base }}/small.jpg {{ $photo.smallWidth }}w, {{ $base }}/medium.jpg {{ $photo.mediumWidth }}w"
+					sizes="(min-width: 1200px) 236px, (min-width: 992px) 253px, (min-width: 768px) 233px, (min-width: 480px) calc((100vw - 50px) / 3), (min-resolution: 2.5dppx) calc((100vw - 40px) / 3), calc((100vw - 40px) / 2)"
+					width="{{ $photo.smallWidth }}" height="{{ $photo.smallHeight }}"
 					alt="{{ with $photo.caption }}{{ . }}{{ else }}Reisefoto{{ end }}"
 					itemprop="thumbnail"
 					decoding="async"

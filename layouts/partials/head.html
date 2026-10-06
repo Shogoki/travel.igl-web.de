@@ -34,10 +34,13 @@
       {{ $image = . | absURL }}
     {{ else }}
       {{ with partialCached "featured-photo.html" . .RelPermalink }}
-        {{ $image = printf "%s/full.jpg" .url }}
+        {{/* medium (≤1024px, ~60–260KB) rather than the original: WhatsApp
+             skips preview images much over 600KB, and the originals are
+             often over 1MB. 1024px is plenty for any preview card. */}}
+        {{ $image = printf "%s/medium.jpg" .url }}
         {{ $imageAlt = .photo.caption | default $title }}
-        {{ $imageWidth = .photo.width }}
-        {{ $imageHeight = .photo.height }}
+        {{ $imageWidth = .photo.mediumWidth }}
+        {{ $imageHeight = .photo.mediumHeight }}
       {{ end }}
     {{ end }}
 
