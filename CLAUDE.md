@@ -49,8 +49,9 @@ The build fetches every album from the API, so a deploy takes about 90s longer t
 ### Content model
 
 - `content/post/*.md` — blog posts, filename-prefixed with an ordinal (`1-…`, `2-…`, … `83-…`, plus a later Brazil series `b01-…`, `b02-…`, `B30-…`). This ordering is **semantic**: Hugo's `PrevInSection`/`NextInSection` navigation in `layouts/_default/page.html` relies on date ordering, but humans sort/read by these numbers. Keep them monotonic when adding posts.
-- `content/unsere-route.md` — standalone page linked from the nav menu (see `params.addtional_menus` in `config.toml`).
+- `content/unsere-route.md` — standalone page linked from the nav menu (see `params.addtional_menus` in `config.toml`). Its maps use `{{< figure src="/img/…png" width="300px" >}}`; the source PNGs live in **`assets/img/`** (not `static/`), and `layouts/shortcodes/figure.html` resizes each to twice its display width and re-encodes it as lazy-loaded WebP at build time. Add new maps to `assets/img/` too — the shortcode fails the build if the file isn't there.
 - `archetypes/default.md` — front-matter template for `hugo new`; sets `draft: true`.
+- `static/img/home-bg-jeep.jpg` (the header photo) is 1920px wide, JPEG q60 — the 4032px original was 700KB on every page. Keep replacements around that size.
 
 Typical post front matter (see `content/post/1-aufbruch-in-eine-unbekannte-welt.md`):
 
@@ -88,12 +89,17 @@ The site uses the `hugo-theme-cleanwhite` theme but **overrides** specific templ
 - `layouts/_default/baseof.html` — adds the "Wir sind gerade hier" location banner, reading `data/location.yaml` (`name` + `url`). Update this file to change the displayed current location.
 - `layouts/_default/page.html` — post template; formats dates using German weekday/month lookups in `data/days_german.toml` and `data/months_german.toml`, and injects the image gallery partial before post content. **It must be named `page.html`, not `single.html`.** Hugo v0.146 reworked template lookup so `page.html` outranks `single.html`, and the theme ships its own `_default/page.html`. While this file was called `single.html`, the theme's minimal page template silently won on every build: no galleries, no German dates, no post header, no prev/next — with no build error, because CI installs the latest Hugo.
 - `layouts/partials/*.html` — overrides for `head`, `nav`, `footer`, `comments`, `image-gallery`, `post_list`, `header`.
+- `layouts/partials/footer.html` — social links from `[params.social]` as inline SVGs from `assets/icons/` (sources and licences in `assets/icons/README.md`). A configured network without an icon there triggers a build warning. The theme's footer JavaScript (table of contents, tag cloud, FastClick, Baidu, PlantUML, language switcher) is deliberately gone — nothing here used it.
+
+### Third-party code
+
+jQuery 1.12.4 and PhotoSwipe 4.1.1 are self-hosted under `static/vendor/`, byte-identical to the CDN builds the site used to load (same SRI hashes). jQuery, `bootstrap.js` and the theme's `hux-blog.js` load with `defer`, so **no inline script may call `$` or `jQuery` at parse time** — wrap such code in a `DOMContentLoaded` listener. PhotoSwipe's CSS and JS are only included by `image-gallery.html`, i.e. only on posts with a gallery.
 
 Before editing a partial, check whether the override exists locally; if not, copy from `themes/hugo-theme-cleanwhite/layouts/...` into `./layouts/...` rather than editing inside the submodule.
 
 ### Comments
 
-Uses [giscus](https://giscus.app) (GitHub Discussions) — config is under `[params.giscus]` in `config.toml`, wired into posts via the theme's comments partial (overridden in `layouts/partials/comments.html`). `disqus_site` and `twikoo_env_id` are present but empty.
+Uses [giscus](https://giscus.app) (GitHub Discussions) — config is under `[params.giscus]` in `config.toml` and rendered by `layouts/partials/comments.html`. Each post's thread is a Discussion in the "Show and tell" category of this repo, matched by pathname, so **renaming a post's URL detaches its comments** (an `aliases` entry does not carry them over). giscus needs Discussions enabled on the repo and the giscus GitHub App installed on it. The site used Cusdis's hosted service until cusdis.com went down; those old comments lived on Cusdis and are not migrated. `disqus_site` and `twikoo_env_id` are present but empty.
 
 ### Site-wide data files
 
@@ -107,3 +113,4 @@ Uses [giscus](https://giscus.app) (GitHub Discussions) — config is under `[par
 - Photos are never committed — they are served through the API's image proxy, which caches them at the edge. `static/img/thumbs/*.jpg` and `static/img/full/*.jpg` remain gitignored.
 - Adding a post with a new album, or photos to an existing one, needs no extra step: the next deploy picks them up.
 - `public/` is gitignored; never commit the build output.
+- No analytics or tracking. Google Analytics was removed because it set cookies without consent, which is a GDPR problem for a German site; adding any tracker back needs a consent mechanism first.
