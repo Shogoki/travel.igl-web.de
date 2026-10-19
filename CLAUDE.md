@@ -49,8 +49,9 @@ The build fetches every album from the API, so a deploy takes about 90s longer t
 ### Content model
 
 - `content/post/*.md` — blog posts, filename-prefixed with an ordinal (`1-…`, `2-…`, … `83-…`, plus a later Brazil series `b01-…`, `b02-…`, `B30-…`). This ordering is **semantic**: Hugo's `PrevInSection`/`NextInSection` navigation in `layouts/_default/page.html` relies on date ordering, but humans sort/read by these numbers. Keep them monotonic when adding posts.
-- `content/unsere-route.md` — standalone page linked from the nav menu (see `params.addtional_menus` in `config.toml`).
+- `content/unsere-route.md` — standalone page linked from the nav menu (see `params.addtional_menus` in `config.toml`). Its maps use `{{< figure src="/img/…png" width="300px" >}}`; the source PNGs live in **`assets/img/`** (not `static/`), and `layouts/shortcodes/figure.html` resizes each to twice its display width and re-encodes it as lazy-loaded WebP at build time. Add new maps to `assets/img/` too — the shortcode fails the build if the file isn't there.
 - `archetypes/default.md` — front-matter template for `hugo new`; sets `draft: true`.
+- `static/img/home-bg-jeep.jpg` (the header photo) is 1920px wide, JPEG q60 — the 4032px original was 700KB on every page. Keep replacements around that size.
 
 Typical post front matter (see `content/post/1-aufbruch-in-eine-unbekannte-welt.md`):
 
@@ -98,7 +99,7 @@ Before editing a partial, check whether the override exists locally; if not, cop
 
 ### Comments
 
-Uses [giscus](https://giscus.app) (GitHub Discussions) — config is under `[params.giscus]` in `config.toml`, wired into posts via the theme's comments partial (overridden in `layouts/partials/comments.html`). `disqus_site` and `twikoo_env_id` are present but empty.
+Uses [giscus](https://giscus.app) (GitHub Discussions) — config is under `[params.giscus]` in `config.toml` and rendered by `layouts/partials/comments.html`. Each post's thread is a Discussion in the "Show and tell" category of this repo, matched by pathname, so **renaming a post's URL detaches its comments** (an `aliases` entry does not carry them over). giscus needs Discussions enabled on the repo and the giscus GitHub App installed on it. The site used Cusdis's hosted service until cusdis.com went down; those old comments lived on Cusdis and are not migrated. `disqus_site` and `twikoo_env_id` are present but empty.
 
 ### Site-wide data files
 
@@ -111,3 +112,4 @@ Uses [giscus](https://giscus.app) (GitHub Discussions) — config is under `[par
 - Photos are never committed — they are served through the API's image proxy, which caches them at the edge.
 - Adding a post with a new album, or photos to an existing one, needs no extra step: the next deploy picks them up.
 - `public/` is gitignored; never commit the build output.
+- No analytics or tracking. Google Analytics was removed because it set cookies without consent, which is a GDPR problem for a German site; adding any tracker back needs a consent mechanism first.
