@@ -1,0 +1,44 @@
+{{/*
+  Overrides the theme's figure shortcode (hugo-easy-gallery), which is only
+  used for the route maps on /unsere-route/.
+
+  The theme's version linked the source file as-is. The maps are 1100–1500px
+  screenshots, up to 1.2MB each, shown 300–700px wide — the page fetched
+  ~8.6MB of PNG, all of it eagerly. Here each map is resized to twice the
+  width it is shown at (sharp on retina screens), re-encoded as WebP and
+  loaded lazily. The originals live in assets/img/ so Hugo can process them.
+
+  Params, all as before:
+    src     path of the image, e.g. "/img/route_peru.png"
+    width   display width, e.g. "300px" (the theme's max-width); default:
+            the full post column
+    height  ignored, as the theme ignored it — the aspect ratio comes from
+            the image
+    alt / caption  optional
+*/}}
+{{- $src := .Get "src" -}}
+{{- $maxWidth := .Get "width" -}}
+{{- $alt := .Get "alt" | default (.Get "caption") | default "Karte unserer Route" -}}
+{{- $img := resources.Get (strings.TrimPrefix "/" $src) -}}
+{{- if not $img -}}
+  {{- errorf "figure: %q not found under assets/ (%s)" $src .Position -}}
+{{- end -}}
+
+{{/* The post column is at most ~750px; double it for retina screens. */}}
+{{- $target := 1500 -}}
+{{- with $maxWidth -}}{{- $target = mul 2 (int (strings.TrimSuffix "px" .)) -}}{{- end -}}
+{{- $out := "" -}}
+{{- if gt $img.Width $target -}}
+  {{- $out = $img.Resize (printf "%dx webp q80" $target) -}}
+{{- else -}}
+  {{- $out = $img.Process "webp q80" -}}
+{{- end -}}
+
+{{/* Inline styles: this is the only figure on the site, and a stylesheet of
+     its own would be one more request on every page. height:auto keeps the
+     aspect ratio once the theme's max-width:100% shrinks the image. */}}
+<figure class="route-map" style="margin:1.5em 0{{ with $maxWidth }};max-width:{{ . }}{{ end }}">
+  <img src="{{ $out.RelPermalink }}" width="{{ $out.Width }}" height="{{ $out.Height }}"
+    style="height:auto;margin:0" alt="{{ $alt }}" loading="lazy" decoding="async">
+  {{- with .Get "caption" }}<figcaption>{{ . }}</figcaption>{{ end }}
+</figure>
