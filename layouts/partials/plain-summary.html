@@ -1,0 +1,17 @@
+{{/*
+  A page's summary as one line of plain text, for card excerpts and link
+  previews. Params: page, length (characters).
+
+  .Summary is HTML, and plainify on its own runs every block together:
+  "08.12.-23.12.2025 - Koh Phi Phi Der erste Monat Allgemein Meine Ohr…".
+  Headings are dropped — including the "dates – places" line every post opens
+  with, which post-lead.html returns on its own — the first paragraph break
+  becomes a dash, and the rest become spaces.
+*/}}
+{{ $html := .page.Summary | string }}
+{{ $html = $html | replaceRE `(?s)<h[1-6][^>]*>.*?</h[1-6]>` " " }}
+{{ $html = replaceRE `</p>\s*<p[^>]*>` " – " $html 1 }}
+{{ $text := $html | replaceRE `</(p|li|div|blockquote)>` " " | plainify | htmlUnescape }}
+{{ $text = $text | replaceRE `\s+` " " | strings.TrimSpace }}
+{{ $text = $text | truncate (.length | default 220) }}
+{{ return $text }}
