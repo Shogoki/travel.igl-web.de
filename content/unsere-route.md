@@ -70,7 +70,7 @@ date: 2026-09-13
 
 11.09 – 12.09. – Flug von Frankfurt 🇩🇪 nach Lima 🇵🇪
 
-# Peru 🇵🇪
+### Peru 🇵🇪
 
 {{< figure src="/img/route_peru.png"  height="430px" width="300px">}}
 
@@ -94,13 +94,13 @@ date: 2026-09-13
 - 21.10. - 23.10. Frachtschiff Iquitos - Santa Rosa
 - 23.10. Boot nach Leticia, Kolumbien 🇨🇴 
 
-# Tri-Border Zone (Peru, Kolumbien, Brasilien) 🇵🇪🇨🇴🇧🇷
+### Tri-Border Zone (Peru, Kolumbien, Brasilien) 🇵🇪🇨🇴🇧🇷
 
 {{< figure src="/img/route_triborder.png"  height="360px" width="323px">}}
 
 - 23.10. - 25.10. Leticia 🇨🇴, Triborder-Zone 🇵🇪🇨🇴🇧🇷
 
-# Kolumbien 🇨🇴
+### Kolumbien 🇨🇴
 
 {{< figure src="/img/route_kolumbien.png"  height="560px" width="315px">}}
 
@@ -126,11 +126,11 @@ date: 2026-09-13
 - 21.11. - 23.11. Cartagena
 - 23.11. Flug nach San Andres
 - 23.11. - 01.12. San Andres
-- 23.11. Flug nach Cartagena
+- 01.12. Flug nach Cartagena
 - 01.12. - 02.12. Cartagena
 - 02.12. Flug nach Cancun, Mexiko 🇲🇽
 
-# Mexiko 🇲🇽
+### Mexiko 🇲🇽
 
 {{< figure src="/img/route_col-mex.png"  height="360px" width="323px">}}
 
@@ -148,7 +148,7 @@ date: 2026-09-13
 - 13.12. Flug nach Tijuana
 - 14.12. - 15.12. Tijuana
 
-# USA & Kanada 🇺🇸🇨🇦
+### USA & Kanada 🇺🇸🇨🇦
 
 {{< figure src="/img/route_usa_kanada.png"  height="560px" width="315px">}}
 
@@ -163,7 +163,7 @@ date: 2026-09-13
 - 23.12. Vancouver 🇨🇦
 - 23.12 Flug nach Sydney 🇦🇺
 
-# Australien 🇦🇺
+### Australien 🇦🇺
 
 {{< figure src="/img/route_canada-aus.png"  height="315px" width="560px">}}
 
@@ -187,7 +187,7 @@ date: 2026-09-13
 
 {{< figure src="/img/route_aus-ind.png"  height="315px" width="560px">}}
 
-# Indonesien 🇮🇩
+### Indonesien 🇮🇩
 
 {{< figure src="/img/route_indonesien_all.png"  height="315px" width="560px">}}
 
@@ -198,7 +198,7 @@ date: 2026-09-13
 - 29.01. - 25.02. Java
 - 26.02. - 15.03. Sumatra
 
-## Bali & Nusa Penida 🇮🇩
+#### Bali & Nusa Penida 🇮🇩
 
 {{< figure src="/img/route_Bali.png"  height="315px" width="560px">}}
 
@@ -211,14 +211,14 @@ date: 2026-09-13
 - 24.01. - 29.01. Nusa Penida
 - 29.01. Weiterreise nach Java 🇮🇩
 
-## Java 🇮🇩
+#### Java 🇮🇩
 
 {{< figure src="/img/Route_Java.png"  height="315px" width="560px">}}
 
 - 29.01. - 31.01. Banyuwangi
 - 31.01. - 01.02. Probolingo
 - 01.02. - 02.02. Cemoro Lawang (Mt. Bromo)
-- 02.01. - 04.02. Surabaya
+- 02.02. - 04.02. Surabaya
 - 04.02. - 10.02. Yogyakarta
 - 10.02. - 13.02. Solo
 - 13.02. - 15.02. Semarang
@@ -230,19 +230,19 @@ date: 2026-09-13
 - 24.02. - 25.02. Jakarta
 - 25.02. Weiterreise nach Sumatra 🇮🇩
 
-## Sumatra 🇮🇩
+#### Sumatra 🇮🇩
 
 {{< figure src="/img/Route_Sumatra.png">}}
 
 - 26.02. - 27.02. Ranau
 - 27.02. - 28.02. Lahat 
-- 02.03. - 06.02. Payakumbuh 
-- 07.03. - 10.02. Danau Toba/Samosir
-- 10.03. - 13.02. Bukit Lawang
-- 13.03. - 15.02. Medan
+- 02.03. - 06.03. Payakumbuh 
+- 07.03. - 10.03. Danau Toba/Samosir
+- 10.03. - 13.03. Bukit Lawang
+- 13.03. - 15.03. Medan
 - 15.03. Flug nach Penang, Malaysia 🇲🇾
 
-# Malaysia 🇲🇾
+### Malaysia 🇲🇾
 
 {{< figure src="/img/Route_Malaysia.png">}}
 
@@ -262,7 +262,7 @@ date: 2026-09-13
 - 16.04. - 23.04. Langkawi
 - 23.04. Fähre nach Koh Lipe, Thailand 🇹🇭
 
-# Thailand 🇹🇭
+### Thailand 🇹🇭
 
 {{< figure src="/img/Route_Thailand.png">}}
 
@@ -277,7 +277,7 @@ date: 2026-09-13
 - 20.05. - 21.05. Bangkok
 - 22.05. Zug nach Poipet, Kambodscha 🇰🇭
 
-# Kambodscha 🇰🇭
+### Kambodscha 🇰🇭
 
 {{< figure src="/img/Route_Kambodscha.png">}}
 
@@ -293,7 +293,7 @@ date: 2026-09-13
 - 07.06. - 08.06. Kep
 - 08.06. Tuktuk nach Ha Tien, Vietnam 🇻🇳
 
-# Vietnam 🇻🇳
+### Vietnam 🇻🇳
 
 {{< figure src="/img/Route_Vietnam.png">}}
 
@@ -312,7 +312,7 @@ date: 2026-09-13
 - 04.07. - 06.07. Hanoi
 - 07.07. Flug nach Busan, Südkorea 🇰🇷
 
-# Südkorea 🇰🇷
+### Südkorea 🇰🇷
 
 {{< figure src="/img/Route_Südkorea.png">}}
 

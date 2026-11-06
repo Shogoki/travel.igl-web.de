@@ -1,0 +1,120 @@
+/* Beitragskarten (Startseite, Länderseiten)
+ *
+ * Phones: photo on top, text below. From 768px: photo left, text right, so a
+ * page of ten posts can be scanned instead of scrolled through.
+ * Colours are the theme's: #404040 text, #808080 meta, #0085a1 accent.
+ */
+.post-card {
+    display: grid;
+    gap: 14px;
+    padding: 28px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.post-card:first-child {
+    padding-top: 10px;
+}
+
+@media (min-width: 768px) {
+    .post-card {
+        grid-template-columns: 280px 1fr;
+        gap: 24px;
+        align-items: start;
+    }
+}
+
+.post-card-image {
+    display: block;
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: #ececec;
+    aspect-ratio: 3 / 2;
+}
+
+/* The theme gives every image inside .post-container a 1.5em margin and
+ * max-width: 100% — wrong for a cropped card image. */
+.post-card-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    max-width: none;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out;
+}
+
+.post-card-image:hover img {
+    transform: scale(1.04);
+}
+
+/* The "dates – places" line each post opens with. */
+.post-card .post-card-lead {
+    margin: 0 0 4px;
+    color: #0085a1;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+}
+
+.post-card .post-card-title {
+    margin: 0 0 6px;
+    font-size: 24px;
+    line-height: 1.25;
+}
+
+.post-card .post-card-title a {
+    color: #404040;
+}
+
+.post-card .post-card-title a:hover,
+.post-card .post-card-title a:focus {
+    color: #0085a1;
+    text-decoration: none;
+}
+
+.post-card .post-card-subtitle {
+    margin: 0 0 6px;
+    font-size: 17px;
+    font-weight: 300;
+}
+
+.post-card .post-card-meta {
+    margin: 0 0 8px;
+    color: #808080;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.post-card .post-card-meta a {
+    color: #808080;
+    text-decoration: underline;
+}
+
+.post-card .post-card-meta a:hover {
+    color: #0085a1;
+}
+
+/* Three lines at most; the full post is one click away. */
+.post-card .post-card-excerpt {
+    margin: 0 0 8px;
+    font-size: 16px;
+    line-height: 1.55;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.post-card .post-card-more,
+.post-card .post-card-more:hover {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: #0085a1;
+}
+
+.post-card + .pager {
+    margin-top: 30px;
+}

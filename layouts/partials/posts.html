@@ -1,0 +1,15 @@
+{{/*
+  The homepage list. Overrides the theme's, which put the posts in an
+  offset-1 column next to a col-lg-3 sidebar — empty here, since about_me,
+  featured_tags, friends and bookmarks are all off — so the list sat left of
+  centre, out of line with the header above it and with every post page.
+  Same centred column as the post pages now.
+*/}}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-container">
+            {{ partial "post_list.html" . }}
+            {{ partial "pagination.html" . }}
+        </div>
+    </div>
+</div>

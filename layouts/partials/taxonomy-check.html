@@ -1,0 +1,16 @@
+{{/*
+  Fails the build when a country or category was typed with typographic
+  quotes. iOS replaces " with „ “ ” as you type, and YAML then reads
+  countries: [„Thailand“] as a country literally named „Thailand“ — a second
+  Thailand in the Länder menu, holding only that one post. #P03 shipped like
+  that and nobody noticed for months.
+*/}}
+{{ range $taxonomy := slice "countries" "categories" }}
+  {{ range $name, $terms := index site.Taxonomies $taxonomy }}
+    {{ if findRE `[„“”‚‘’«»]` $name }}
+      {{ $pages := slice }}
+      {{ range $terms.Pages }}{{ $pages = $pages | append .File.Path }}{{ end }}
+      {{ errorf "%s %q contains typographic quotes — use plain \" in the front matter of: %s" $taxonomy $name (delimit $pages ", ") }}
+    {{ end }}
+  {{ end }}
+{{ end }}

@@ -1,4 +1,6 @@
 <!-- Navigation -->
+{{/* Cached: the check covers the whole site, so it only needs to run once. */}}
+{{ partialCached "taxonomy-check.html" . "site" }}
 {{ if or (eq .Params.navstyle "invert") (eq .Params.headerstyle "text")  }}
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
 {{ else }}
@@ -32,10 +34,14 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Länder <span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            {{/* $name is Hugo's lowercased key ("südkorea", "usa");
+                                 the term page keeps the spelling from front matter. */}}
                             {{ range $name, $taxonomy := . }}
+                            {{ with $taxonomy.Page }}
                             <li>
-                                <a href="{{ (printf "countries/%s/" ($name | urlize)) | relLangURL }}">{{ $name }} <span class="badge">{{ len $taxonomy.Pages }}</span></a>
+                                <a href="{{ .RelPermalink }}">{{ .LinkTitle }} <span class="badge">{{ len $taxonomy.Pages }}</span></a>
                             </li>
+                            {{ end }}
                             {{ end }}
                         </ul>
                     </li>

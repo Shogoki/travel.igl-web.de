@@ -18,22 +18,31 @@
 {{ $photos := partial "album-photos.html" (dict "api" $api "album" $album "where" .context.RelPermalink) }}
 {{ if $photos }}
 
-<link rel="stylesheet" href="{{ "css/hugo-easy-gallery.css" | relURL }}" />
-
-<div id="single-gallery" class="gallery caption-position-bottom caption-effect-slide hover-effect-zoom itemscope">
+{{/* Styled by static/css/gallery.css alone (loaded site-wide via
+     custom_css). The hugo-easy-gallery stylesheet it used to pull in is gone. */}}
+<div id="single-gallery" class="gallery" itemscope itemtype="http://schema.org/ImageGallery">
 	{{ range $index, $photo := $photos }}
 	{{/* The .jpg suffix is what makes these cacheable at the edge: a CDN's
 	     default cache level decides from the file extension, and an
 	     extensionless URL is treated as dynamic however long its max-age. */}}
 	{{ $base := printf "%s/img/%s/%s" $api $album $photo.photoGuid }}
-	<div class="box fancy-figure caption-position-bottom caption-effect-slide" data-guid="{{ $album }}-{{ $index }}">
+	<div class="box" data-guid="{{ $album }}-{{ $index }}">
 		<figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
 			<div class="img">
 				{{/* The first few tiles are above the fold on most screens; the
 				     rest are lazy so a 15-photo post does not fetch 15 images
 				     before it can paint. */}}
-				<img src="{{ $base }}/thumb.jpg"
-					width="{{ $photo.thumbWidth }}" height="{{ $photo.thumbHeight }}"
+				{{/* small (≤640px) covers a ~230px tile even on a retina
+				     screen, portrait photos included, at about the bytes of
+				     iCloud's own 342px preview. sizes is the tile width per
+				     Bootstrap breakpoint, as laid out by gallery.css — except
+				     on 3x phones, where it claims two thirds of the tile so
+				     the browser picks for 2x: a third more pixels on a 175px
+				     tile cannot be seen, but would double the download. */}}
+				<img src="{{ $base }}/small.jpg"
+					srcset="{{ $base }}/small.jpg {{ $photo.smallWidth }}w, {{ $base }}/medium.jpg {{ $photo.mediumWidth }}w"
+					sizes="(min-width: 1200px) 236px, (min-width: 992px) 253px, (min-width: 768px) 233px, (min-width: 480px) calc((100vw - 50px) / 3), (min-resolution: 2.5dppx) calc((100vw - 40px) / 3), calc((100vw - 40px) / 2)"
+					width="{{ $photo.smallWidth }}" height="{{ $photo.smallHeight }}"
 					alt="{{ with $photo.caption }}{{ . }}{{ else }}Reisefoto{{ end }}"
 					itemprop="thumbnail"
 					decoding="async"
@@ -48,10 +57,15 @@
 	{{ end }}
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe.min.js"
-	integrity="sha256-UplRCs9v4KXVJvVY+p+RSo5Q4ilAUXh7kpjyIP5odyc=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.1/photoswipe-ui-default.min.js"
-	integrity="sha256-PWHOlUzc96pMc8ThwRIXPn8yH4NOLu42RQ0b9SpnpFk=" crossorigin="anonymous"></script>
+{{/* PhotoSwipe 4.1.1, self-hosted (byte-identical to the cdnjs files the
+     site used, same SRI hashes) and only on pages that have a gallery — its
+     CSS used to be in <head> on every page. The scripts are deferred so they
+     no longer block rendering of the post text below; they still run before
+     DOMContentLoaded, which is when the init below binds the figures. */}}
+<link rel="stylesheet" href="{{ "vendor/photoswipe/photoswipe.min.css" | relURL }}">
+<link rel="stylesheet" href="{{ "vendor/photoswipe/default-skin/default-skin.min.css" | relURL }}">
+<script defer src="{{ "vendor/photoswipe/photoswipe.min.js" | relURL }}"></script>
+<script defer src="{{ "vendor/photoswipe/photoswipe-ui-default.min.js" | relURL }}"></script>
 
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">

@@ -1,0 +1,10 @@
+{{/*
+  The "dates – places" line a post opens with, as plain text, e.g.
+  "29.06.-03.07.2024 - Rio de Janeiro". Every post starts with it as a "##"
+  heading; returns "" if this one doesn't.
+*/}}
+{{ $lead := "" }}
+{{ with findRESubmatch `^\s*<h2[^>]*>(?s:(.*?))</h2>` (.Summary | string) 1 }}
+  {{ $lead = index . 0 1 | plainify | htmlUnescape | strings.TrimSpace }}
+{{ end }}
+{{ return $lead }}
