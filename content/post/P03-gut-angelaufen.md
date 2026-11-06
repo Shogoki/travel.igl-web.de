@@ -4,7 +4,7 @@ date: 2025-12-27
 author: Kerstin
 categories: ["Thailand“ , “Koh Phi Phi"]
 countries: [„Thailand“]
-featured: 11
+featured: 8
 album: D2Rv30d4S-yj0_RTspdCiE5GhmQCAEQARogunlXd0lUgBpiy3GYPBSu0sklTol8d81M2yBxwNIj9JY
 draft: false
 
