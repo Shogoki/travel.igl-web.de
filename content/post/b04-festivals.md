@@ -4,7 +4,7 @@ date: 2024-06-18
 author: Kerstin
 categories: ["Brasilien" , "Diamantina" , "Salvador"]
 countries: ["Brasilien"]
-featured: 7
+featured: 11
 album: B19GnbeumHAblKS
 draft: false
 
