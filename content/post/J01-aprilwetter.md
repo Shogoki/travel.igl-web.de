@@ -2,8 +2,8 @@
 title: "#J01 - Aprilwetter"
 date: 2026-04-19
 author: Kerstin
-categories: ["Japan“ , “Osaka“]
-countries: [„Japan“]
+categories: ["Japan" , "Osaka"]
+countries: ["Japan"]
 featured: 5
 album: B2RJpT2aKISDoyW
 draft: false

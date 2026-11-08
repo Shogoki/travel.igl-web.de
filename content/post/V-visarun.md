@@ -2,7 +2,7 @@
 title: "#Visarun"
 date: 2026-09-16
 author: Kerstin
-categories: ["Vietnam“ , „Nha Trang"]
+categories: ["Vietnam" , "Nha Trang"]
 countries: ["Vietnam"]
 featured: 
 album: 

@@ -2,8 +2,8 @@
 title: "#J02 - An jeder Ecke"
 date: 2026-04-20
 author: Kerstin
-categories: ["Japan“ , “Kyoto“]
-countries: [„Japan“]
+categories: ["Japan" , "Kyoto"]
+countries: ["Japan"]
 featured: 13
 album: B2R5jEMpo8glIlu
 draft: false

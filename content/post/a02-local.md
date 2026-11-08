@@ -2,8 +2,8 @@
 title: "#A01 - Entspannt"
 date: 2026-09-10
 author: Kerstin
-categories: ["Ägypten“ , “Dahab"]
-countries: [„Ägypten“]
+categories: ["Ägypten" , "Dahab"]
+countries: ["Ägypten"]
 featured: 
 album: 
 draft: true

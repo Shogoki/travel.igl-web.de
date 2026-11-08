@@ -2,8 +2,8 @@
 title: "#J08 - "
 date: 2026-04-20
 author: Kerstin
-categories: ["Japan“ , “Kyoto“]
-countries: [„Japan“]
+categories: ["Japan" , "Kyoto"]
+countries: ["Japan"]
 featured: 
 album: 
 draft: true

@@ -5,7 +5,7 @@ author: Kerstin
 categories: ["Brasilien"]
 countries: ["Brasilien"]
 featured: 28
-album: https://www.icloud.com/sharedalbum/#D2Rv3Zyx87Op7HxAvY1vH5kyepACAEQARogMSxUHZldAkXx0X1LX71ue-5ti-PrWnvD3zsJR9tmEn0
+album: D2Rv3Zyx87Op7HxAvY1vH5kyepACAEQARogMSxUHZldAkXx0X1LX71ue-5ti-PrWnvD3zsJR9tmEn0
 draft: false
 
 ---
