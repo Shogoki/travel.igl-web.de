@@ -2,10 +2,10 @@
 title: "#S01 - Ibiza with Friends"
 date: 2023-10-01
 author: Kerstin
-categories: ["Spanien“ , „Ibiza"]
+categories: ["Spanien" , "Ibiza"]
 countries: ["Spanien"]
 featured: 15
-album: https://www.icloud.com/sharedalbum/#D2Rv3uIDjHQa0Amho7yKb8oHB9ACAEQARogHurbqf2yzvLW4Ky8DWYGMz_EUtehO4rIYzQazcETNYw
+album: D2Rv3uIDjHQa0Amho7yKb8oHB9ACAEQARogHurbqf2yzvLW4Ky8DWYGMz_EUtehO4rIYzQazcETNYw
 draft: false
 
 ---

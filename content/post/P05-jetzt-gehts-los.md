@@ -2,10 +2,10 @@
 title: "#P05 - Jetzt gehts los"
 date: 2026-01-27
 author: Kerstin
-categories: ["Thailand“ , “Koh Phi Phi"]
-countries: [„Thailand“]
+categories: ["Thailand" , "Koh Phi Phi"]
+countries: ["Thailand"]
 featured: 5
-album: https://www.icloud.com/sharedalbum/#D2Rv3MbrH4m0ATxn-JgD7pxAcVwCAEQARogX3yxo9a34oI2hJH1xCzhlY-AXvPppzD_vJjLrq4us3g
+album: D2Rv3MbrH4m0ATxn-JgD7pxAcVwCAEQARogX3yxo9a34oI2hJH1xCzhlY-AXvPppzD_vJjLrq4us3g
 draft: false
 
 ---

@@ -2,10 +2,10 @@
 title: "#P07 - Follower"
 date: 2026-04-07
 author: Kerstin
-categories: ["Thailand“ , “Koh Phi Phi"]
-countries: [„Thailand“]
+categories: ["Thailand" , "Koh Phi Phi"]
+countries: ["Thailand"]
 featured: 34
-album: https://www.icloud.com/sharedalbum/#D2Rv3maIH4gNLNnDqIHYQPf0SaACAEQARoggVjX9p0WvlwiJwGAqUKoZyTTThvHpBz94qsHHBBEP-o
+album: D2Rv3maIH4gNLNnDqIHYQPf0SaACAEQARoggVjX9p0WvlwiJwGAqUKoZyTTThvHpBz94qsHHBBEP-o
 draft: true
 
 ---

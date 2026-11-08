@@ -2,7 +2,7 @@
 title: "#S02 - Valencia"
 date: 2026-09-16
 author: Kerstin
-categories: ["Spanien“ , „Valencia"]
+categories: ["Spanien" , "Valencia"]
 countries: ["Spanien"]
 featured: 
 album: 

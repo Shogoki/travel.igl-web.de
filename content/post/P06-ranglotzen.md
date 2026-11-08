@@ -2,10 +2,10 @@
 title: "#P06 - Ranglotzen"
 date: 2026-03-02
 author: Kerstin
-categories: ["Thailand“ , “Koh Phi Phi"]
-countries: [„Thailand“]
+categories: ["Thailand" , "Koh Phi Phi"]
+countries: ["Thailand"]
 featured: 5
-album: https://www.icloud.com/sharedalbum/#D2Rv3WFXYE08-vJszAy2xdBPRsACAEQARogSbcB_c51IdE88gSkgShITQo0goBGRsmApkcx49H0T4s
+album: D2Rv3WFXYE08-vJszAy2xdBPRsACAEQARogSbcB_c51IdE88gSkgShITQo0goBGRsmApkcx49H0T4s
 draft: true
 
 ---
