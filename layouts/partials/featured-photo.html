@@ -11,7 +11,7 @@
   (card and <head>) resolves it — and warns about it — once.
 */}}
 {{ $result := dict }}
-{{ with .Params.album }}
+{{ with partial "album-id.html" (dict "album" .Params.album "where" .RelPermalink) }}
   {{ $album := . }}
   {{ $api := site.Params.icloud_api }}
   {{ $photos := partial "album-photos.html" (dict "api" $api "album" $album "where" $.RelPermalink) }}

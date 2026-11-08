@@ -1,0 +1,21 @@
+{{/*
+  Returns the iCloud shared-album ID from a post's `album:` front matter.
+
+  Accepts the bare ID (B0OGrq0zwH4gVC) or the link iCloud's "Share" button
+  copies (https://www.icloud.com/sharedalbum/#B0OGrq0zwH4gVC) — the ID is
+  whatever follows the "#". Pasting the link is the natural thing to do, and
+  passed through as-is it reached the API as a URL and the build failed with
+  "returned nothing".
+
+  Anything that is still not an ID fails the build rather than shipping a
+  post without photos.
+
+  Params: album, where (a page reference, for error messages).
+*/}}
+{{ $id := .album | default "" | string | strings.TrimSpace }}
+{{ $id = replaceRE `^.*#` "" $id }}
+{{ if and $id (not (findRE `^[A-Za-z0-9_-]+$` $id)) }}
+  {{ errorf "album %q (%s) is neither an album ID nor an iCloud shared-album link (https://www.icloud.com/sharedalbum/#…)" .album (.where | default "unknown page") }}
+  {{ $id = "" }}
+{{ end }}
+{{ return $id }}

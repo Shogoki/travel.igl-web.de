@@ -61,14 +61,14 @@ date: 2022-09-15
 author: Kerstin
 categories: ["Deutschland", "Peru", "Lima"]
 featured: 1
-album: B0OGrq0zwH4gVC      # iCloud shared album ID — drives the gallery
+album: B0OGrq0zwH4gVC      # iCloud shared album ID (or its share link) — drives the gallery
 aliases:                    # legacy WP URL compatibility — preserve when migrating posts
    - "/2022/09/15/…/"
 ```
 
 ### Photo galleries (built at deploy time)
 
-Posts embed an iCloud shared-album gallery by declaring `album: <id>` in front matter. Galleries are **built at deploy time**, not fetched by the browser.
+Posts embed an iCloud shared-album gallery by declaring `album: <id>` in front matter. The share link (`https://www.icloud.com/sharedalbum/#<id>`) works too: `layouts/partials/album-id.html` reduces it to the ID, and fails the build on anything that is neither. Galleries are **built at deploy time**, not fetched by the browser.
 
 **The constraint that shapes all of this:** iCloud's own asset URLs are signed and expire about three hours after they are issued. They can never be committed or written into a page.
 

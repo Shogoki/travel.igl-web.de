@@ -12,7 +12,7 @@
   build just needs running again once the API is back.
 */}}
 
-{{ $album := .album | default "" | string }}
+{{ $album := partial "album-id.html" (dict "album" .album "where" .context.RelPermalink) }}
 {{ if $album }}
 {{ $api := .site.Params.icloud_api }}
 {{ $photos := partial "album-photos.html" (dict "api" $api "album" $album "where" .context.RelPermalink) }}
