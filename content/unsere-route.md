@@ -4,6 +4,14 @@ author: Sven, Kerstin
 date: 2026-09-13
 ---
 
+## Costa Rica & Nicaragua 03.11. - 02.12.2026 🇨🇷🇳🇮 
+
+- 03.11.26 - 04.11.26 San José 🇨🇷 
+- 04.11.26 - 05.11.26 Liberia 🇨🇷 von dort nach Peñas Blancas und über die Grenze nach Nicaragua 🇳🇮 
+- 05.11.26 - 07.11.26 San Juan del Sur 🇳🇮 
+- 07.11.26 - xx.11.26 Ometepe
+
+
 ## Valencia 11.09. - 13.09.2026 🇪🇸
 
 
