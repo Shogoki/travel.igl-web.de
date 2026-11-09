@@ -1,5 +1,5 @@
 ---
-title: "Übergang"
+title: "Pura Vida"
 date: 2026-11-05
 author: Kerstin
 categories: ["Costa Rica" , "San José" , „Liberia“]
@@ -16,8 +16,8 @@ Für unsere Reise nach Nicaragua war es die beste Option nach Costa Rica zu flie
 
 Da in Costa Rica noch Regenzeit ist und nach Wetterbericht die erste Woche hier auch komplett verregnet sein würde, entschieden wir uns doch direkt nach Nicaragua zu gehen und vielleicht am Ende zurückzukommen und von hier zurückzufliegen. Background: Unser Rückflug geht am 02.12. von Mexico-City und da müssen wir am Ende noch irgendwie hinkommen :D
 
-In San José haben wir uns erstmal in einem Supermarkt ausgetobt und Snacks probiert, dann eine Free Walking Tour gemacht und über den Market und kleine Shops geschlendert.
+„Pura Vida“: Man hört und liest es hier recht oft, es ist das nationale Motto von Costa Rica, ein Ausdruck für Optimismus, Dankbarkeit und Gelassenheit. Ich finde es ist ein ganz tolles Motto und ich kann es zwar nicht so recht beschreiben, aber man kann es auch ab und zu wirklich spüren :)
 
-Direkt am nächsten Abend sind wir ca. 6 Stunden mit dem Bus nach Liberia weitergefahren und haben dort übernachtet. Von hier fahren regelmäßig Busse nach Peñas Blancas, dem Ort vor der Grenze, von wo aus man nach Nicaragua einreisen kann. Da unsere Internetverbindung unterwegs im Bus schlecht war, konnten wir unser Einreiseformular für morgen nicht rechtzeitig einreichen und hoffen jetzt, dass das kein Problem ist 😅
+In San José haben wir uns erstmal in einem Supermarkt ausgetobt und Snacks probiert, dann eine Free Walking Tour gemacht und über den Market und kleine Shops geschlendert. Direkt am nächsten Abend sind wir ca. 6 Stunden mit dem Bus nach Liberia weitergefahren und haben dort übernachtet. Von hier fahren regelmäßig Busse nach Peñas Blancas, dem Ort vor der Grenze, von wo aus man nach Nicaragua einreisen kann. Da unsere Internetverbindung unterwegs im Bus schlecht war, konnten wir unser Einreiseformular für morgen nicht rechtzeitig einreichen und hoffen jetzt, dass das kein Problem ist 😅
 
 Ziel für morgen: Einreise in Nicaragua
