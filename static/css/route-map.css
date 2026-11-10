@@ -75,7 +75,9 @@
   background: #fff;
 }
 
-.route-legend {
+/* Scoped by .post-container to outrank the theme's .post-container ul
+   (40px below, and indented on phones); the popup lists below likewise. */
+.post-container .route-legend {
   display: flex;
   flex-wrap: wrap;
   gap: 4px 18px;
@@ -156,8 +158,8 @@
   color: #808080;
 }
 
-.route-popup-visits,
-.route-popup-posts {
+.route-popup .route-popup-visits,
+.route-popup .route-popup-posts {
   margin: 6px 0 0;
   padding: 0;
   list-style: none;
@@ -167,7 +169,7 @@
   margin-top: 4px;
 }
 
-.route-popup-posts {
+.route-popup .route-popup-posts {
   border-top: 1px solid #eee;
   padding-top: 6px;
 }
