@@ -93,11 +93,32 @@
   map.createPane('basemap').style.zIndex = 250;
   var basemapRenderer = L.canvas({ pane: 'basemap', padding: 0.5 });
 
+  // Natural Earth cuts Russia, Wrangel Island and Fiji at the antimeridian,
+  // so their rings jump from 180° to -180°, and Leaflet fills that jump as a
+  // band across the whole map. Unwrapped, the cut-off piece just reaches
+  // past 180°. Antarctica's ring circles the pole and would no longer close
+  // unwrapped, so a ring that doesn't end where it started is kept as is.
+  function unwrapCoords(c) {
+    if (typeof c[0][0] !== 'number') return c.map(unwrapCoords);
+    var prev = c[0][0];
+    var out = c.map(function (p) {
+      prev = unwrap(p[0], prev);
+      return [prev, p[1]];
+    });
+    return Math.abs(out[out.length - 1][0] - out[0][0]) > 180 ? c : out;
+  }
+  function unwrapGeometry(g) {
+    if (g.type === 'FeatureCollection') g.features.forEach(function (f) { unwrapGeometry(f.geometry); });
+    else if (g.type === 'GeometryCollection') g.geometries.forEach(unwrapGeometry);
+    else if (g.type !== 'Point' && g.type !== 'MultiPoint') g.coordinates = unwrapCoords(g.coordinates);
+    return g;
+  }
+
   fetch(mapEl.getAttribute('data-world'))
     .then(function (r) { return r.ok ? r.json() : Promise.reject(r.status); })
     .then(function (world) {
-      var land = topojson.feature(world, world.objects.land);
-      var borders = topojson.mesh(world, world.objects.countries, function (a, b) { return a !== b; });
+      var land = unwrapGeometry(topojson.feature(world, world.objects.land));
+      var borders = unwrapGeometry(topojson.mesh(world, world.objects.countries, function (a, b) { return a !== b; }));
       // Three copies of the world, so land is under the route wherever the
       // unwrapping put it.
       [-360, 0, 360].forEach(function (off) {
