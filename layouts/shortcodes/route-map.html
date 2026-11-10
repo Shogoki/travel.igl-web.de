@@ -1,0 +1,61 @@
+{{/*
+  Interactive map of every trip, drawn by static/js/route-map.js from
+  data/route.yaml (generated from the list on this same page by
+  scripts/route-to-yaml.py — see CLAUDE.md).
+
+  The basemap is Natural Earth country outlines served from this site
+  (static/data/world-50m.json). Deliberately no tile server: every tile
+  request would hand the visitor's IP to a third party, which on a German
+  site needs consent first.
+
+  Posts are linked by slug. A slug that no longer resolves — a draft in a
+  production build — is skipped; the generator only emits slugs of posts
+  that exist, so a typo can't get here.
+*/}}
+{{ $trips := slice }}
+{{ with hugo.Data.route }}
+  {{ range .trips }}
+    {{ $stops := slice }}
+    {{ range .stops }}
+      {{ $posts := slice }}
+      {{ range .posts }}
+        {{ with site.GetPage (printf "/post/%s" .) }}
+          {{ $img := "" }}
+          {{ with partialCached "featured-photo.html" . .RelPermalink }}
+            {{ $img = printf "%s/small.jpg" .url }}
+          {{ end }}
+          {{ $posts = $posts | append (dict "t" .Title "u" .RelPermalink "img" $img) }}
+        {{ end }}
+      {{ end }}
+      {{ $stops = $stops | append (dict
+          "n" .name "c" .country "f" .flag "lat" .lat "lon" .lon
+          "from" .from "to" .to "by" .by "l" .label "posts" $posts) }}
+    {{ end }}
+    {{ $trips = $trips | append (dict "id" .id "title" .title "stops" $stops) }}
+  {{ end }}
+{{ end }}
+{{ $loc := dict }}
+{{ with hugo.Data.location }}
+  {{ if and .lat .lon }}
+    {{ $loc = dict "name" .name "lat" .lat "lon" .lon }}
+  {{ end }}
+{{ end }}
+
+<link rel="stylesheet" href="{{ "vendor/leaflet/leaflet.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/route-map.css" | relURL }}">
+<div class="route-map-wrap">
+  <div class="route-filter" role="group" aria-label="Reise auswählen"></div>
+  <div id="route-map" class="route-map" data-world="{{ "data/world-50m.json" | relURL }}">
+    <noscript><p class="route-map-noscript">Die Karte braucht JavaScript — die ganze Route steht auch in der Liste unten.</p></noscript>
+  </div>
+  <ul class="route-legend" aria-label="Legende">
+    <li><span class="route-legend-line route-legend-flug"></span>Flug</li>
+    <li><span class="route-legend-line route-legend-boot"></span>Boot/Fähre</li>
+    <li><span class="route-legend-line route-legend-land"></span>Bus, Zug, Auto</li>
+    {{ with $loc }}<li><span class="route-legend-here"></span>Wir sind gerade hier</li>{{ end }}
+  </ul>
+</div>
+<script type="application/json" id="route-data">{{ dict "trips" $trips "here" $loc | jsonify | safeJS }}</script>
+<script defer src="{{ "vendor/leaflet/leaflet.js" | relURL }}"></script>
+<script defer src="{{ "vendor/topojson-client.min.js" | relURL }}"></script>
+<script defer src="{{ "js/route-map.js" | relURL }}"></script>
