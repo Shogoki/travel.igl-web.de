@@ -2,7 +2,7 @@
 title: "Pura Vida"
 date: 2026-11-05
 author: Kerstin
-categories: ["Costa Rica" , "San José" , „Liberia“]
+categories: ["Costa Rica" , "San José" , "Liberia"]
 countries: ["Costa Rica"]
 featured: 5
 album: https://www.icloud.com/sharedalbum/#D2Rv3ugQaC8x4_khWMcpbeiD63QCAEQARogd6ExU54jxDGj90rJRkknmwxzhwJtTNFNUVB5YrdHjTo
