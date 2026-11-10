@@ -35,6 +35,45 @@ jobs:
           hugo-version: "0.167.0"
           # extended: true
 
+      # The route map's data (data/route.yaml) is derived from the
+      # hand-written list in content/unsere-route.md by a language model
+      # behind an OpenAI-compatible API (scripts/route-to-yaml.py). Only trips
+      # whose text or posts changed are sent; the result is committed back
+      # so the next run starts from it. This step never fails the deploy:
+      # without a key, or when the model misbehaves, the site builds with the
+      # last committed data. A push made with GITHUB_TOKEN does not trigger
+      # another run.
+      - name: Update route map data
+        continue-on-error: true
+        env:
+          LLM_BASE_URL: ${{ vars.LLM_BASE_URL }}
+          LLM_MODEL: ${{ vars.LLM_MODEL }}
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+        run: |
+          if python3 scripts/route-to-yaml.py --check; then
+            exit 0
+          fi
+          if [ "${{ github.event_name }}" = pull_request ] || [ "${{ github.ref }}" != refs/heads/main ]; then
+            echo "::notice::The route list changed; the map data is regenerated when this is merged into main."
+            exit 0
+          fi
+          status=0
+          python3 scripts/route-to-yaml.py || status=$?
+          if [ "$status" = 2 ]; then
+            # Exit 2: the model is needed, but LLM_* isn't configured.
+            echo "::warning::The route list changed, but LLM_API_KEY, LLM_BASE_URL or LLM_MODEL is not set; the map shows the old data. See CLAUDE.md."
+            exit 0
+          fi
+          if [ -n "$(git status --porcelain -- data/route.yaml data/places.yaml)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+            git add data/route.yaml data/places.yaml
+            git commit -m "Update route map data"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi
+          exit $status
+
       - name: Build
         run: |
           # Galleries are fetched from the album API during this build, so a

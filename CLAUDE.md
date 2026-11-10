@@ -27,7 +27,7 @@ git submodule update --init --recursive
 hugo server --config config.toml,config.local.toml
 ```
 
-There are no tests, linters, or package managers — the entire toolchain is Hugo + bash.
+There are no tests, linters, or package managers — the entire toolchain is Hugo + bash, plus one stdlib-only Python script for the route map (below).
 
 ## Deployment
 
@@ -49,7 +49,7 @@ The build fetches every album from the API, so a deploy takes about 90s longer t
 ### Content model
 
 - `content/post/*.md` — blog posts, filename-prefixed with an ordinal (`1-…`, `2-…`, … `83-…`, plus a later Brazil series `b01-…`, `b02-…`, `B30-…`). This ordering is **semantic**: Hugo's `PrevInSection`/`NextInSection` navigation in `layouts/_default/page.html` relies on date ordering, but humans sort/read by these numbers. Keep them monotonic when adding posts.
-- `content/unsere-route.md` — standalone page linked from the nav menu (see `params.addtional_menus` in `config.toml`). Its maps use `{{< figure src="/img/…png" width="300px" >}}`; the source PNGs live in **`assets/img/`** (not `static/`), and `layouts/shortcodes/figure.html` resizes each to twice its display width and re-encodes it as lazy-loaded WebP at build time. Add new maps to `assets/img/` too — the shortcode fails the build if the file isn't there.
+- `content/unsere-route.md` — standalone page linked from the nav menu (see `params.addtional_menus` in `config.toml`): an interactive map (`{{< route-map >}}`) above the hand-written route list. The list is the source of truth and is shown as written; see "Route map" below for how the map follows it.
 - `archetypes/default.md` — front-matter template for `hugo new`; sets `draft: true`.
 - `static/img/home-bg-jeep.jpg` (the header photo) is 1920px wide, JPEG q60 — the 4032px original was 700KB on every page. Keep replacements around that size.
 
@@ -82,6 +82,20 @@ The way around that is the API's image proxy. `{{ icloud_api }}/img/{album}/{pho
 - `icloud_api` is configured in `config.toml` (default: `https://icloud-api.evolution-web.de`). To develop against a local API, put the override in an untracked `config.local.toml` and run `hugo server --config config.toml,config.local.toml`. That file also needs a `[security.http]` block: Hugo's default policy permits ordinary https hosts but blocks `localhost` and raw IPs.
 - `static/css/gallery.css` is the whole gallery stylesheet: a CSS grid (2 columns, 3 from 480px) of square tiles with the `<img>` as the visible tile (`object-fit: cover`). It replaced hugo-easy-gallery.css, which floated boxes with the padding-bottom hack and painted tiles as a `background-image` — what used to force the full-size original into every tile. Keep `margin: 0; max-width: none` on the tile image: the theme's `.post-container img` rule otherwise pushes it out of its square.
 
+### Route map
+
+The map on `/unsere-route/` is drawn by `static/js/route-map.js` (Leaflet) from `data/route.yaml`, which nobody edits by hand: `scripts/route-to-yaml.py` derives it from the Markdown list in `content/unsere-route.md`.
+
+- **To change the route, edit the list.** One `##` heading per trip, newest first; lines like `- 12.09. – 14.09. Lima` (stays) and `- 14.09. Nachtbus nach Huaraz` (transport). The format is loose on purpose — a language model reads it, not a parser. An unknown end (`- 07.11.26 - xx.11.26 Ometepe`, or `seit 07.11.26`) marks the current stop; a planned end in the trip heading is fine.
+- The script sends each trip whose text changed to an **OpenAI-compatible** `chat/completions` endpoint (structured output via `response_format: json_schema`), validates the answer (ISO dates, chronological order, transport type, only the newest trip may be open-ended) and gives the model one retry with the errors. A second request per trip links blog posts to stops, chosen from posts whose opening "dates – places" line overlaps the trip — so a post's lead line is also what puts it on the map. The model echoes each stop's name with its index (small models slip by one in a 136-stop list), and a post whose lead line names a stop outright is linked to it even if the model missed it. Overview posts ("Peru", "Einmal um die Welt") stay unlinked on purpose. New places are geocoded through OpenStreetMap Nominatim and cached in `data/places.yaml`. The model also returns rough coordinates for every stop; they only pick between Nominatim's candidates (namesakes, restaurants called "Koh Lanta") and stand in when Nominatim finds nothing — a small model's guesses can be 100 km off or worse, so those cases are logged as `warning:` lines, as are implausibly long legs. **A misplaced point is fixed in `places.yaml`**, by correcting its `lat`/`lon`: the next run copies it into `route.yaml` without calling the model, and cached entries are never refetched (delete one to refetch it). On the first run about one point in twenty needed this.
+- Each trip in `route.yaml` carries a hash of its list text and of its candidate posts (each including the prompt it was made with), so a run only calls the model for what changed — usually one request when a post is added; editing a prompt redoes every trip once.
+- CI runs it in the "Update route map data" step of `hugo.yml` before the build, **on `main` only**, and commits the result back as github-actions[bot]. The step never fails the deploy: without credentials (needed only when a trip's text or posts changed, not for coordinate fixes), or when the model's answer stays invalid, the trip keeps its previous version and the site builds with the last committed data. On PRs it only notes that the data will be regenerated after merge. It needs repository settings → Secrets and variables → Actions: secret `LLM_API_KEY`, variables `LLM_BASE_URL` (e.g. `https://api.openai.com/v1`) and `LLM_MODEL`. `LLM_JSON_MODE=none` drops `response_format` for endpoints that reject it.
+- Run it locally with the same three variables set: `python3 scripts/route-to-yaml.py` (`--check` reports stale trips without calling anything, `--redo Japan` regenerates the trips whose heading contains "Japan", `--force` all of them). Commit `data/route.yaml` and `data/places.yaml` together with the list change.
+- `layouts/shortcodes/route-map.html` serialises the trips to JSON in the page, resolving each post slug to its title, URL and featured photo (`small.jpg` via the image proxy, loaded only when a popup opens). A slug that doesn't resolve — a draft, in a production build — is skipped.
+- The basemap is **self-hosted on purpose**: Natural Earth country outlines as TopoJSON (`static/data/world-50m.json`), no tile server. Tiles from OpenStreetMap, Mapbox & co. would send every visitor's IP to a third party, which needs consent on a German site. Don't add a tile layer.
+- The world trip goes once around the globe, so the script keeps raw longitudes and the JS unwraps each trip (no leg jumps more than 180°) and draws the basemap three times side by side. Flights are dashed arcs, boats dotted, everything else solid; colours are assigned oldest trip first, so a new trip doesn't recolour the old ones.
+- The "Wir sind gerade hier" marker reads `lat`/`lon` from `data/location.yaml`.
+
 ### Layout overrides
 
 The site uses the `hugo-theme-cleanwhite` theme but **overrides** specific templates at the project root (Hugo's lookup order puts `./layouts/` ahead of `./themes/*/layouts/`):
@@ -93,7 +107,7 @@ The site uses the `hugo-theme-cleanwhite` theme but **overrides** specific templ
 
 ### Third-party code
 
-jQuery 1.12.4 and PhotoSwipe 4.1.1 are self-hosted under `static/vendor/`, byte-identical to the CDN builds the site used to load (same SRI hashes). jQuery, `bootstrap.js` and the theme's `hux-blog.js` load with `defer`, so **no inline script may call `$` or `jQuery` at parse time** — wrap such code in a `DOMContentLoaded` listener. PhotoSwipe's CSS and JS are only included by `image-gallery.html`, i.e. only on posts with a gallery.
+jQuery 1.12.4 and PhotoSwipe 4.1.1 are self-hosted under `static/vendor/`, byte-identical to the CDN builds the site used to load (same SRI hashes). So are Leaflet 1.9.4 and topojson-client 3.1.0 for the route map, plus the Natural Earth outline in `static/data/` — sources, licences and hashes in `static/vendor/README.md`. Leaflet and topojson load only on the route page. jQuery, `bootstrap.js` and the theme's `hux-blog.js` load with `defer`, so **no inline script may call `$` or `jQuery` at parse time** — wrap such code in a `DOMContentLoaded` listener. PhotoSwipe's CSS and JS are only included by `image-gallery.html`, i.e. only on posts with a gallery.
 
 Before editing a partial, check whether the override exists locally; if not, copy from `themes/hugo-theme-cleanwhite/layouts/...` into `./layouts/...` rather than editing inside the submodule.
 
@@ -103,7 +117,8 @@ Uses [giscus](https://giscus.app) (GitHub Discussions) — config is under `[par
 
 ### Site-wide data files
 
-- `data/location.yaml` — current location banner (name + Google Maps URL).
+- `data/location.yaml` — current location banner (name + Google Maps URL) and the route map's "you are here" marker (`lat`/`lon`). Update all four together.
+- `data/route.yaml`, `data/places.yaml` — route map data, generated (see "Route map"); only `places.yaml` coordinates are meant to be hand-corrected.
 
 ## Conventions
 
