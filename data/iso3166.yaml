@@ -1,0 +1,259 @@
+# Every ISO 3166-1 country, by alpha-2 code (lower case):
+#   n:  numeric code, the `id` of the country in static/data/world-50m.json
+#   f:  flag emoji
+#   de: German names; the country map matches the `countries` in post
+#       front matter against these, so a name used there that's missing
+#       here (the build warns) is added to this list.
+# From codes.json and langs/de.json of i18n-iso-countries 7.14.0 (MIT);
+# see static/vendor/README.md. Keys quoted, so YAML can't read Norway
+# ("no") as false.
+"ad": {n: "020", f: "🇦🇩", de: ["Andorra"]}
+"ae": {n: "784", f: "🇦🇪", de: ["Vereinigte Arabische Emirate"]}
+"af": {n: "004", f: "🇦🇫", de: ["Afghanistan"]}
+"ag": {n: "028", f: "🇦🇬", de: ["Antigua und Barbuda"]}
+"ai": {n: "660", f: "🇦🇮", de: ["Anguilla"]}
+"al": {n: "008", f: "🇦🇱", de: ["Albanien"]}
+"am": {n: "051", f: "🇦🇲", de: ["Armenien"]}
+"ao": {n: "024", f: "🇦🇴", de: ["Angola"]}
+"aq": {n: "010", f: "🇦🇶", de: ["Antarktis"]}
+"ar": {n: "032", f: "🇦🇷", de: ["Argentinien"]}
+"as": {n: "016", f: "🇦🇸", de: ["Amerikanisch-Samoa"]}
+"at": {n: "040", f: "🇦🇹", de: ["Österreich"]}
+"au": {n: "036", f: "🇦🇺", de: ["Australien"]}
+"aw": {n: "533", f: "🇦🇼", de: ["Aruba"]}
+"ax": {n: "248", f: "🇦🇽", de: ["Åland"]}
+"az": {n: "031", f: "🇦🇿", de: ["Aserbaidschan"]}
+"ba": {n: "070", f: "🇧🇦", de: ["Bosnien und Herzegowina"]}
+"bb": {n: "052", f: "🇧🇧", de: ["Barbados"]}
+"bd": {n: "050", f: "🇧🇩", de: ["Bangladesch"]}
+"be": {n: "056", f: "🇧🇪", de: ["Belgien"]}
+"bf": {n: "854", f: "🇧🇫", de: ["Burkina Faso"]}
+"bg": {n: "100", f: "🇧🇬", de: ["Bulgarien"]}
+"bh": {n: "048", f: "🇧🇭", de: ["Bahrain"]}
+"bi": {n: "108", f: "🇧🇮", de: ["Burundi"]}
+"bj": {n: "204", f: "🇧🇯", de: ["Benin"]}
+"bl": {n: "652", f: "🇧🇱", de: ["Saint-Barthélemy"]}
+"bm": {n: "060", f: "🇧🇲", de: ["Bermuda"]}
+"bn": {n: "096", f: "🇧🇳", de: ["Brunei Darussalam"]}
+"bo": {n: "068", f: "🇧🇴", de: ["Bolivien"]}
+"bq": {n: "535", f: "🇧🇶", de: ["Bonaire"]}
+"br": {n: "076", f: "🇧🇷", de: ["Brasilien"]}
+"bs": {n: "044", f: "🇧🇸", de: ["Bahamas"]}
+"bt": {n: "064", f: "🇧🇹", de: ["Bhutan"]}
+"bv": {n: "074", f: "🇧🇻", de: ["Bouvetinsel"]}
+"bw": {n: "072", f: "🇧🇼", de: ["Botswana"]}
+"by": {n: "112", f: "🇧🇾", de: ["Belarus"]}
+"bz": {n: "084", f: "🇧🇿", de: ["Belize"]}
+"ca": {n: "124", f: "🇨🇦", de: ["Kanada"]}
+"cc": {n: "166", f: "🇨🇨", de: ["Kokosinseln"]}
+"cd": {n: "180", f: "🇨🇩", de: ["Kongo"]}
+"cf": {n: "140", f: "🇨🇫", de: ["Zentralafrikanische Republik"]}
+"cg": {n: "178", f: "🇨🇬", de: ["Republik Kongo"]}
+"ch": {n: "756", f: "🇨🇭", de: ["Schweiz"]}
+"ci": {n: "384", f: "🇨🇮", de: ["Elfenbeinküste"]}
+"ck": {n: "184", f: "🇨🇰", de: ["Cookinseln"]}
+"cl": {n: "152", f: "🇨🇱", de: ["Chile"]}
+"cm": {n: "120", f: "🇨🇲", de: ["Kamerun"]}
+"cn": {n: "156", f: "🇨🇳", de: ["China"]}
+"co": {n: "170", f: "🇨🇴", de: ["Kolumbien"]}
+"cr": {n: "188", f: "🇨🇷", de: ["Costa Rica"]}
+"cu": {n: "192", f: "🇨🇺", de: ["Kuba"]}
+"cv": {n: "132", f: "🇨🇻", de: ["Kap Verde"]}
+"cw": {n: "531", f: "🇨🇼", de: ["Curaçao"]}
+"cx": {n: "162", f: "🇨🇽", de: ["Weihnachtsinsel"]}
+"cy": {n: "196", f: "🇨🇾", de: ["Zypern"]}
+"cz": {n: "203", f: "🇨🇿", de: ["Tschechische Republik", "Tschechien"]}
+"de": {n: "276", f: "🇩🇪", de: ["Deutschland"]}
+"dj": {n: "262", f: "🇩🇯", de: ["Dschibuti"]}
+"dk": {n: "208", f: "🇩🇰", de: ["Dänemark"]}
+"dm": {n: "212", f: "🇩🇲", de: ["Dominica"]}
+"do": {n: "214", f: "🇩🇴", de: ["Dominikanische Republik"]}
+"dz": {n: "012", f: "🇩🇿", de: ["Algerien"]}
+"ec": {n: "218", f: "🇪🇨", de: ["Ecuador"]}
+"ee": {n: "233", f: "🇪🇪", de: ["Estland"]}
+"eg": {n: "818", f: "🇪🇬", de: ["Ägypten"]}
+"eh": {n: "732", f: "🇪🇭", de: ["Westsahara"]}
+"er": {n: "232", f: "🇪🇷", de: ["Eritrea"]}
+"es": {n: "724", f: "🇪🇸", de: ["Spanien"]}
+"et": {n: "231", f: "🇪🇹", de: ["Äthiopien"]}
+"fi": {n: "246", f: "🇫🇮", de: ["Finnland"]}
+"fj": {n: "242", f: "🇫🇯", de: ["Fidschi"]}
+"fk": {n: "238", f: "🇫🇰", de: ["Falklandinseln"]}
+"fm": {n: "583", f: "🇫🇲", de: ["Mikronesien"]}
+"fo": {n: "234", f: "🇫🇴", de: ["Färöer"]}
+"fr": {n: "250", f: "🇫🇷", de: ["Frankreich"]}
+"ga": {n: "266", f: "🇬🇦", de: ["Gabun"]}
+"gb": {n: "826", f: "🇬🇧", de: ["Vereinigtes Königreich", "Großbritannien"]}
+"gd": {n: "308", f: "🇬🇩", de: ["Grenada"]}
+"ge": {n: "268", f: "🇬🇪", de: ["Georgien"]}
+"gf": {n: "254", f: "🇬🇫", de: ["Französisch-Guayana"]}
+"gg": {n: "831", f: "🇬🇬", de: ["Guernsey"]}
+"gh": {n: "288", f: "🇬🇭", de: ["Ghana"]}
+"gi": {n: "292", f: "🇬🇮", de: ["Gibraltar"]}
+"gl": {n: "304", f: "🇬🇱", de: ["Grönland"]}
+"gm": {n: "270", f: "🇬🇲", de: ["Gambia"]}
+"gn": {n: "324", f: "🇬🇳", de: ["Guinea"]}
+"gp": {n: "312", f: "🇬🇵", de: ["Guadeloupe"]}
+"gq": {n: "226", f: "🇬🇶", de: ["Äquatorialguinea"]}
+"gr": {n: "300", f: "🇬🇷", de: ["Griechenland"]}
+"gs": {n: "239", f: "🇬🇸", de: ["Südgeorgien und die Südlichen Sandwichinseln"]}
+"gt": {n: "320", f: "🇬🇹", de: ["Guatemala"]}
+"gu": {n: "316", f: "🇬🇺", de: ["Guam"]}
+"gw": {n: "624", f: "🇬🇼", de: ["Guinea-Bissau"]}
+"gy": {n: "328", f: "🇬🇾", de: ["Guyana"]}
+"hk": {n: "344", f: "🇭🇰", de: ["Hongkong", "Hong Kong"]}
+"hm": {n: "334", f: "🇭🇲", de: ["Heard und McDonaldinseln"]}
+"hn": {n: "340", f: "🇭🇳", de: ["Honduras"]}
+"hr": {n: "191", f: "🇭🇷", de: ["Kroatien"]}
+"ht": {n: "332", f: "🇭🇹", de: ["Haiti"]}
+"hu": {n: "348", f: "🇭🇺", de: ["Ungarn"]}
+"id": {n: "360", f: "🇮🇩", de: ["Indonesien"]}
+"ie": {n: "372", f: "🇮🇪", de: ["Irland"]}
+"il": {n: "376", f: "🇮🇱", de: ["Israel"]}
+"im": {n: "833", f: "🇮🇲", de: ["Insel Man"]}
+"in": {n: "356", f: "🇮🇳", de: ["Indien"]}
+"io": {n: "086", f: "🇮🇴", de: ["Britisches Territorium im Indischen Ozean"]}
+"iq": {n: "368", f: "🇮🇶", de: ["Irak"]}
+"ir": {n: "364", f: "🇮🇷", de: ["Iran"]}
+"is": {n: "352", f: "🇮🇸", de: ["Island"]}
+"it": {n: "380", f: "🇮🇹", de: ["Italien"]}
+"je": {n: "832", f: "🇯🇪", de: ["Jersey"]}
+"jm": {n: "388", f: "🇯🇲", de: ["Jamaika"]}
+"jo": {n: "400", f: "🇯🇴", de: ["Jordanien"]}
+"jp": {n: "392", f: "🇯🇵", de: ["Japan"]}
+"ke": {n: "404", f: "🇰🇪", de: ["Kenia"]}
+"kg": {n: "417", f: "🇰🇬", de: ["Kirgisistan"]}
+"kh": {n: "116", f: "🇰🇭", de: ["Kambodscha"]}
+"ki": {n: "296", f: "🇰🇮", de: ["Kiribati"]}
+"km": {n: "174", f: "🇰🇲", de: ["Komoren"]}
+"kn": {n: "659", f: "🇰🇳", de: ["St. Kitts und Nevis"]}
+"kp": {n: "408", f: "🇰🇵", de: ["Nordkorea"]}
+"kr": {n: "410", f: "🇰🇷", de: ["Südkorea"]}
+"kw": {n: "414", f: "🇰🇼", de: ["Kuwait"]}
+"ky": {n: "136", f: "🇰🇾", de: ["Kaimaninseln"]}
+"kz": {n: "398", f: "🇰🇿", de: ["Kasachstan"]}
+"la": {n: "418", f: "🇱🇦", de: ["Laos"]}
+"lb": {n: "422", f: "🇱🇧", de: ["Libanon"]}
+"lc": {n: "662", f: "🇱🇨", de: ["St. Lucia"]}
+"li": {n: "438", f: "🇱🇮", de: ["Liechtenstein"]}
+"lk": {n: "144", f: "🇱🇰", de: ["Sri Lanka"]}
+"lr": {n: "430", f: "🇱🇷", de: ["Liberia"]}
+"ls": {n: "426", f: "🇱🇸", de: ["Lesotho"]}
+"lt": {n: "440", f: "🇱🇹", de: ["Litauen"]}
+"lu": {n: "442", f: "🇱🇺", de: ["Luxemburg"]}
+"lv": {n: "428", f: "🇱🇻", de: ["Lettland"]}
+"ly": {n: "434", f: "🇱🇾", de: ["Libyen"]}
+"ma": {n: "504", f: "🇲🇦", de: ["Marokko"]}
+"mc": {n: "492", f: "🇲🇨", de: ["Monaco"]}
+"md": {n: "498", f: "🇲🇩", de: ["Moldawien"]}
+"me": {n: "499", f: "🇲🇪", de: ["Montenegro"]}
+"mf": {n: "663", f: "🇲🇫", de: ["Saint-Martin"]}
+"mg": {n: "450", f: "🇲🇬", de: ["Madagaskar"]}
+"mh": {n: "584", f: "🇲🇭", de: ["Marshallinseln"]}
+"mk": {n: "807", f: "🇲🇰", de: ["Nordmazedonien"]}
+"ml": {n: "466", f: "🇲🇱", de: ["Mali"]}
+"mm": {n: "104", f: "🇲🇲", de: ["Myanmar"]}
+"mn": {n: "496", f: "🇲🇳", de: ["Mongolei"]}
+"mo": {n: "446", f: "🇲🇴", de: ["Macao"]}
+"mp": {n: "580", f: "🇲🇵", de: ["Nördliche Marianen"]}
+"mq": {n: "474", f: "🇲🇶", de: ["Martinique"]}
+"mr": {n: "478", f: "🇲🇷", de: ["Mauretanien"]}
+"ms": {n: "500", f: "🇲🇸", de: ["Montserrat"]}
+"mt": {n: "470", f: "🇲🇹", de: ["Malta"]}
+"mu": {n: "480", f: "🇲🇺", de: ["Mauritius"]}
+"mv": {n: "462", f: "🇲🇻", de: ["Malediven"]}
+"mw": {n: "454", f: "🇲🇼", de: ["Malawi"]}
+"mx": {n: "484", f: "🇲🇽", de: ["Mexiko"]}
+"my": {n: "458", f: "🇲🇾", de: ["Malaysia"]}
+"mz": {n: "508", f: "🇲🇿", de: ["Mosambik"]}
+"na": {n: "516", f: "🇳🇦", de: ["Namibia"]}
+"nc": {n: "540", f: "🇳🇨", de: ["Neukaledonien"]}
+"ne": {n: "562", f: "🇳🇪", de: ["Niger"]}
+"nf": {n: "574", f: "🇳🇫", de: ["Norfolkinsel"]}
+"ng": {n: "566", f: "🇳🇬", de: ["Nigeria"]}
+"ni": {n: "558", f: "🇳🇮", de: ["Nicaragua"]}
+"nl": {n: "528", f: "🇳🇱", de: ["Niederlande"]}
+"no": {n: "578", f: "🇳🇴", de: ["Norwegen"]}
+"np": {n: "524", f: "🇳🇵", de: ["Nepal"]}
+"nr": {n: "520", f: "🇳🇷", de: ["Nauru"]}
+"nu": {n: "570", f: "🇳🇺", de: ["Niue"]}
+"nz": {n: "554", f: "🇳🇿", de: ["Neuseeland"]}
+"om": {n: "512", f: "🇴🇲", de: ["Oman"]}
+"pa": {n: "591", f: "🇵🇦", de: ["Panama"]}
+"pe": {n: "604", f: "🇵🇪", de: ["Peru"]}
+"pf": {n: "258", f: "🇵🇫", de: ["Französisch-Polynesien"]}
+"pg": {n: "598", f: "🇵🇬", de: ["Papua-Neuguinea"]}
+"ph": {n: "608", f: "🇵🇭", de: ["Philippinen"]}
+"pk": {n: "586", f: "🇵🇰", de: ["Pakistan"]}
+"pl": {n: "616", f: "🇵🇱", de: ["Polen"]}
+"pm": {n: "666", f: "🇵🇲", de: ["Saint-Pierre und Miquelon"]}
+"pn": {n: "612", f: "🇵🇳", de: ["Pitcairninseln"]}
+"pr": {n: "630", f: "🇵🇷", de: ["Puerto Rico"]}
+"ps": {n: "275", f: "🇵🇸", de: ["Staat Palästina"]}
+"pt": {n: "620", f: "🇵🇹", de: ["Portugal"]}
+"pw": {n: "585", f: "🇵🇼", de: ["Palau"]}
+"py": {n: "600", f: "🇵🇾", de: ["Paraguay"]}
+"qa": {n: "634", f: "🇶🇦", de: ["Katar"]}
+"re": {n: "638", f: "🇷🇪", de: ["Réunion"]}
+"ro": {n: "642", f: "🇷🇴", de: ["Rumänien"]}
+"rs": {n: "688", f: "🇷🇸", de: ["Serbien"]}
+"ru": {n: "643", f: "🇷🇺", de: ["Russische Föderation", "Russland"]}
+"rw": {n: "646", f: "🇷🇼", de: ["Ruanda"]}
+"sa": {n: "682", f: "🇸🇦", de: ["Saudi-Arabien"]}
+"sb": {n: "090", f: "🇸🇧", de: ["Salomonen"]}
+"sc": {n: "690", f: "🇸🇨", de: ["Seychellen"]}
+"sd": {n: "729", f: "🇸🇩", de: ["Sudan"]}
+"se": {n: "752", f: "🇸🇪", de: ["Schweden"]}
+"sg": {n: "702", f: "🇸🇬", de: ["Singapur"]}
+"sh": {n: "654", f: "🇸🇭", de: ["St. Helena"]}
+"si": {n: "705", f: "🇸🇮", de: ["Slowenien"]}
+"sj": {n: "744", f: "🇸🇯", de: ["Svalbard und Jan Mayen"]}
+"sk": {n: "703", f: "🇸🇰", de: ["Slowakei"]}
+"sl": {n: "694", f: "🇸🇱", de: ["Sierra Leone"]}
+"sm": {n: "674", f: "🇸🇲", de: ["San Marino"]}
+"sn": {n: "686", f: "🇸🇳", de: ["Senegal"]}
+"so": {n: "706", f: "🇸🇴", de: ["Somalia"]}
+"sr": {n: "740", f: "🇸🇷", de: ["Suriname"]}
+"ss": {n: "728", f: "🇸🇸", de: ["Südsudan"]}
+"st": {n: "678", f: "🇸🇹", de: ["São Tomé und Príncipe"]}
+"sv": {n: "222", f: "🇸🇻", de: ["El Salvador"]}
+"sx": {n: "534", f: "🇸🇽", de: ["Sint Maarten"]}
+"sy": {n: "760", f: "🇸🇾", de: ["Syrien, Arabische Republik"]}
+"sz": {n: "748", f: "🇸🇿", de: ["Eswatini"]}
+"tc": {n: "796", f: "🇹🇨", de: ["Turks- und Caicosinseln"]}
+"td": {n: "148", f: "🇹🇩", de: ["Tschad"]}
+"tf": {n: "260", f: "🇹🇫", de: ["Französische Süd- und Antarktisgebiete"]}
+"tg": {n: "768", f: "🇹🇬", de: ["Togo"]}
+"th": {n: "764", f: "🇹🇭", de: ["Thailand"]}
+"tj": {n: "762", f: "🇹🇯", de: ["Tadschikistan"]}
+"tk": {n: "772", f: "🇹🇰", de: ["Tokelau"]}
+"tl": {n: "626", f: "🇹🇱", de: ["Osttimor"]}
+"tm": {n: "795", f: "🇹🇲", de: ["Turkmenistan"]}
+"tn": {n: "788", f: "🇹🇳", de: ["Tunesien"]}
+"to": {n: "776", f: "🇹🇴", de: ["Tonga"]}
+"tr": {n: "792", f: "🇹🇷", de: ["Türkei"]}
+"tt": {n: "780", f: "🇹🇹", de: ["Trinidad und Tobago"]}
+"tv": {n: "798", f: "🇹🇻", de: ["Tuvalu"]}
+"tw": {n: "158", f: "🇹🇼", de: ["Taiwan"]}
+"tz": {n: "834", f: "🇹🇿", de: ["Tansania, Vereinigte Republik", "Tansania"]}
+"ua": {n: "804", f: "🇺🇦", de: ["Ukraine"]}
+"ug": {n: "800", f: "🇺🇬", de: ["Uganda"]}
+"um": {n: "581", f: "🇺🇲", de: ["United States Minor Outlying Islands"]}
+"us": {n: "840", f: "🇺🇸", de: ["Vereinigte Staaten von Amerika", "Vereinigte Staaten", "USA"]}
+"uy": {n: "858", f: "🇺🇾", de: ["Uruguay"]}
+"uz": {n: "860", f: "🇺🇿", de: ["Usbekistan"]}
+"va": {n: "336", f: "🇻🇦", de: ["Vatikanstadt"]}
+"vc": {n: "670", f: "🇻🇨", de: ["St. Vincent und die Grenadinen"]}
+"ve": {n: "862", f: "🇻🇪", de: ["Venezuela"]}
+"vg": {n: "092", f: "🇻🇬", de: ["Britische Jungferninseln"]}
+"vi": {n: "850", f: "🇻🇮", de: ["Amerikanische Jungferninseln"]}
+"vn": {n: "704", f: "🇻🇳", de: ["Vietnam"]}
+"vu": {n: "548", f: "🇻🇺", de: ["Vanuatu"]}
+"wf": {n: "876", f: "🇼🇫", de: ["Wallis und Futuna"]}
+"ws": {n: "882", f: "🇼🇸", de: ["Samoa"]}
+"xk": {n: "983", f: "🇽🇰", de: ["Kosovo"]}
+"ye": {n: "887", f: "🇾🇪", de: ["Jemen"]}
+"yt": {n: "175", f: "🇾🇹", de: ["Mayotte"]}
+"za": {n: "710", f: "🇿🇦", de: ["Südafrika"]}
+"zm": {n: "894", f: "🇿🇲", de: ["Sambia"]}
+"zw": {n: "716", f: "🇿🇼", de: ["Simbabwe"]}

@@ -12,6 +12,24 @@ upgrading, and don't edit them in place.
 | `topojson-client.min.js` | [topojson-client](https://www.npmjs.com/package/topojson-client) 3.1.0, `dist/topojson-client.min.js` | ISC |
 | `../data/world-50m.json` | [world-atlas](https://www.npmjs.com/package/world-atlas) 2.0.2, `countries-50m.json` — [Natural Earth](https://www.naturalearthdata.com/) 1:50m countries as TopoJSON | Public domain (Natural Earth), ISC (world-atlas) |
 
+`../data/states-50m.json` (states and provinces for the country map) is
+derived, so it has no upstream hash: Natural Earth's 1:50m admin-1
+states (`geojson/ne_50m_admin_1_states_provinces_lakes.geojson` from
+[natural-earth-vector](https://github.com/nvkelso/natural-earth-vector)
+at 9380cca, public domain) with each state's properties cut down to `n`
+(German name, `name_de`), `cc` (`iso_a2`) and `iso` (`iso_3166_2`), then
+`geo2topo -q 1e5 states=…` from topojson-server 3. Natural Earth only has
+states at this scale for the USA, Canada, Brazil, Australia, Indonesia,
+China, India, Russia and South Africa.
+
+`data/iso3166.yaml` (outside `static/`, read by Hugo) is derived, not
+copied: the alpha-2 and numeric columns of `codes.json` and the German
+names of `langs/de.json` from
+[i18n-iso-countries](https://www.npmjs.com/package/i18n-iso-countries)
+7.14.0 (MIT), plus each code's flag emoji, rewritten as YAML. Names we
+use that the package doesn't have may be added to a country's `de` list
+by hand.
+
 Leaflet's marker PNGs (`dist/images/`) are left out: the route map draws
 circle markers and a CSS marker, so it never requests them.
 
