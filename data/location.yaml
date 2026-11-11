@@ -1,2 +1,5 @@
 name: Ometepe 🇳🇮
 url: https://www.google.com/maps/place/Isla+de+Ometepe,+Nicaragua
+# Position of the "Wir sind gerade hier" marker on the route map.
+lat: 11.50
+lon: -85.58
