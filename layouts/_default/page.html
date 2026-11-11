@@ -115,7 +115,10 @@
                 </ul>
                 {{ end }}
 
+                {{/* `comments: false` in front matter turns them off (the map page). */}}
+                {{ if ne .Params.comments false }}
                 {{ partial "comments.html" . }}
+                {{ end }}
             </div>
 
 

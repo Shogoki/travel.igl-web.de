@@ -11,6 +11,10 @@
   outline is found through its ISO code: data/iso3166.yaml maps the stop's
   country_code to the numeric code world-50m.json uses as the country's id.
 
+  Each country also carries its stops (n, lat, lon): where
+  static/data/states-50m.json has states for it (USA, Kanada, Brasilien,
+  Australien, Indonesien, ...), the JS fills in the states the stops lie in.
+
   Below the map, the same countries as a list: tiny ones like Costa Rica are
   hard to hit on a phone, and it works without JavaScript.
 */}}
@@ -25,6 +29,7 @@
 {{ $names := dict }}
 {{ $flags := dict }}
 {{ $slugs := dict }}
+{{ $stops := dict }}
 {{ with hugo.Data.route }}
   {{ $trips := .trips }}
   {{ $n := len $trips }}
@@ -37,6 +42,7 @@
         {{ $flags = merge $flags (dict $cc .flag) }}
       {{ end }}
       {{ $slugs = merge $slugs (dict $cc ((index $slugs $cc | default slice) | append .posts)) }}
+      {{ $stops = merge $stops (dict $cc ((index $stops $cc | default slice) | append (dict "n" .name "lat" .lat "lon" .lon))) }}
     {{ end }}
   {{ end }}
 {{ end }}
@@ -58,7 +64,7 @@
       {{ if $term }}{{ break }}{{ end }}
     {{ end }}
   {{ end }}
-  {{ $c := dict "id" $id "f" (index $flags $cc) "n" (index $names $cc) "u" "" "c" 0 }}
+  {{ $c := dict "id" $id "cc" (upper $cc) "f" (index $flags $cc) "n" (index $names $cc) "u" "" "c" 0 "s" (index $stops $cc) }}
   {{ with $term }}
     {{ $matched = $matched | append (lower .Title) }}
     {{ $c = merge $c (dict "n" .LinkTitle "u" .RelPermalink "c" (len .Pages)) }}
@@ -74,7 +80,7 @@
 <link rel="stylesheet" href="{{ "vendor/leaflet/leaflet.css" | relURL }}">
 <link rel="stylesheet" href="{{ "css/country-map.css" | relURL }}">
 <div class="country-map-wrap">
-  <div id="country-map" class="country-map" data-world="{{ "data/world-50m.json" | relURL }}">
+  <div id="country-map" class="country-map" data-world="{{ "data/world-50m.json" | relURL }}" data-states="{{ "data/states-50m.json" | relURL }}">
     <noscript><p class="country-map-noscript">Die Karte braucht JavaScript — alle Länder stehen auch in der Liste unten.</p></noscript>
   </div>
   <ul class="country-list">
