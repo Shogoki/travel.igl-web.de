@@ -23,9 +23,12 @@ states at this scale for the USA, Canada, Brazil, Australia, Indonesia,
 China, India, Russia and South Africa.
 
 `data/iso3166.yaml` (outside `static/`, read by Hugo) is derived, not
-copied: the alpha-2 and numeric columns of `codes.json` from
+copied: the alpha-2 and numeric columns of `codes.json` and the German
+names of `langs/de.json` from
 [i18n-iso-countries](https://www.npmjs.com/package/i18n-iso-countries)
-7.14.0 (MIT), rewritten as YAML. It only changes if ISO adds a country.
+7.14.0 (MIT), plus each code's flag emoji, rewritten as YAML. Names we
+use that the package doesn't have may be added to a country's `de` list
+by hand.
 
 Leaflet's marker PNGs (`dist/images/`) are left out: the route map draws
 circle markers and a CSS marker, so it never requests them.

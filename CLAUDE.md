@@ -101,11 +101,10 @@ The map on `/unsere-route/` is drawn by `static/js/route-map.js` (Leaflet) from 
 
 `/karte/` (`content/karte.md`, `layouts/shortcodes/country-map.html`, `static/js/country-map.js`, `static/css/country-map.css`) fills in every country we've been to on the same self-hosted outline; clicking one opens its page in the `countries` taxonomy (`/countries/peru/`). Below the map, the same countries as a list — small countries are hard to tap on a phone, and the list works without JavaScript.
 
-- **It needs no upkeep.** The countries are those of the stops in `data/route.yaml`, so a trip added to the route list shows up here once the route data is regenerated. Each is matched to its taxonomy term by name (the route data is German, like the front matter), or failing that through the countries of the posts linked to its stops. A country whose posts are all drafts is still coloured, with "noch keine Posts" and no link.
-- The outline is found through the stop's `country_code`: `data/iso3166.yaml` maps it to the numeric ISO code that `world-50m.json` uses as each country's `id`.
-- The build warns (it doesn't fail) about a country code missing from that table, and about a country in the front matter that has no stop on the route list, i.e. is missing from the map.
-- **States**: where Natural Earth has them at 1:50m (USA, Kanada, Brasilien, Australien, Indonesien; also China, India, Russia, South Africa), the states our stops lie in get the country's colour and the rest of the country a light tint. The JS finds them from the stops' coordinates (`static/data/states-50m.json`, built as described in `static/vendor/README.md`); a stop on an island too small for the outline goes to the nearest state, which can be the wrong one (Pulau Pramuka, part of Jakarta, lands in Banten). Mexico has no states at this scale.
-- Colours: each country's hue steps on by the golden angle, in the order we first got there, so all of them differ and a new country doesn't recolour the others; a hue within 45° of a bordering country's is skipped.
+- **It needs no upkeep.** The countries come from the `countries` in post front matter, matched by German name against `data/iso3166.yaml` (which also gives each one's outline and flag), and from the stops in `data/route.yaml`, which add countries we've been to but haven't written about yet. A post from a new country is enough to put it on the map; no language model is involved. A country whose posts are all drafts is still shown if the route has it, with "noch keine Posts" and no link.
+- A front matter name the table doesn't know ("Atlantis") is matched through the route stops its posts are linked to, and otherwise left off with a build warning; add the name to that country's `de` list in `data/iso3166.yaml`. An unknown `country_code` in the route data is warned about too. Neither fails the build.
+- **States**: where Natural Earth has them at 1:50m (USA, Kanada, Brasilien, Australien, Indonesien; also China, India, Russia, South Africa), the states our stops lie in get the country's colour and the rest of the country a light tint. The JS finds them from the stops' coordinates (`static/data/states-50m.json`, built as described in `static/vendor/README.md`); a stop on an island too small for the outline goes to the nearest state, which can be the wrong one (Pulau Pramuka, part of Jakarta, lands in Banten). Mexico has no states at this scale, and a country that's only in the front matter has no stops, so it's filled whole.
+- Colours: each country's hue steps on by the golden angle, in the order we first got there (its first stop or post, whichever is earlier), so all of them differ and a new country doesn't recolour the others; a hue within 45° of a bordering country's is skipped.
 - The map is wider than the text column (the window, less 16px a side) and the page has `comments: false` in its front matter, which `page.html` honours.
 
 ### Layout overrides
@@ -131,7 +130,7 @@ Uses [giscus](https://giscus.app) (GitHub Discussions) — config is under `[par
 
 - `data/location.yaml` — current location banner (name + Google Maps URL) and the route map's "you are here" marker (`lat`/`lon`). Update all four together.
 - `data/route.yaml`, `data/places.yaml` — route map data, generated (see "Route map"); only `places.yaml` coordinates are meant to be hand-corrected.
-- `data/iso3166.yaml` — ISO country codes for the country map (see "Country map"); changes only if ISO adds a country.
+- `data/iso3166.yaml` — every country's ISO codes, flag and German names, for the country map (see "Country map"); add a German name there if the front matter uses one it doesn't know.
 
 ## Conventions
 
