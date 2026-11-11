@@ -1,15 +1,26 @@
 /* Country map on /karte/ (layouts/shortcodes/country-map.html,
    static/js/country-map.js). Only that page loads this file. */
 
+/* The theme pads the column 15px on the left but 5% on the right, which
+   would put the wide map off centre. */
+.post-container:has(.country-map-wrap) {
+  padding-right: 15px;
+}
+
 .country-map-wrap {
-  margin: 0 0 32px;
+  /* Wider than the text column: up to the window, less 16px each side.
+     The column is centred, so half the difference on the left centres the
+     map in the window too. */
+  --wide: min(100vw - 32px, 1600px);
+  width: var(--wide);
+  margin: 0 0 32px calc((100% - var(--wide)) / 2);
 }
 
 .country-map {
   /* About the shape of the inhabited world, so a phone doesn't spend a
      third of the map on Antarctica. */
   aspect-ratio: 3 / 2;
-  max-height: 460px;
+  max-height: 80vh;
   border-radius: 6px;
   /* The sea: the map has no tiles, only countries drawn on top of this. */
   background: #cfe3ec;
@@ -19,6 +30,12 @@
 .country-map-noscript {
   padding: 16px;
   margin: 0;
+}
+
+@media (min-width: 768px) {
+  .country-map {
+    aspect-ratio: 2 / 1;
+  }
 }
 
 /* The theme's `.post-container img` rule (max-width, margins) would bend
@@ -33,6 +50,7 @@
 .post-container .country-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 6px;
   margin: 14px 0 0;
   padding: 0;
