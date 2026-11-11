@@ -12,6 +12,11 @@ upgrading, and don't edit them in place.
 | `topojson-client.min.js` | [topojson-client](https://www.npmjs.com/package/topojson-client) 3.1.0, `dist/topojson-client.min.js` | ISC |
 | `../data/world-50m.json` | [world-atlas](https://www.npmjs.com/package/world-atlas) 2.0.2, `countries-50m.json` — [Natural Earth](https://www.naturalearthdata.com/) 1:50m countries as TopoJSON | Public domain (Natural Earth), ISC (world-atlas) |
 
+`data/iso3166.yaml` (outside `static/`, read by Hugo) is derived, not
+copied: the alpha-2 and numeric columns of `codes.json` from
+[i18n-iso-countries](https://www.npmjs.com/package/i18n-iso-countries)
+7.14.0 (MIT), rewritten as YAML. It only changes if ISO adds a country.
+
 Leaflet's marker PNGs (`dist/images/`) are left out: the route map draws
 circle markers and a CSS marker, so it never requests them.
 
