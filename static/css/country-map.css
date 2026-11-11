@@ -1,0 +1,99 @@
+/* Country map on /karte/ (layouts/shortcodes/country-map.html,
+   static/js/country-map.js). Only that page loads this file. */
+
+/* The theme pads the column 15px on the left but 5% on the right, which
+   would put the wide map off centre. */
+.post-container:has(.country-map-wrap) {
+  padding-right: 15px;
+}
+
+.country-map-wrap {
+  /* Wider than the text column: up to the window, less 16px each side.
+     The column is centred, so half the difference on the left centres the
+     map in the window too. */
+  --wide: min(100vw - 32px, 1600px);
+  width: var(--wide);
+  margin: 0 0 32px calc((100% - var(--wide)) / 2);
+}
+
+.country-map {
+  /* About the shape of the inhabited world, so a phone doesn't spend a
+     third of the map on Antarctica. */
+  aspect-ratio: 3 / 2;
+  max-height: 80vh;
+  border-radius: 6px;
+  /* The sea: the map has no tiles, only countries drawn on top of this. */
+  background: #cfe3ec;
+  z-index: 0;
+}
+
+.country-map-noscript {
+  padding: 16px;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .country-map {
+    aspect-ratio: 2 / 1;
+  }
+}
+
+/* The theme's `.post-container img` rule (max-width, margins) would bend
+   Leaflet's internal images out of shape. */
+.post-container .country-map img {
+  max-width: none;
+  margin: 0;
+}
+
+/* Scoped by .post-container to outrank the theme's .post-container ul
+   (40px below, and indented on phones). */
+.post-container .country-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  margin: 14px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.country-list li {
+  --country-color: #bdb5a3;
+}
+
+.country-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 3px 10px;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  background: #fff;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #404040;
+  text-decoration: none;
+}
+
+.country-pill::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--country-color);
+}
+
+a.country-pill:hover,
+a.country-pill:focus,
+.is-active .country-pill {
+  border-color: var(--country-color);
+  color: #404040;
+  text-decoration: none;
+}
+
+.country-list .badge {
+  font-size: 11px;
+  font-weight: normal;
+  background: #eee;
+  color: #808080;
+}

@@ -95,7 +95,9 @@
                 {{ .Content }}
 
 
-                {{ if or (.PrevInSection) (.NextInSection) }}
+                {{/* Posts only: the standalone pages (Unsere Route, Karte)
+                     share the root section and would link to each other. */}}
+                {{ if and (eq .Section "post") (or .PrevInSection .NextInSection) }}
                 <hr>
                 <ul class="pager">
                     {{ if .PrevInSection }}
@@ -113,7 +115,10 @@
                 </ul>
                 {{ end }}
 
+                {{/* `comments: false` in front matter turns them off (the map page). */}}
+                {{ if ne .Params.comments false }}
                 {{ partial "comments.html" . }}
+                {{ end }}
             </div>
 
 
