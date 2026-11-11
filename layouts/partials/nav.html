@@ -34,6 +34,10 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Länder <span class="caret"></span></a>
                         <ul class="dropdown-menu">
+                            {{ with site.GetPage "/karte" }}
+                            <li><a href="{{ .RelPermalink }}">Karte</a></li>
+                            <li role="separator" class="divider"></li>
+                            {{ end }}
                             {{/* $name is Hugo's lowercased key ("südkorea", "usa");
                                  the term page keeps the spelling from front matter. */}}
                             {{ range $name, $taxonomy := . }}

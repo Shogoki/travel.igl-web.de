@@ -50,6 +50,7 @@ The build fetches every album from the API, so a deploy takes about 90s longer t
 
 - `content/post/*.md` — blog posts, filename-prefixed with an ordinal (`1-…`, `2-…`, … `83-…`, plus a later Brazil series `b01-…`, `b02-…`, `B30-…`). This ordering is **semantic**: Hugo's `PrevInSection`/`NextInSection` navigation in `layouts/_default/page.html` relies on date ordering, but humans sort/read by these numbers. Keep them monotonic when adding posts.
 - `content/unsere-route.md` — standalone page linked from the nav menu (see `params.addtional_menus` in `config.toml`): an interactive map (`{{< route-map >}}`) above the hand-written route list. The list is the source of truth and is shown as written; see "Route map" below for how the map follows it.
+- `content/karte.md` — standalone page (`/karte/`), linked as "Karte" at the top of the Länder dropdown: a world map of every country we've been to (`{{< country-map >}}`); see "Country map" below.
 - `archetypes/default.md` — front-matter template for `hugo new`; sets `draft: true`.
 - `static/img/home-bg-jeep.jpg` (the header photo) is 1920px wide, JPEG q60 — the 4032px original was 700KB on every page. Keep replacements around that size.
 
@@ -93,21 +94,30 @@ The map on `/unsere-route/` is drawn by `static/js/route-map.js` (Leaflet) from 
 - Run it locally with the same three variables set: `python3 scripts/route-to-yaml.py` (`--check` reports stale trips without calling anything, `--redo Japan` regenerates the trips whose heading contains "Japan", `--force` all of them). Commit `data/route.yaml` and `data/places.yaml` together with the list change.
 - `layouts/shortcodes/route-map.html` serialises the trips to JSON in the page, resolving each post slug to its title, URL and featured photo (`small.jpg` via the image proxy, loaded only when a popup opens). A slug that doesn't resolve — a draft, in a production build — is skipped.
 - The basemap is **self-hosted on purpose**: Natural Earth country outlines as TopoJSON (`static/data/world-50m.json`), no tile server. Tiles from OpenStreetMap, Mapbox & co. would send every visitor's IP to a third party, which needs consent on a German site. Don't add a tile layer.
-- The world trip goes once around the globe, so the script keeps raw longitudes and the JS unwraps each trip (no leg jumps more than 180°) and draws the basemap three times side by side. Flights are dashed arcs, boats dotted, everything else solid; colours are assigned oldest trip first, so a new trip doesn't recolour the old ones.
+- The world trip goes once around the globe, so the script keeps raw longitudes and the JS unwraps each trip (no leg jumps more than 180°) and draws the basemap three times side by side. Natural Earth cuts Russia and Fiji at the antimeridian, which Leaflet draws as a band across the whole map unless their rings are unwrapped too; `static/js/world-outline.js` does that for both maps. Flights are dashed arcs, boats dotted, everything else solid; colours are assigned oldest trip first, so a new trip doesn't recolour the old ones.
 - The "Wir sind gerade hier" marker reads `lat`/`lon` from `data/location.yaml`.
+
+### Country map
+
+`/karte/` (`content/karte.md`, `layouts/shortcodes/country-map.html`, `static/js/country-map.js`) fills in every country we've been to on the same self-hosted outline; clicking one opens its page in the `countries` taxonomy (`/countries/peru/`). Below the map, the same countries as a list — small countries are hard to tap on a phone, and the list works without JavaScript.
+
+- **It needs no upkeep.** The countries are those of the stops in `data/route.yaml`, so a trip added to the route list shows up here once the route data is regenerated. Each is matched to its taxonomy term by name (the route data is German, like the front matter), or failing that through the countries of the posts linked to its stops. A country whose posts are all drafts is still coloured, with "noch keine Posts" and no link.
+- The outline is found through the stop's `country_code`: `data/iso3166.yaml` maps it to the numeric ISO code that `world-50m.json` uses as each country's `id`.
+- The build warns (it doesn't fail) about a country code missing from that table, and about a country in the front matter that has no stop on the route list, i.e. is missing from the map.
+- Colours cycle through a palette in the order we first got to each country, skipping a colour a bordering visited country already has, so a new country doesn't recolour the others.
 
 ### Layout overrides
 
 The site uses the `hugo-theme-cleanwhite` theme but **overrides** specific templates at the project root (Hugo's lookup order puts `./layouts/` ahead of `./themes/*/layouts/`):
 
 - `layouts/_default/baseof.html` — adds the "Wir sind gerade hier" location badge (a pill above the site title, styled in `static/css/header.css`), reading `data/location.yaml` (`name` + `url`). Update that data file to change the displayed current location.
-- `layouts/_default/page.html` — post template; formats dates with Hugo's own localization (`.Date | time.Format ":date_full"` → "Mittwoch, 3. Juli 2024", driven by `locale = 'de-DE'` in `config.toml`), and injects the image gallery partial before post content. The post header's background is the post's featured photo (`medium` below 1100px, the original above, under a dark gradient for the white title); `image:` in front matter overrides it, and pages without an album fall back to `header_image`. **It must be named `page.html`, not `single.html`.** Hugo v0.146 reworked template lookup so `page.html` outranks `single.html`, and the theme ships its own `_default/page.html`. While this file was called `single.html`, the theme's minimal page template silently won on every build: no galleries, no German dates, no post header, no prev/next — with no build error, because CI installs the latest Hugo.
+- `layouts/_default/page.html` — post template; formats dates with Hugo's own localization (`.Date | time.Format ":date_full"` → "Mittwoch, 3. Juli 2024", driven by `locale = 'de-DE'` in `config.toml`), and injects the image gallery partial before post content. The post header's background is the post's featured photo (`medium` below 1100px, the original above, under a dark gradient for the white title); `image:` in front matter overrides it, and pages without an album fall back to `header_image`. The prev/next links are for posts only: the standalone pages share the root section and would otherwise link to each other. **It must be named `page.html`, not `single.html`.** Hugo v0.146 reworked template lookup so `page.html` outranks `single.html`, and the theme ships its own `_default/page.html`. While this file was called `single.html`, the theme's minimal page template silently won on every build: no galleries, no German dates, no post header, no prev/next — with no build error, because CI installs the latest Hugo.
 - `layouts/partials/*.html` — overrides for `head`, `nav`, `footer`, `comments`, `image-gallery`, `post_list`, `pagination` (German "Neuere/Ältere Posts").
 - `layouts/partials/footer.html` — social links from `[params.social]` as inline SVGs from `assets/icons/` (sources and licences in `assets/icons/README.md`). A configured network without an icon there triggers a build warning. The theme's footer JavaScript (table of contents, tag cloud, FastClick, Baidu, PlantUML, language switcher) is deliberately gone — nothing here used it.
 
 ### Third-party code
 
-jQuery 1.12.4 and PhotoSwipe 4.1.1 are self-hosted under `static/vendor/`, byte-identical to the CDN builds the site used to load (same SRI hashes). So are Leaflet 1.9.4 and topojson-client 3.1.0 for the route map, plus the Natural Earth outline in `static/data/` — sources, licences and hashes in `static/vendor/README.md`. Leaflet and topojson load only on the route page. jQuery, `bootstrap.js` and the theme's `hux-blog.js` load with `defer`, so **no inline script may call `$` or `jQuery` at parse time** — wrap such code in a `DOMContentLoaded` listener. PhotoSwipe's CSS and JS are only included by `image-gallery.html`, i.e. only on posts with a gallery.
+jQuery 1.12.4 and PhotoSwipe 4.1.1 are self-hosted under `static/vendor/`, byte-identical to the CDN builds the site used to load (same SRI hashes). So are Leaflet 1.9.4 and topojson-client 3.1.0 for the route and country maps, plus the Natural Earth outline in `static/data/` — sources, licences and hashes in `static/vendor/README.md`. Leaflet and topojson load only on those two pages. jQuery, `bootstrap.js` and the theme's `hux-blog.js` load with `defer`, so **no inline script may call `$` or `jQuery` at parse time** — wrap such code in a `DOMContentLoaded` listener. PhotoSwipe's CSS and JS are only included by `image-gallery.html`, i.e. only on posts with a gallery.
 
 Before editing a partial, check whether the override exists locally; if not, copy from `themes/hugo-theme-cleanwhite/layouts/...` into `./layouts/...` rather than editing inside the submodule.
 
@@ -119,6 +129,7 @@ Uses [giscus](https://giscus.app) (GitHub Discussions) — config is under `[par
 
 - `data/location.yaml` — current location banner (name + Google Maps URL) and the route map's "you are here" marker (`lat`/`lon`). Update all four together.
 - `data/route.yaml`, `data/places.yaml` — route map data, generated (see "Route map"); only `places.yaml` coordinates are meant to be hand-corrected.
+- `data/iso3166.yaml` — ISO country codes for the country map (see "Country map"); changes only if ISO adds a country.
 
 ## Conventions
 

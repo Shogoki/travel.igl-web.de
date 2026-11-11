@@ -1,0 +1,96 @@
+{{/*
+  World map of every country we've been to, drawn by static/js/country-map.js
+  on the same self-hosted outline as the route map (no tile server, see
+  route-map.html). Clicking a country opens its page in the "countries"
+  taxonomy, i.e. the posts from there.
+
+  The countries are those of the stops in data/route.yaml, so a trip added
+  to the route list shows up here too. Each is matched to its taxonomy term
+  by name ("Peru" — the route data is in German, like the front matter), or
+  failing that by the countries of the posts linked to its stops. Its
+  outline is found through its ISO code: data/iso3166.yaml maps the stop's
+  country_code to the numeric code world-50m.json uses as the country's id.
+
+  Below the map, the same countries as a list: tiny ones like Costa Rica are
+  hard to hit on a phone, and it works without JavaScript.
+*/}}
+{{ $terms := dict }}
+{{ range site.Taxonomies.countries }}
+  {{ with .Page }}{{ $terms = merge $terms (dict (lower .Title) .) }}{{ end }}
+{{ end }}
+
+{{/* The route lists trips newest first; walk it oldest first, so a new
+     country is appended and doesn't shift the colours of the others. */}}
+{{ $order := slice }}
+{{ $names := dict }}
+{{ $flags := dict }}
+{{ $slugs := dict }}
+{{ with hugo.Data.route }}
+  {{ $trips := .trips }}
+  {{ $n := len $trips }}
+  {{ range seq $n }}
+    {{ range (index $trips (sub $n .)).stops }}
+      {{ $cc := lower .country_code }}
+      {{ if not (in $order $cc) }}
+        {{ $order = $order | append $cc }}
+        {{ $names = merge $names (dict $cc .country) }}
+        {{ $flags = merge $flags (dict $cc .flag) }}
+      {{ end }}
+      {{ $slugs = merge $slugs (dict $cc ((index $slugs $cc | default slice) | append .posts)) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ $countries := slice }}
+{{ $matched := slice }}
+{{ range $cc := $order }}
+  {{ $id := index hugo.Data.iso3166 $cc }}
+  {{ if not $id }}
+    {{ warnf "country-map: unknown country code %q in data/route.yaml; it is left off the map" $cc }}
+    {{ continue }}
+  {{ end }}
+  {{ $term := index $terms (lower (index $names $cc)) }}
+  {{ if not $term }}
+    {{ range index $slugs $cc }}
+      {{ with site.GetPage (printf "/post/%s" .) }}
+        {{ with .GetTerms "countries" }}{{ $term = index . 0 }}{{ end }}
+      {{ end }}
+      {{ if $term }}{{ break }}{{ end }}
+    {{ end }}
+  {{ end }}
+  {{ $c := dict "id" $id "f" (index $flags $cc) "n" (index $names $cc) "u" "" "c" 0 }}
+  {{ with $term }}
+    {{ $matched = $matched | append (lower .Title) }}
+    {{ $c = merge $c (dict "n" .LinkTitle "u" .RelPermalink "c" (len .Pages)) }}
+  {{ end }}
+  {{ $countries = $countries | append $c }}
+{{ end }}
+{{ range $key, $term := $terms }}
+  {{ if not (in $matched $key) }}
+    {{ warnf "country-map: country %q has posts but no stop on the route list (content/unsere-route.md), so it is missing from the map" $term.Title }}
+  {{ end }}
+{{ end }}
+
+<link rel="stylesheet" href="{{ "vendor/leaflet/leaflet.css" | relURL }}">
+<link rel="stylesheet" href="{{ "css/country-map.css" | relURL }}">
+<div class="country-map-wrap">
+  <div id="country-map" class="country-map" data-world="{{ "data/world-50m.json" | relURL }}">
+    <noscript><p class="country-map-noscript">Die Karte braucht JavaScript — alle Länder stehen auch in der Liste unten.</p></noscript>
+  </div>
+  <ul class="country-list">
+    {{ range sort $countries "n" }}
+    <li data-id="{{ .id }}">
+      {{ if .u }}
+      <a class="country-pill" href="{{ .u }}">{{ .f }} {{ .n }} <span class="badge">{{ .c }}</span></a>
+      {{ else }}
+      <span class="country-pill">{{ .f }} {{ .n }}</span>
+      {{ end }}
+    </li>
+    {{ end }}
+  </ul>
+</div>
+<script type="application/json" id="country-data">{{ $countries | jsonify | safeJS }}</script>
+<script defer src="{{ "vendor/leaflet/leaflet.js" | relURL }}"></script>
+<script defer src="{{ "vendor/topojson-client.min.js" | relURL }}"></script>
+<script defer src="{{ "js/world-outline.js" | relURL }}"></script>
+<script defer src="{{ "js/country-map.js" | relURL }}"></script>
