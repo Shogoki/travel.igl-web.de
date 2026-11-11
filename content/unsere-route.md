@@ -4,6 +4,8 @@ author: Sven, Kerstin
 date: 2026-09-13
 ---
 
+{{< route-map >}}
+
 ## Costa Rica & Nicaragua 03.11. - 02.12.2026 🇨🇷🇳🇮 
 
 - 03.11.26 - 04.11.26 San José 🇨🇷 
@@ -80,8 +82,6 @@ date: 2026-09-13
 
 ### Peru 🇵🇪
 
-{{< figure src="/img/route_peru.png"  height="430px" width="300px">}}
-
 - 12.09. – 14.09. Lima
 - 14.09. Nachtbus nach Huaraz
 - 15.09. – 20.09. Huaraz
@@ -104,13 +104,9 @@ date: 2026-09-13
 
 ### Tri-Border Zone (Peru, Kolumbien, Brasilien) 🇵🇪🇨🇴🇧🇷
 
-{{< figure src="/img/route_triborder.png"  height="360px" width="323px">}}
-
 - 23.10. - 25.10. Leticia 🇨🇴, Triborder-Zone 🇵🇪🇨🇴🇧🇷
 
 ### Kolumbien 🇨🇴
-
-{{< figure src="/img/route_kolumbien.png"  height="560px" width="315px">}}
 
 - 25.10. Flug von Leticia nach Bogotá
 - 25.10. - 28.10. Bogotá
@@ -140,10 +136,6 @@ date: 2026-09-13
 
 ### Mexiko 🇲🇽
 
-{{< figure src="/img/route_col-mex.png"  height="360px" width="323px">}}
-
-{{< figure src="/img/Route_Mexico.png"  height="560px" width="315px">}}
-
 - 02.12. - 04.12. Cancun
 - 04.12. Collectivo nach Tulum
 - 04.12. - 07.12. Tulum
@@ -158,8 +150,6 @@ date: 2026-09-13
 
 ### USA & Kanada 🇺🇸🇨🇦
 
-{{< figure src="/img/route_usa_kanada.png"  height="560px" width="315px">}}
-
 - 15.12. Einreise zu Fuß von Tijuana 🇲🇽 nach San Diego 🇺🇸
 - 15.12. - 16.12. San Diego, CA
 - 16.12. - 17.12. Joshua Tree Nationalpark
@@ -172,10 +162,6 @@ date: 2026-09-13
 - 23.12 Flug nach Sydney 🇦🇺
 
 ### Australien 🇦🇺
-
-{{< figure src="/img/route_canada-aus.png"  height="315px" width="560px">}}
-
-{{< figure src="/img/Route_Australien.png">}}
 
 - 25.12 Ankunft in Sydney --> Weiterfahrt nach Newcastle
 - 25.12. - 26.12 Newcastle
@@ -193,22 +179,10 @@ date: 2026-09-13
 - 14.01. - 15.01. Sydney
 - 15.01. Flug nach Denpasar, Bali 🇮🇩
 
-{{< figure src="/img/route_aus-ind.png"  height="315px" width="560px">}}
 
 ### Indonesien 🇮🇩
 
-{{< figure src="/img/route_indonesien_all.png"  height="315px" width="560px">}}
-
-Übersicht der Indonesien Route. Details folgen weiter unten.
-
-- 15.01. - 23.01. Bali
-- 24.01. - 29.01. Nusa Penida
-- 29.01. - 25.02. Java
-- 26.02. - 15.03. Sumatra
-
 #### Bali & Nusa Penida 🇮🇩
-
-{{< figure src="/img/route_Bali.png"  height="315px" width="560px">}}
 
 - 15.01. - 17.01. Bukit Halbinsel
 - 17.01. - 18.01. Kuta
@@ -220,8 +194,6 @@ date: 2026-09-13
 - 29.01. Weiterreise nach Java 🇮🇩
 
 #### Java 🇮🇩
-
-{{< figure src="/img/Route_Java.png"  height="315px" width="560px">}}
 
 - 29.01. - 31.01. Banyuwangi
 - 31.01. - 01.02. Probolingo
@@ -240,8 +212,6 @@ date: 2026-09-13
 
 #### Sumatra 🇮🇩
 
-{{< figure src="/img/Route_Sumatra.png">}}
-
 - 26.02. - 27.02. Ranau
 - 27.02. - 28.02. Lahat 
 - 02.03. - 06.03. Payakumbuh 
@@ -251,8 +221,6 @@ date: 2026-09-13
 - 15.03. Flug nach Penang, Malaysia 🇲🇾
 
 ### Malaysia 🇲🇾
-
-{{< figure src="/img/Route_Malaysia.png">}}
 
 - 15.03. - 19.03. Penang
 - 19.03. - 20.03. Butterworth
@@ -272,8 +240,6 @@ date: 2026-09-13
 
 ### Thailand 🇹🇭
 
-{{< figure src="/img/Route_Thailand.png">}}
-
 - 23.04. - 26.04. Koh Lipe 
 - 26.04. - 27.04. Koh Andang
 - 27.04. - 30.04. Koh Lanta
@@ -286,8 +252,6 @@ date: 2026-09-13
 - 22.05. Zug nach Poipet, Kambodscha 🇰🇭
 
 ### Kambodscha 🇰🇭
-
-{{< figure src="/img/Route_Kambodscha.png">}}
 
 - 22.05. Bus nach Battambang
 - 22.05. - 24.05. Battambang
@@ -302,8 +266,6 @@ date: 2026-09-13
 - 08.06. Tuktuk nach Ha Tien, Vietnam 🇻🇳
 
 ### Vietnam 🇻🇳
-
-{{< figure src="/img/Route_Vietnam.png">}}
 
 - 08.06. Taxi nach Can Tho
 - 08.06. - 10.06. Can Tho
@@ -321,8 +283,6 @@ date: 2026-09-13
 - 07.07. Flug nach Busan, Südkorea 🇰🇷
 
 ### Südkorea 🇰🇷
-
-{{< figure src="/img/Route_Südkorea.png">}}
 
 - 07.07. - 10.07. Busan 
 - 10.07. - 11.07. Ulsan
