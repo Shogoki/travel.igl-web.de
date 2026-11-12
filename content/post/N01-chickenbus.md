@@ -6,7 +6,7 @@ categories: ["Nicaragua" , "San Juan del Sur"]
 countries: ["Nicaragua"]
 featured: 14
 album: https://www.icloud.com/sharedalbum/#D2Rv3naTMHEoW16Zu3s7Q7tCfuACAEQARogRFNcn6yF2N7wRDjtqVImVLT2U9J1ssuqncICgq5KUTU
-draft: true
+draft: false
 
 ---
 
