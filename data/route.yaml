@@ -5,7 +5,7 @@ trips:
     title: "Costa Rica & Nicaragua"
     heading: "Costa Rica & Nicaragua 03.11. - 02.12.2026 🇨🇷🇳🇮"
     hash: "eef8309dff161031"
-    posts_hash: "c0f0618c390689ee"
+    posts_hash: "2916e1c842facb01"
     stops:
       - name: "San José"
         country: "Costa Rica"
@@ -54,7 +54,7 @@ trips:
         by: null
         label: null
         query: "San Juan del Sur, Nicaragua"
-        posts: []
+        posts: ["N01-chickenbus"]
       - name: "Ometepe"
         country: "Nicaragua"
         country_code: "NI"
