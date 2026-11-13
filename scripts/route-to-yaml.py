@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Turn the hand-written list in content/unsere-route.md into data/route.yaml.
+"""Turn the hand-written list in content/unsere-route.md into route-data/route.yaml.
 
 The list stays the source of truth: it is written for people, and the page
 shows it as-is below the map. This script derives the map data from it:
@@ -14,10 +14,15 @@ shows it as-is below the map. This script derives the map data from it:
    line names a stop outright are linked without asking.
 4. Geocode new places through OpenStreetMap Nominatim, using the model's
    rough coordinates to rule out namesakes (and in place of a result when
-   there is none), and cache them in data/places.yaml. That file is
+   there is none), and cache them in route-data/places.yaml. That file is
    hand-editable: correct a misplaced point there and rerun.
-5. Write data/route.yaml with hashes of each trip's source text and
+5. Write route-data/route.yaml with hashes of each trip's source text and
    candidate posts, so the next run only asks about what changed.
+
+Both files live on the route-data branch, not on main, so CI can commit
+them without anyone having to pull. route-data/ is that branch's checkout:
+a git worktree locally (`git worktree add route-data route-data`), a second
+checkout in CI. Hugo mounts route.yaml from there as data/route.yaml.
 
 Standard library only, so CI needs no pip install. Configuration:
 
@@ -51,8 +56,9 @@ import urllib.request
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SOURCE = os.path.join(ROOT, "content", "unsere-route.md")
 POSTS_DIR = os.path.join(ROOT, "content", "post")
-ROUTE_YAML = os.path.join(ROOT, "data", "route.yaml")
-PLACES_YAML = os.path.join(ROOT, "data", "places.yaml")
+DATA_DIR = os.path.join(ROOT, "route-data")
+ROUTE_YAML = os.path.join(DATA_DIR, "route.yaml")
+PLACES_YAML = os.path.join(DATA_DIR, "places.yaml")
 
 TRANSPORT = ["flug", "bus", "zug", "auto", "boot", "fuss"]
 
@@ -687,7 +693,7 @@ def locate(query, country_code, estimate, previous=None):
     a candidate must lie near its estimate, or near the previous stop (the
     estimate itself can be badly off: one put Medan on Kuala Lumpur). With
     no candidate, the estimate stands in, logged for a look at
-    data/places.yaml.
+    route-data/places.yaml.
     """
     refs = [estimate] + ([previous] if previous else [])
     for q in query_variants(query):
@@ -704,7 +710,7 @@ def locate(query, country_code, estimate, previous=None):
         if near:
             return {"lat": near[0]["lat"], "lon": near[0]["lon"]}
     print(f"  warning: no Nominatim match near the model's estimate for {query!r}; using the estimate, "
-          "check it in data/places.yaml", file=sys.stderr)
+          "check it in route-data/places.yaml", file=sys.stderr)
     return {"lat": round(float(estimate["lat"]), 4), "lon": round(float(estimate["lon"]), 4)}
 
 
@@ -889,8 +895,12 @@ def main():
     ap.add_argument("--redo", action="append", default=[], metavar="TEXT",
                     help="regenerate trips whose heading contains TEXT (repeatable)")
     ap.add_argument("--check", action="store_true",
-                    help="only report whether data/route.yaml is out of date (exit 1 if so)")
+                    help="only report whether route-data/route.yaml is out of date (exit 1 if so)")
     args = ap.parse_args()
+    if not os.path.isdir(DATA_DIR):
+        print("route-data/ is missing: it is the route-data branch, checked out with\n"
+              "  git worktree add route-data route-data", file=sys.stderr)
+        return 1
 
     def redo(heading):
         return args.force or any(text in heading for text in args.redo)
@@ -936,7 +946,7 @@ def main():
             print("stale:", s)
         return 1 if stale or len(old_trips) != len(sections) else 0
     if not stale and len(old_trips) == len(sections):
-        print("data/route.yaml is up to date")
+        print("route-data/route.yaml is up to date")
         return 0
 
     # Copying places and literal post links needs no model.
@@ -964,13 +974,13 @@ def main():
             d = distance_km(a, b)
             if d > MAX_LEG_KM.get(b.get("by"), 1500):
                 print(f"warning: {t['title']}: {a['name']} -> {b['name']} is {d:.0f} km "
-                      f"by {b.get('by') or 'unknown'}; check data/places.yaml", file=sys.stderr)
+                      f"by {b.get('by') or 'unknown'}; check route-data/places.yaml", file=sys.stderr)
 
     # Drop cache entries no stop uses any more (renamed queries).
     used = {s["query"] for t in trips for s in t["stops"]}
     write_places({q: v for q, v in places.items() if q in used})
     write_route(trips)
-    print(f"wrote data/route.yaml ({sum(len(t['stops']) for t in trips)} stops in {len(trips)} trips)")
+    print(f"wrote route-data/route.yaml ({sum(len(t['stops']) for t in trips)} stops in {len(trips)} trips)")
     if failed:
         print(f"{len(failed)} trip(s) failed and kept their previous version (if any): {failed}", file=sys.stderr)
         return 1
@@ -982,5 +992,5 @@ if __name__ == "__main__":
         sys.exit(main())
     except (LLMError, urllib.error.URLError, OSError) as e:
         print(f"error: {e}", file=sys.stderr)
-        print("data/route.yaml was not changed.", file=sys.stderr)
+        print("route-data/route.yaml was not changed.", file=sys.stderr)
         sys.exit(1)

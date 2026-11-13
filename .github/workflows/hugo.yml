@@ -8,7 +8,7 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# Pushing to gh-pages needs write access; nothing else does.
+# Pushing to gh-pages and route-data needs write access; nothing else does.
 permissions:
   contents: write
 
@@ -35,14 +35,23 @@ jobs:
           hugo-version: "0.167.0"
           # extended: true
 
-      # The route map's data (data/route.yaml) is derived from the
-      # hand-written list in content/unsere-route.md by a language model
-      # behind an OpenAI-compatible API (scripts/route-to-yaml.py). Only trips
-      # whose text or posts changed are sent; the result is committed back
-      # so the next run starts from it. This step never fails the deploy:
-      # without a key, or when the model misbehaves, the site builds with the
-      # last committed data. A push made with GITHUB_TOKEN does not trigger
-      # another run.
+      # The route map's data lives on its own branch, route-data, so the
+      # commits below never land on main and nobody has to pull after a
+      # push. config.toml mounts route-data/route.yaml as data/route.yaml.
+      - name: Check out route map data
+        uses: actions/checkout@v7
+        with:
+          ref: route-data
+          path: route-data
+
+      # The route map's data (route.yaml) is derived from the hand-written
+      # list in content/unsere-route.md by a language model behind an
+      # OpenAI-compatible API (scripts/route-to-yaml.py). Only trips whose
+      # text or posts changed are sent; the result is committed to the
+      # route-data branch so the next run starts from it. This step never
+      # fails the deploy: without a key, or when the model misbehaves, the
+      # site builds with the last committed data. The workflow only runs on
+      # pushes to main, so this push doesn't start another one.
       - name: Update route map data
         continue-on-error: true
         env:
@@ -64,13 +73,15 @@ jobs:
             echo "::warning::The route list changed, but LLM_API_KEY, LLM_BASE_URL or LLM_MODEL is not set; the map shows the old data. See CLAUDE.md."
             exit 0
           fi
-          if [ -n "$(git status --porcelain -- data/route.yaml data/places.yaml)" ]; then
+          cd route-data
+          if [ -n "$(git status --porcelain -- route.yaml places.yaml)" ]; then
             git config user.name "github-actions[bot]"
             git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
-            git add data/route.yaml data/places.yaml
-            git commit -m "Update route map data"
-            git pull --rebase origin main
-            git push origin HEAD:main
+            git add route.yaml places.yaml
+            git commit -m "Update route map data for main@${GITHUB_SHA::8}"
+            # A hand correction to places.yaml may have landed meanwhile.
+            git pull --rebase origin route-data
+            git push origin HEAD:route-data
           fi
           exit $status
 
