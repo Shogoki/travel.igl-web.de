@@ -1,7 +1,7 @@
 {{/*
   Interactive map of every trip, drawn by static/js/route-map.js from
-  data/route.yaml (generated from the list on this same page by
-  scripts/route-to-yaml.py — see CLAUDE.md).
+  route.yaml on the route-data branch, mounted as data/ (generated from the
+  list on this same page by scripts/route-to-yaml.py — see CLAUDE.md).
 
   The basemap is Natural Earth country outlines served from this site
   (static/data/world-50m.json). Deliberately no tile server: every tile
@@ -33,6 +33,9 @@
     {{ end }}
     {{ $trips = $trips | append (dict "id" .id "title" .title "stops" $stops) }}
   {{ end }}
+{{ else }}
+  {{/* CI always checks the route-data branch out; locally it's a worktree. */}}
+  {{ warnf "route-map: no route-data/route.yaml, so the map is empty. Run: git worktree add route-data route-data (see CLAUDE.md)" }}
 {{ end }}
 {{ $loc := dict }}
 {{ with hugo.Data.location }}
