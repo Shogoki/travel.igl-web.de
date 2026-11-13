@@ -72,3 +72,16 @@ home = ["HTML", "RSS"]
 # cache and always fetches fresh; this only changes local builds.
 [caches.getresource]
   maxAge = "1h"
+
+# The route map's data is generated and lives on its own branch, route-data,
+# so the bot that updates it never commits to main (see CLAUDE.md, "Route
+# map"). CI checks that branch out into route-data/; locally it is a git
+# worktree there. Declaring any data mount replaces Hugo's default, so data/
+# is listed too.
+[[module.mounts]]
+  source = "data"
+  target = "data"
+[[module.mounts]]
+  source = "route-data"
+  target = "data"
+  files = ["route.yaml"]
