@@ -1,5 +1,5 @@
 ---
-title: "Pura Vida"
+title: "C01 - Pura Vida"
 date: 2026-11-05
 author: Kerstin
 categories: ["Costa Rica" , "San José" , "Liberia"]
