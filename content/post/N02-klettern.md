@@ -22,3 +22,4 @@ Die Insel selbst ist sehr schön, es gibt auf der westlichen Seite im Süden auf
 - Ojo de Agua, natural spring pool
 - Playa Mangos
  
+Next Stop: Granada 
