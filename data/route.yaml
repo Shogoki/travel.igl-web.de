@@ -5,7 +5,7 @@ trips:
     title: "Costa Rica & Nicaragua"
     heading: "Costa Rica & Nicaragua 03.11. - 02.12.2026 🇨🇷🇳🇮"
     hash: "eef8309dff161031"
-    posts_hash: "cd1187e36cfb62a9"
+    posts_hash: "27d8aed677740a42"
     stops:
       - name: "San José"
         country: "Costa Rica"
@@ -66,7 +66,7 @@ trips:
         by: null
         label: null
         query: "Ometepe, Nicaragua"
-        posts: []
+        posts: ["N02-klettern"]
   - id: "valencia-2026"
     title: "Valencia"
     heading: "Valencia 11.09. - 13.09.2026 🇪🇸"
