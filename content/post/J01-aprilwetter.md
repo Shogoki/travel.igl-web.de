@@ -1,6 +1,6 @@
 ---
 title: "#J01 - Aprilwetter"
-date: 2026-04-19
+date: 2026-04-22
 author: Kerstin
 categories: ["Japan" , "Osaka"]
 countries: ["Japan"]
