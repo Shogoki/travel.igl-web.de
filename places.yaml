@@ -1,0 +1,162 @@
+# Geocoding cache for scripts/route-to-yaml.py (OpenStreetMap Nominatim).
+# If a stop sits in the wrong spot, correct its lat/lon here: the next run
+# copies it into route.yaml. Entries are never refetched; delete one to
+# fetch it again.
+"Ao Nang, Thailand": {lat: 8.033, lon: 98.8235}
+"Armenia, Colombia": {lat: 4.5363, lon: -75.6724}
+"Bandung, Java, Indonesia": {lat: -6.9218, lon: 107.6071}
+"Bangkok, Thailand": {lat: 13.7525, lon: 100.4935}
+"Banyuwangi, Java, Indonesia": {lat: -8.2095, lon: 114.3737}
+"Battambang, Cambodia": {lat: 13.102, lon: 103.1998}
+"Bogotá, Colombia": {lat: 4.6534, lon: -74.0836}
+"Buenaventura, Colombia": {lat: 3.8882, lon: -77.0738}
+"Bukit Lawang, Sumatra, Indonesia": {lat: 3.548, lon: 98.1272}
+"Bukit Peninsula, Bali, Indonesia": {lat: -8.7667, lon: 115.2167}
+"Busan, South Korea": {lat: 35.18, lon: 129.0752}
+"Butterworth, Malaysia": {lat: 5.4082, lon: 100.3697}
+"Cajamarca, Peru": {lat: -7.1567, lon: -78.5173}
+"Cali, Colombia": {lat: 3.452, lon: -76.5325}
+"Can Tho, Vietnam": {lat: 10.0362, lon: 105.7873}
+"Cancún, Mexico": {lat: 21.1527, lon: -86.8426}
+"Cartagena, Colombia": {lat: 10.4266, lon: -75.5442}
+"Cat Ba Island, Vietnam": {lat: 20.7952, lon: 107.0049}
+"Caves Beach, New South Wales, Australia": {lat: -33.1123, lon: 151.645}
+"Cemoro Lawang, Java, Indonesia": {lat: -7.9425, lon: 112.953}
+"Chachapoyas, Peru": {lat: -6.2293, lon: -77.8715}
+"Chungcheongbuk-do, South Korea": {lat: 36.8527, lon: 127.7153}
+"Chungcheongnam-do, South Korea": {lat: 36.6593, lon: 126.6729}
+"Da Lat, Vietnam": {lat: 11.9402, lon: 108.4376}
+"Da Nang, Vietnam": {lat: 16.0685, lon: 108.224}
+"Daegu, South Korea": {lat: 35.8713, lon: 128.6018}
+"Dahab, Egypt": {lat: 28.4964, lon: 34.5146}
+"Diamantina, Brazil": {lat: -18.2441, lon: -43.6006}
+"Dong Hoi, Vietnam": {lat: 17.4495, lon: 106.5912}
+"Forest City, Johor, Malaysia": {lat: 1.338, lon: 103.5868}
+"Fortaleza, Brazil": {lat: -3.7932, lon: -38.528}
+"Frankfurt, Germany": {lat: 50.1106, lon: 8.6821}
+"Gangwon-do, South Korea": {lat: 37.7725, lon: 128.3821}
+"Guadalajara, Mexico": {lat: 20.672, lon: -103.3384}
+"Gyeongsangbuk-do, South Korea": {lat: 36.5754, lon: 128.5058}
+"Gyeongsangnam-do, South Korea": {lat: 35.3878, lon: 128.3662}
+"Ha Giang, Vietnam": {lat: 22.8168, lon: 104.9505}
+"Ha Tien, Vietnam": {lat: 10.3807, lon: 104.4871}
+"Hanoi, Vietnam": {lat: 21.0283, lon: 105.854}
+"Ho Chi Minh City, Vietnam": {lat: 10.7737, lon: 106.7166}
+"Hoi An, Vietnam": {lat: 15.8796, lon: 108.3319}
+"Huanchaco, Peru": {lat: -8.08, lon: -79.1205}
+"Huaraz, Peru": {lat: -9.5299, lon: -77.529}
+"Huế, Vietnam": {lat: 16.4639, lon: 107.5863}
+"Ibiza, Spain": {lat: 38.9744, lon: 1.4197}
+"Ilha Grande, Rio de Janeiro, Brazil": {lat: -23.1555, lon: -44.2345}
+"Ipoh, Malaysia": {lat: 4.5987, lon: 101.09}
+"Iquitos, Peru": {lat: -3.7494, lon: -73.2444}
+"Ishigaki, Okinawa, Japan": {lat: 24.3444, lon: 124.1852}
+"Jakarta, Java, Indonesia": {lat: -6.1754, lon: 106.8272}
+"Jardín, Colombia": {lat: 5.5991, lon: -75.8192}
+"Jeollabuk-do, South Korea": {lat: 35.8199, lon: 127.109}
+"Jerantut, Malaysia": {lat: 3.9367, lon: 102.372}
+"Jericoacoara, Brazil": {lat: -2.8986, lon: -40.4506}
+"Joshua Tree National Park, USA": {lat: 33.8971, lon: -115.9511}
+"Kampot, Cambodia": {lat: 10.6099, lon: 104.181}
+"Kangaroo Valley, New South Wales, Australia": {lat: -34.7352, lon: 150.5325}
+"Katoomba, New South Wales, Australia": {lat: -33.714, lon: 150.3116}
+"Kep, Cambodia": {lat: 10.4846, lon: 104.3144}
+"Khao Lak, Thailand": {lat: 8.6367, lon: 98.2487}
+"Koh Andang, Thailand": {lat: 6.527, lon: 99.278}
+"Koh Chang, Thailand": {lat: 12.0546, lon: 102.3373}
+"Koh Kood, Thailand": {lat: 11.6622, lon: 102.5681}
+"Koh Lanta, Thailand": {lat: 7.5598, lon: 99.0573}
+"Koh Lipe, Thailand": {lat: 6.4876, lon: 99.3025}
+"Koh Pha-Ngan, Thailand": {lat: 9.735, lon: 100.0306}
+"Koh Phi Phi, Thailand": {lat: 7.7407, lon: 98.7784}
+"Koh Rong Samloem, Cambodia": {lat: 10.584, lon: 103.2955}
+"Koh Samui, Thailand": {lat: 9.5014, lon: 99.9956}
+"Koh Tao, Thailand": {lat: 10.0922, lon: 99.8395}
+"Kratié, Cambodia": {lat: 12.489, lon: 106.0201}
+"Kuala Besut, Malaysia": {lat: 5.8284, lon: 102.5561}
+"Kuala Lumpur, Malaysia": {lat: 3.1517, lon: 101.6942}
+"Kuta, Bali, Indonesia": {lat: -8.7264, lon: 115.1778}
+"Lahat, Sumatra, Indonesia": {lat: -3.7854, lon: 103.5392}
+"Lake Toba, Sumatra, Indonesia": {lat: 2.6109, lon: 98.9023}
+"Langkawi, Malaysia": {lat: 6.37, lon: 99.7929}
+"Las Vegas, Nevada, USA": {lat: 36.1674, lon: -115.1484}
+"Leticia, Colombia": {lat: -4.2129, lon: -69.9426}
+"Liberia, Costa Rica": {lat: 10.632, lon: -85.4393}
+"Lima, Peru": {lat: -12.046, lon: -77.0306}
+"Los Angeles, California, USA": {lat: 34.0537, lon: -118.2428}
+"Malacca, Malaysia": {lat: 2.1943, lon: 102.2487}
+"Maragogi, Brazil": {lat: -9.0118, lon: -35.2225}
+"Medan, Sumatra, Indonesia": {lat: 3.5895, lon: 98.6742}
+"Medellín, Colombia": {lat: 6.2697, lon: -75.6026}
+"Mersing, Malaysia": {lat: 2.4299, lon: 103.8355}
+"Mexico City, Mexico": {lat: 19.4326, lon: -99.1332}
+"Mollymook, New South Wales, Australia": {lat: -35.3419, lon: 150.4704}
+"Munduk, Bali, Indonesia": {lat: -8.2684, lon: 115.0777}
+"Nauta, Peru": {lat: -4.507, lon: -73.574}
+"Newcastle, New South Wales, Australia": {lat: -32.9193, lon: 151.7795}
+"Nha Trang, Vietnam": {lat: 12.2085, lon: 109.2871}
+"Ninh Bình, Vietnam": {lat: 20.2572, lon: 105.9719}
+"Nusa Penida, Bali, Indonesia": {lat: -8.7456, lon: 115.5347}
+"Okinawa, Japan": {lat: 26.475, lon: 127.9115}
+"Ometepe, Nicaragua": {lat: 11.4984, lon: -85.6255}
+"Osaka, Japan": {lat: 34.6938, lon: 135.5015}
+"Palenque, Mexico": {lat: 17.5092, lon: -91.9809}
+"Palomino, Colombia": {lat: 11.2449, lon: -73.5598}
+"Paraty, Brazil": {lat: -23.2196, lon: -44.7154}
+"Payakumbuh, Sumatra, Indonesia": {lat: -0.2243, lon: 100.6319}
+"Penang, Malaysia": {lat: 5.4065, lon: 100.2559}
+"Perhentian Kecil Island, Malaysia": {lat: 5.9158, lon: 102.7197}
+"Peñas Blancas, Costa Rica": {lat: 11.2133, lon: -85.6117}
+"Phnom Penh, Cambodia": {lat: 11.5683, lon: 104.9224}
+"Phong Nha, Vietnam": {lat: 17.6475, lon: 106.2729}
+"Phuket, Thailand": {lat: 7.8848, lon: 98.3892}
+"Pipa, Brazil": {lat: -6.2373, lon: -35.0442}
+"Poipet, Cambodia": {lat: 13.6594, lon: 102.5708}
+"Pramuka Island, Indonesia": {lat: -5.7465, lon: 106.6139}
+"Probolinggo, Java, Indonesia": {lat: -7.7441, lon: 113.2158}
+"Purwokerto, Java, Indonesia": {lat: -7.4279, lon: 109.2409}
+"Ranau, Sumatra, Indonesia": {lat: -4.83, lon: 103.92}
+"Recife, Brazil": {lat: -8.0585, lon: -34.8848}
+"Rio de Janeiro, Brazil": {lat: -22.911, lon: -43.2094}
+"Salento, Colombia": {lat: 4.6373, lon: -75.5698}
+"Salvador, Brazil": {lat: -12.9822, lon: -38.4813}
+"San Andrés, Colombia": {lat: 12.5376, lon: -81.7204}
+"San Diego, California, USA": {lat: 32.7157, lon: -117.1638}
+"San José, Costa Rica": {lat: 9.9327, lon: -84.0797}
+"San Juan del Sur, Nicaragua": {lat: 11.1944, lon: -85.8598}
+"Santa Marta, Colombia": {lat: 11.2321, lon: -74.1951}
+"Santa Rosa, Peru": {lat: -4.2318, lon: -69.9609}
+"Sanur, Bali, Indonesia": {lat: -8.6946, lon: 115.2606}
+"Seattle, Washington, USA": {lat: 47.6038, lon: -122.3301}
+"Semarang, Java, Indonesia": {lat: -6.9904, lon: 110.4229}
+"Seoul, South Korea": {lat: 37.5667, lon: 126.9783}
+"Sharm El-Sheikh, Egypt": {lat: 27.8644, lon: 34.2954}
+"Shoal Bay, New South Wales, Australia": {lat: -32.7244, lon: 152.1749}
+"Shoalhaven, New South Wales, Australia": {lat: -35.1416, lon: 150.3917}
+"Siem Reap, Cambodia": {lat: 13.3618, lon: 103.859}
+"Sihanoukville, Cambodia": {lat: 10.622, lon: 103.5223}
+"Similan Islands, Thailand": {lat: 8.65, lon: 97.64}
+"Surabaya, Java, Indonesia": {lat: -7.2463, lon: 112.7378}
+"Surakarta, Java, Indonesia": {lat: -7.5692, lon: 110.8284}
+"Sydney, Australia": {lat: -33.8698, lon: 151.2083}
+"São Paulo, Brazil": {lat: -23.5507, lon: -46.6334}
+"Tanah Rata, Malaysia": {lat: 4.4707, lon: 101.3777}
+"Tarapoto, Peru": {lat: -6.4877, lon: -76.3599}
+"Terengganu, Malaysia": {lat: 5.3302, lon: 103.1408}
+"Tijuana, Mexico": {lat: 32.5365, lon: -117.0371}
+"Tioman Island, Malaysia": {lat: 2.8065, lon: 104.1722}
+"Tokyo, Japan": {lat: 35.6769, lon: 139.7639}
+"Trujillo, Peru": {lat: -8.1117, lon: -79.0288}
+"Tulum, Mexico": {lat: 20.4296, lon: -87.6529}
+"Ubatuba, Brazil": {lat: -23.3977, lon: -45.082}
+"Ubud, Bali, Indonesia": {lat: -8.517, lon: 115.2551}
+"Ulsan, South Korea": {lat: 35.5392, lon: 129.3119}
+"Umina, New South Wales, Australia": {lat: -33.5178, lon: 151.3094}
+"Valencia, Spain": {lat: 39.4697, lon: -0.3763}
+"Vancouver, Canada": {lat: 49.2609, lon: -123.114}
+"Villavieja, Colombia": {lat: 3.2195, lon: -75.219}
+"Wollongong, New South Wales, Australia": {lat: -34.4278, lon: 150.8931}
+"Wonosobo, Java, Indonesia": {lat: -7.3595, lon: 109.9028}
+"Yamanouchi, Nagano, Japan": {lat: 36.7446, lon: 138.4127}
+"Yogyakarta, Indonesia": {lat: -7.8013, lon: 110.3647}
+"Yurimaguas, Peru": {lat: -5.8952, lon: -76.1047}
