@@ -8,8 +8,9 @@
   - the `countries` in post front matter, matched by German name against
     data/iso3166.yaml ("USA" -> us). A name it doesn't know is warned
     about; add it to that country's `de` list.
-  - the stops in data/route.yaml, by their country_code, which adds a
-    country we've been to but not written about yet.
+  - the stops in route.yaml (on the route-data branch), by their
+    country_code, which adds a country we've been to but not written
+    about yet.
   data/iso3166.yaml then gives each country's outline (`n`, the id in
   world-50m.json) and flag.
 
@@ -80,7 +81,7 @@
   {{ $cc := .cc }}
   {{ $c := index $iso $cc }}
   {{ if not $c }}
-    {{ warnf "country-map: unknown country code %q in data/route.yaml; it is left off the map" $cc }}
+    {{ warnf "country-map: unknown country code %q in route.yaml; it is left off the map" $cc }}
     {{ continue }}
   {{ end }}
   {{ $entry := dict "id" $c.n "cc" (upper $cc) "f" $c.f "n" (index $names $cc) "u" "" "c" 0 "s" (index $stops $cc | default slice) }}
