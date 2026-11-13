@@ -1,5 +1,5 @@
 ---
-title: "N01 - Chickenbus"
+title: "#N01 - Chickenbus"
 date: 2026-11-08
 author: Kerstin
 categories: ["Nicaragua" , "San Juan del Sur"]
