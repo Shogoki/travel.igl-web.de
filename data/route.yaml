@@ -119,7 +119,7 @@ trips:
     title: "Japan"
     heading: "Japan 🇯🇵"
     hash: "2f7eadb45e3d3ba8"
-    posts_hash: "69ac8aa2c14be266"
+    posts_hash: "734741f95ff77878"
     stops:
       - name: "Osaka"
         country: "Japan"
@@ -185,7 +185,7 @@ trips:
     title: "Thailand (Internship)"
     heading: "Thailand (Internship) 🇹🇭"
     hash: "38150b24e7aa026d"
-    posts_hash: "c37155d04785c8f4"
+    posts_hash: "0d0f8052f5dfbddf"
     stops:
       - name: "Phuket"
         country: "Thailand"
@@ -234,7 +234,7 @@ trips:
         by: null
         label: null
         query: "Koh Phi Phi, Thailand"
-        posts: ["P06-ranglotzen", "P07-follower", "P08-schiffe"]
+        posts: ["P06-ranglotzen", "P07-follower"]
       - name: "Khao Lak"
         country: "Thailand"
         country_code: "TH"
@@ -258,7 +258,7 @@ trips:
         by: null
         label: null
         query: "Similan Islands, Thailand"
-        posts: ["P08-schiffe"]
+        posts: []
       - name: "Koh Phi Phi"
         country: "Thailand"
         country_code: "TH"
@@ -270,7 +270,7 @@ trips:
         by: null
         label: null
         query: "Koh Phi Phi, Thailand"
-        posts: ["P08-schiffe"]
+        posts: []
   - id: "malaysia-2025"
     title: "Malaysia"
     heading: "Malaysia 🇲🇾"
