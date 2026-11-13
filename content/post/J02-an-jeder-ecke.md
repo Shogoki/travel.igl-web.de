@@ -1,6 +1,6 @@
 ---
 title: "#J02 - An jeder Ecke"
-date: 2026-04-20
+date: 2026-04-23
 author: Kerstin
 categories: ["Japan" , "Kyoto"]
 countries: ["Japan"]
