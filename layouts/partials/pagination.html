@@ -1,17 +1,32 @@
 <!-- Pagination -->
-{{/* Overrides the theme's, which said "Newer Posts" / "Older Posts". */}}
-{{ $pag := $.Paginator }}
+{{/*
+  Overrides the theme's, which said "Newer Posts" / "Older Posts".
+
+  Rendered twice by posts.html and term.html: above the list ("top": true) and
+  below it. Someone paging back through ~12 pages to find an old post would
+  otherwise have to scroll past ten cards on every page to reach the next
+  link. A floating button was the alternative, but on phones it covers the
+  cards it floats over, and "to the bottom" is only ever a detour to this pager.
+
+  Called as (dict "page" . "top" true).
+*/}}
+{{ $pag := .page.Paginator }}
 {{ if gt $pag.TotalPages 1 }}
+<nav class="pager-nav{{ if .top }} pager-nav-top{{ end }}" aria-label="{{ if .top }}Seiten (oben){{ else }}Seiten{{ end }}">
 <ul class="pager">
     {{ if $pag.HasPrev }}
     <li class="previous">
-        <a href="{{ $pag.Prev.URL }}">&larr; Neuere Posts</a>
+        <a href="{{ $pag.Prev.URL }}" rel="prev">&larr; Neuere<span class="pager-word"> Posts</span></a>
     </li>
     {{ end }}
+    <li class="pager-status">
+        <span class="pager-word">Seite </span>{{ $pag.PageNumber }}<span class="pager-word"> von</span><span class="pager-slash"> /</span> {{ $pag.TotalPages }}
+    </li>
     {{ if $pag.HasNext }}
     <li class="next">
-        <a href="{{ $pag.Next.URL }}">Ältere Posts &rarr;</a>
+        <a href="{{ $pag.Next.URL }}" rel="next">Ältere<span class="pager-word"> Posts</span> &rarr;</a>
     </li>
     {{ end }}
 </ul>
+</nav>
 {{ end }}
